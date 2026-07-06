@@ -347,13 +347,17 @@
 
 /* ===================== CORE VALUES ===================== */
 .values .container {
-    position: relative;
+    display: flex;
+    align-items: center;   /* heading vertically centered against the cluster */
+    gap: 2rem;
 }
 
 .values__title {
-    font-size: var(--fs-display);
-    font-weight: 400;
-    line-height: 1.05;
+    flex: 1 1 auto;
+    font-family: var(--font-heading);
+    font-size: 4.375rem;   /* 70px */
+    font-weight: 500;
+    line-height: 1;
     color: var(--color-ink);
 }
 
@@ -366,17 +370,16 @@
 /* Desktop hexagonal cluster */
 .values__cluster {
     position: relative;
-    width: 855px;
-    height: 710px;
-    max-width: 100%;
-    margin-left: auto;
-    margin-top: -4rem;
+    flex: 0 0 890px;
+    width: 890px;
+    height: 661px;
+    margin: 0;
 }
 
 .value {
     position: absolute;
-    width: 232px;
-    height: 232px;
+    width: 240px;
+    height: 240px;
     border: 1.5px solid var(--color-red);
     border-radius: 50%;
     display: flex;
@@ -387,49 +390,64 @@
 }
 
 .value__inner {
-    padding: 1.5rem;
-    max-width: 190px;
+    width: 196px;
+    padding: 0.5rem;
 }
 
 .value__icon {
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
     margin: 0 auto 0.5rem;
 }
 
 .value__name {
+    font-family: var(--font-heading);
     color: var(--color-red);
-    font-size: 1.125rem;
-    font-weight: 600;
-    margin-bottom: 0.4rem;
+    font-size: 1.5rem;     /* 24px */
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 0.6rem;
 }
 
 .value__desc {
-    color: var(--color-body);
-    font-size: 0.75rem;
-    line-height: 1.45;
+    font-family: var(--font-body);
+    color: var(--color-red);
+    font-size: 1rem;       /* 16px */
+    font-weight: 400;
+    line-height: 1.2;      /* 120% */
+    letter-spacing: -0.02em;
 }
 
-/* Center: filled red with photo backdrop */
+/* Center: 316 photo ring holding a 240 solid-red circle */
 .value--center {
-    width: 276px;
-    height: 276px;
+    width: 316px;
+    height: 316px;
     border: none;
     overflow: hidden;
-    color: var(--color-white);
-    background-image: linear-gradient(rgba(180, 36, 59, 0.86), rgba(180, 36, 59, 0.86)),
-        url('../images/about-us/hero-section-bg.jpg');
+    background-image: url('../images/about-us/hero-section-bg.jpg');
     background-size: cover;
     background-position: center;
 }
 
+.value--center .value__inner {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background-color: var(--color-red);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.75rem;
+    color: var(--color-white);
+}
+
 .value--center .value__name {
     color: var(--color-white);
-    font-size: 1.25rem;
 }
 
 .value--center .value__desc {
-    color: rgba(255, 255, 255, 0.92);
+    color: var(--color-white);
 }
 
 .value--center .value__icon {
@@ -437,12 +455,12 @@
 }
 
 /* Cluster placement (DOM: center, innovation, quality, sustainability, safety, integrity) */
-.value:nth-child(1) { left: 12px;  top: 207px; }   /* Customer Focus (center) */
-.value:nth-child(2) { left: 214px; top: 16px; }    /* Innovation */
-.value:nth-child(3) { left: 469px; top: 19px; }    /* Quality */
-.value:nth-child(4) { left: 619px; top: 256px; }   /* Sustainability */
-.value:nth-child(5) { left: 214px; top: 476px; }   /* Safety */
-.value:nth-child(6) { left: 466px; top: 474px; }   /* Integrity */
+.value:nth-child(1) { left: 0;     top: 173px; }   /* Customer Focus (316 center) */
+.value:nth-child(2) { left: 245px; top: 0; }       /* Innovation */
+.value:nth-child(3) { left: 495px; top: 0; }       /* Quality */
+.value:nth-child(4) { left: 650px; top: 210px; }   /* Sustainability */
+.value:nth-child(5) { left: 245px; top: 421px; }   /* Safety */
+.value:nth-child(6) { left: 495px; top: 421px; }   /* Integrity */
 
 /* ===================== COMMITMENT ===================== */
 .commitment {
@@ -723,11 +741,22 @@
    ============================================================ */
 
 /* --- Core Values cluster scales down before the mobile swap --- */
-@media (max-width: 1180px) {
+@media (max-width: 1320px) {
     .values__cluster {
-        transform: scale(0.82);
-        transform-origin: top right;
-        margin-bottom: -6rem;
+        transform: scale(0.72);
+        transform-origin: top left;
+        /* reclaim the space the scale frees so flex reserves the visual size */
+        margin-right: -249px;   /* 890 * 0.28 */
+        margin-bottom: -185px;  /* 661 * 0.28 */
+    }
+}
+
+@media (max-width: 1120px) {
+    .values__cluster {
+        transform: scale(0.58);
+        transform-origin: top left;
+        margin-right: -374px;   /* 890 * 0.42 */
+        margin-bottom: -278px;  /* 661 * 0.42 */
     }
 }
 
