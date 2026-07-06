@@ -284,49 +284,45 @@
 }
 
 .profile-card {
+    /* colour tokens — flipped per position via :nth-child (see below) */
+    --pc-bg: var(--color-red);
+    --pc-fg: #fff;
+    --pc-line: rgba(255, 255, 255, 0.35);
+
     position: relative;
     border-radius: var(--radius-lg);
     overflow: hidden;
-    min-height: 380px;
+    min-height: 430px;
     padding: 1.75rem 1.5rem 0;
     display: flex;
     flex-direction: column;
+    background-color: var(--pc-bg);
+    color: var(--pc-fg);
 }
 
-.profile-card--red {
-    background-color: var(--color-red);
-    color: var(--color-white);
-}
-
-.profile-card--light {
-    background-color: var(--color-surface);
-    color: var(--color-red);
+/* Desktop 4-up: strict alternate red / gray */
+.profile-card:nth-child(even) {
+    --pc-bg: var(--color-surface);
+    --pc-fg: var(--color-red);
+    --pc-line: rgba(180, 36, 59, 0.3);
 }
 
 .profile-card__text {
     position: relative;
     z-index: 2;
     padding-bottom: 1rem;
-    border-bottom: 1px solid currentColor;
-}
-
-.profile-card--red .profile-card__text {
-    border-color: rgba(255, 255, 255, 0.35);
-}
-
-.profile-card--light .profile-card__text {
-    border-color: rgba(180, 36, 59, 0.3);
+    border-bottom: 1px solid var(--pc-line);
 }
 
 .profile-card__name {
-    color: inherit;
+    color: var(--pc-fg);
     font-size: var(--fs-h3);
     font-weight: 600;
     margin-bottom: 0.75rem;
 }
 
 .profile-card__role {
-    color: inherit;
+    color: var(--pc-fg);
     font-size: 0.95rem;
     font-weight: 500;
 }
@@ -336,9 +332,8 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    height: 297px;    /* fixed — every portrait renders the same height */
     width: auto;
-    max-width: 100%;
-    max-height: 74%;
     object-fit: contain;
     object-position: bottom;
     filter: grayscale(1) contrast(1.05);
@@ -834,6 +829,20 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
+    /* 2-up checkerboard: cards 2 & 3 become gray so no column repeats a colour */
+    .profile-card:nth-child(even) {
+        --pc-bg: var(--color-red);
+        --pc-fg: #fff;
+        --pc-line: rgba(255, 255, 255, 0.35);
+    }
+
+    .profile-card:nth-child(2),
+    .profile-card:nth-child(3) {
+        --pc-bg: var(--color-surface);
+        --pc-fg: var(--color-red);
+        --pc-line: rgba(180, 36, 59, 0.3);
+    }
+
     /* Commitment / Network -> single column */
     .commitment__grid,
     .network__head {
@@ -1020,8 +1029,13 @@
 @media (max-width: 576px) {
     /* Leadership stays a 2x2 grid on mobile (per mobile mock) */
     .profile-card {
-        min-height: 300px;
+        min-height: 360px;
         padding: 1.25rem 1.1rem 0;
+    }
+
+    /* smaller portraits so they fit the narrow cards (still equal height) */
+    .profile-card__photo {
+        height: 230px;
     }
 
     .profile-card__name {
