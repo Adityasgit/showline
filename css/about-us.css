@@ -513,14 +513,19 @@
 }
 
 .network__title {
-    font-size: var(--fs-h2);
+    font-family: var(--font-heading);
+    font-size: 3.75rem;    /* 60px */
+    font-weight: 500;
+    line-height: 1;
     color: var(--color-ink);
-    font-weight: 600;
 }
 
 .network__intro {
-    font-size: var(--fs-lead);
-    color: var(--color-body);
+    font-family: var(--font-body);
+    font-size: 1.375rem;   /* 22px */
+    font-weight: 500;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.8);   /* #000000CC */
 }
 
 .network__cards {
@@ -561,7 +566,7 @@
 }
 
 .info-card--red p {
-    color: rgba(255, 255, 255, 0.9);
+    color: #fff;
 }
 
 .info-card--light {
@@ -574,27 +579,39 @@
 }
 
 .info-card__title {
-    font-size: var(--fs-h3);
-    font-weight: 600;
-    color: var(--color-ink);
+    font-family: var(--font-heading);
+    font-size: 2.25rem;    /* 36px */
+    font-weight: 500;
+    line-height: 1;
+    color: #000;
     margin-bottom: 1.25rem;
 }
 
 .info-card p {
-    font-size: var(--fs-body);
-    line-height: 1.7;
+    font-family: var(--font-body);
+    font-size: 1.25rem;    /* 20px */
+    font-weight: 600;
+    line-height: 1.6;      /* 160% */
+}
+
+.info-card--light p {
+    color: #000;
 }
 
 .network__footnote {
     margin-top: clamp(2rem, 4vw, 3rem);
-    font-size: var(--fs-body);
-    color: var(--color-body);
-    max-width: 62ch;
+    font-family: var(--font-body);
+    font-size: 1.375rem;   /* 22px */
+    font-weight: 500;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.8);   /* #000000CC */
+    max-width: none;       /* full width, not 50% */
 }
 
 /* ===================== CONTACT ===================== */
 .contact {
     position: relative;
+    margin-top:8rem;
     padding-bottom: 11rem;
 }
 
