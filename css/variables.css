@@ -51,8 +51,8 @@
     --shadow-btn: 0 8px 20px rgba(180, 36, 59, 0.25);
 
     /* ---- Layout ---- */
-    --container-max: 1280px;
-    --container-pad: 3.75rem;
+    --container-max: 1455px;
+    --container-pad: 2rem;
 
     /* ---- Z-index ---- */
     --z-base: 1;

@@ -80,15 +80,22 @@
 
 .intro__title {
     color: var(--color-white);
-    font-size: var(--fs-display);
-    font-weight: 400;
-    line-height: 1.02;
+    font-family: var(--font-heading);
+    font-size: 4.875rem;   /* 78px */
+    font-weight: 400;      /* "Projects" */
+    line-height: 1;
+}
+
+.intro__title-strong {
+    font-weight: 500;      /* "Showline" */
 }
 
 .intro__text {
-    color: rgba(255, 255, 255, 0.92);
-    font-size: var(--fs-lead);
-    line-height: 1.7;
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;    /* 24px */
+    font-weight: 400;
+    line-height: 35px;
     align-self: center;
 }
 
@@ -103,16 +110,19 @@
 
 .identity__eyebrow {
     font-family: var(--font-heading);
-    font-size: var(--fs-h4);
-    font-weight: 600;
-    color: var(--color-ink);
-    margin-bottom: 0.25rem;
+    font-size: 3rem;       /* 48px */
+    font-weight: 500;
+    line-height: 1;
+    color: #000;
+    margin-bottom: 0.5rem;
 }
 
 .identity__title {
-    font-size: var(--fs-h2);
+    font-family: var(--font-heading);
+    font-size: 4rem;       /* 64px */
+    font-weight: 500;
+    line-height: 1;
     color: var(--color-red);
-    font-weight: 600;
 }
 
 .identity__grid {
@@ -128,7 +138,7 @@
 }
 
 .pillar--right {
-    margin-top: 7rem;
+    margin-top: 4.5rem;
     margin-left: auto;
     text-align: right;
 }
@@ -137,8 +147,10 @@
     display: flex;
     align-items: center;
     gap: 0.9rem;
-    font-size: var(--fs-h3);
-    font-weight: 600;
+    font-family: var(--font-heading);
+    font-size: 2.5rem;   /* 40px */
+    font-weight: 400;
+    line-height: 1.1;
     color: var(--color-ink);
     margin-bottom: 1.25rem;
 }
@@ -159,8 +171,7 @@
 .pillar__marker {
     display: flex;
     align-items: center;
-    flex: 1 1 auto;
-    min-width: 0;
+    flex: 0 0 auto;   /* don't grow — keep the title at the edge, not pushed to center */
 }
 
 .pillar__dot {
@@ -173,33 +184,34 @@
 
 .pillar__line {
     height: 1.5px;
+    width: 50vw;   /* fixed; extends off-screen and is clipped by .identity overflow:hidden */
     background-color: var(--color-red);
-    flex: 1 1 auto;
+    flex: none;
 }
 
-/* left: line grows to the left, dot sits beside the label */
+/* left: line runs off-screen left, dot sits at its end (joined) beside the label */
 .pillar--left .pillar__marker {
-    margin-right: 0.9rem;
     margin-left: -50vw;
 }
 
-.pillar--left .pillar__dot {
-    margin-left: 0.75rem;
-}
-
-/* right: dot beside label, line grows to the right */
+/* right: dot beside the label, line runs off-screen right (joined) */
 .pillar--right .pillar__marker {
-    margin-left: 0.9rem;
     margin-right: -50vw;
 }
 
-.pillar--right .pillar__dot {
-    margin-right: 0.75rem;
+.pillar p {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    line-height: 40px;
+    color: var(--color-body);
 }
 
-.pillar p {
-    font-size: var(--fs-body);
-    color: var(--color-body);
+.pillar--left p {
+    font-size: 1.625rem;   /* 26px */
+}
+
+.pillar--right p {
+    font-size: 1.75rem;    /* 28px */
 }
 
 /* ===================== WHO WE ARE ===================== */
@@ -876,6 +888,15 @@
         gap: 1.5rem;
     }
 
+    .intro__title {
+        font-size: 3.25rem;   /* 52px */
+    }
+
+    .intro__text {
+        font-size: 1.125rem;
+        line-height: 1.7;
+    }
+
     /* Vision & Mission -> single column stack */
     .identity__grid {
         grid-template-columns: 1fr;
@@ -887,6 +908,34 @@
         max-width: 100%;
         margin-top: 0;
         margin-left: 0;
+    }
+
+    /* Right pillar reads left-aligned when stacked */
+    .pillar--right {
+        text-align: left;
+    }
+
+    .pillar--right .pillar__title {
+        justify-content: flex-start;
+    }
+
+    /* Scale the large headings down for narrow screens */
+    .identity__eyebrow {
+        font-size: 2rem;
+    }
+
+    .identity__title {
+        font-size: 2.75rem;
+    }
+
+    .pillar__title {
+        font-size: 2rem;
+    }
+
+    .pillar--left p,
+    .pillar--right p {
+        font-size: 1.125rem;
+        line-height: 1.7;
     }
 
     .contact__watermark {
