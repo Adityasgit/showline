@@ -488,7 +488,7 @@
     font-size: 3.75rem;    /* 60px */
     font-weight: 500;
     line-height: 1;
-    align-self: center;    /* vertically centered against the text block */
+    align-self: flex-start;    /* vertically centered against the text block */
 }
 
 .commitment__text p {
