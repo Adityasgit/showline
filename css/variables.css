@@ -1,0 +1,81 @@
+/* ============================================================
+   variables.css — design tokens only
+   ============================================================ */
+
+:root {
+    /* ---- Colors ---- */
+    --color-red: #B4243B;
+    --color-red-dark: #9E1E33;
+    --color-red-deep: #8A1A2C;
+    --color-ink: #111111;
+    --color-body: #555555;
+    --color-muted: #AAAAAA;
+    --color-line: #D9D9D9;
+    --color-surface: #EEEEEE;
+    --color-surface-2: #FBFBFB;
+    --color-white: #FFFFFF;
+    --color-black: #0D0D0D;
+
+    /* ---- Spacing scale ---- */
+    --space-2: 0.125rem;
+    --space-4: 0.25rem;
+    --space-8: 0.5rem;
+    --space-12: 0.75rem;
+    --space-16: 1rem;
+    --space-20: 1.25rem;
+    --space-24: 1.5rem;
+    --space-32: 2rem;
+    --space-40: 2.5rem;
+    --space-48: 3rem;
+    --space-56: 3.5rem;
+    --space-64: 4rem;
+    --space-80: 5rem;
+    --space-96: 6rem;
+    --space-120: 7.5rem;
+
+    /* ---- Section rhythm ---- */
+    --section-pad-y: 6rem;
+    --section-pad-y-sm: 3.5rem;
+
+    /* ---- Border radius ---- */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 28px;
+    --radius-2xl: 36px;
+    --radius-pill: 999px;
+
+    /* ---- Shadows ---- */
+    --shadow-card: 0 20px 60px rgba(17, 17, 17, 0.08);
+    --shadow-soft: 0 10px 30px rgba(17, 17, 17, 0.06);
+    --shadow-btn: 0 8px 20px rgba(180, 36, 59, 0.25);
+
+    /* ---- Layout ---- */
+    --container-max: 1280px;
+    --container-pad: 3.75rem;
+
+    /* ---- Z-index ---- */
+    --z-base: 1;
+    --z-raised: 10;
+    --z-header: 100;
+    --z-overlay: 1000;
+
+    /* ---- Transitions ---- */
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.25s ease;
+    --transition-slow: 0.4s ease;
+}
+
+@media (max-width: 992px) {
+    :root {
+        --container-pad: 2rem;
+        --section-pad-y: 4rem;
+    }
+}
+
+@media (max-width: 576px) {
+    :root {
+        --container-pad: 1.25rem;
+        --section-pad-y: 3rem;
+    }
+}

@@ -1,0 +1,75 @@
+/* ============================================================
+   typography.css — fonts + text scale
+   Instrument Sans -> headings/display
+   Manrope        -> body / UI copy
+   Geist          -> button labels
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Manrope:wght@400;500;600;700;800&family=Geist:wght@400;500;600;700&display=swap');
+
+:root {
+    --font-heading: 'Instrument Sans', system-ui, sans-serif;
+    --font-body: 'Manrope', system-ui, sans-serif;
+    --font-button: 'Geist', system-ui, sans-serif;
+
+    /* Fluid display / heading scale */
+    --fs-display: clamp(2.75rem, 6vw, 5.5rem);   /* Showline Projects / Commitment */
+    --fs-h1: clamp(2.25rem, 4.5vw, 3.75rem);     /* About Us / Who We Are */
+    --fs-h2: clamp(2rem, 3.6vw, 3.25rem);        /* Section titles */
+    --fs-h3: clamp(1.5rem, 2.2vw, 2rem);         /* Sub-headings / card names */
+    --fs-h4: clamp(1.125rem, 1.6vw, 1.375rem);   /* Small headings */
+    --fs-lead: clamp(1rem, 1.25vw, 1.125rem);    /* Lead paragraph */
+    --fs-body: 1rem;
+    --fs-sm: 0.875rem;
+    --fs-xs: 0.75rem;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--fs-body);
+    color: var(--color-body);
+    background-color: var(--color-white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    color: var(--color-ink);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+}
+
+p {
+    color: var(--color-body);
+    line-height: 1.65;
+}
+
+a {
+    font-family: var(--font-body);
+    transition: color var(--transition-fast);
+}
+
+strong,
+b {
+    font-weight: 700;
+    color: inherit;
+}
+
+.eyebrow {
+    font-family: var(--font-body);
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-red);
+}
+
+/* Heading accent: black lead word + red remainder */
+.accent {
+    color: var(--color-red);
+}

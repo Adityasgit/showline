@@ -1,0 +1,91 @@
+/* ============================================================
+   buttons.css — reusable button styles (Geist)
+   ============================================================ */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: var(--font-button);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    line-height: 1;
+    padding: 0.875rem 1.5rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background-color var(--transition-base),
+                color var(--transition-base),
+                transform var(--transition-fast),
+                box-shadow var(--transition-base);
+    white-space: nowrap;
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+/* Solid red pill */
+.btn-primary {
+    background-color: var(--color-red);
+    color: var(--color-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-red-dark);
+    box-shadow: var(--shadow-btn);
+}
+
+/* White pill (on red backgrounds) */
+.btn-light {
+    background-color: var(--color-white);
+    color: var(--color-red);
+}
+
+.btn-light:hover {
+    background-color: var(--color-surface);
+}
+
+/* Full-width solid red (forms) */
+.btn-block {
+    width: 100%;
+    padding-block: 1.125rem;
+    font-weight: 600;
+}
+
+/* Circular icon button (arrow) */
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: var(--color-red);
+    flex-shrink: 0;
+    transition: background-color var(--transition-base),
+                transform var(--transition-base);
+}
+
+.btn-icon:hover {
+    background-color: var(--color-red-dark);
+    transform: rotate(45deg);
+}
+
+.btn-icon img {
+    width: 1.5rem;
+    height: 1.5rem;
+    filter: brightness(0) invert(1); /* white arrow */
+}
+
+.btn-icon--sm {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+/* Pairing: label pill + circular icon sharing a hover group */
+.btn-pair {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}

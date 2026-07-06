@@ -1,0 +1,43 @@
+.
+├── about-us.html
+├── css
+├── Design
+│   ├── about-us-mobile.pdf
+│   ├── about-us-mobile.png
+│   ├── about-us-mobile.svg
+│   ├── About us.pdf
+│   ├── About us.png
+│   └── About us.svg
+├── fonts
+├── images
+│   ├── about-us
+│   │   ├── hero-section-bg.jpg
+│   │   ├── hero-section-overlay.png
+│   │   └── our-commitment.jpg
+│   ├── icons
+│   │   ├── icon-arrow-navbar.svg
+│   │   ├── icon-customer-focus-ix_customer.svg
+│   │   ├── icon-inovation-hugeicons_ai-innovation-03.svg
+│   │   ├── icon-intigraity-streamline-cyber_business-handshake-deal.svg
+│   │   ├── icon-our-mission-mage_goals.svg
+│   │   ├── icon-ourvision-eye.svg
+│   │   ├── icon-qualitystreamline_star-badge.svg
+│   │   ├── icon-safety-si_shield-health-safety-line.png
+│   │   ├── icon-safety-si_shield-health-safety-line.svg
+│   │   ├── icon-social-facebook.svg
+│   │   ├── icon-social-instagram.svg
+│   │   ├── icon-social-linkedin.svg
+│   │   ├── icon-social-twitter.svg
+│   │   └── icon-sustainability-carbon_sustainability.svg
+│   ├── logo
+│   │   ├── showline-logo-symbol.png
+│   │   ├── showline-logo-text.png
+│   │   └── showline-navbar-logo.png
+│   └── team-members
+│       ├── 1.png
+│       └── 2.png
+├── index.html
+├── js
+└── tree.txt
+
+10 directories, 31 files
