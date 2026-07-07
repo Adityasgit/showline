@@ -193,8 +193,8 @@
     color: var(--color-body);
     font-family: var(--font-body);
     font-weight: 400;
-    font-size: 20px;
-    line-height: 1;
+    font-size: 16px;
+    line-height: 1.5;
     letter-spacing: 0;
     margin-bottom: 1.75rem;
 }
@@ -315,16 +315,21 @@
 }
 
 .why__title {
-    font-size: clamp(2.5rem, 4.5vw, 4.25rem);
-    font-weight: 600;
-    line-height: 1.05;
+    font-family: var(--font-heading);
+    font-weight: 500;
+    font-size: 70px;
+    line-height: 1;
+    letter-spacing: 0;
     margin-bottom: 1.5rem;
 }
 
 .why__text {
     color: var(--color-body);
-    font-size: 1.05rem;
-    line-height: 1.6;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1;
+    letter-spacing: 0;
 }
 
 .why__cluster {
@@ -342,7 +347,7 @@
     width: 360px;
     height: 360px;
     border-radius: 50%;
-    background: url("../images/home/what-we-do.jpg") center / cover;
+    background: url("../images/home/expertise-image-bg-circle.png") center / cover;
     z-index: 1;
 }
 
@@ -1106,6 +1111,17 @@
 
     .service-card__desc {
         font-size: 14px;
+    }
+
+    /* Why Choose Us -> scale the desktop 70px/22px down for phones */
+    .why__title {
+        font-size: 42px;
+        line-height: 1.1;
+    }
+
+    .why__text {
+        font-size: 16px;
+        line-height: 1.5;
     }
 
     /* Stats -> single column, dividers become top borders */
