@@ -376,8 +376,8 @@
 .why-circle--center {
     width: 260px;
     height: 260px;
-    left: 150px;
-    top: 185px;
+    left: 50px;    /* centered in the 360px photo circle (centre 180,330) */
+    top: 200px;
     border: none;
     background-color: var(--color-red);
     z-index: 3;
