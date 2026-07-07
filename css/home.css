@@ -306,7 +306,7 @@
 .why__inner {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: clamp(2rem, 5vw, 5rem);
 }
 
 .why__intro {
@@ -334,10 +334,10 @@
 
 .why__cluster {
     position: relative;
-    flex: 0 0 720px;
-    width: 720px;
-    height: 620px;
-    margin-left: auto;
+    flex: 0 0 760px;
+    width: 760px;
+    height: 640px;
+    /* sits right after the intro (no margin-left:auto) so it reads closer to the text */
 }
 
 .why__photo {
@@ -390,9 +390,10 @@
     line-height: 1.25;
 }
 
-.why-circle--sustainability { width: 220px; height: 220px; left: 360px; top: 0; }
-.why-circle--innovation     { width: 200px; height: 200px; left: 520px; top: 195px; }
-.why-circle--precision      { width: 215px; height: 215px; left: 330px; top: 360px; }
+/* photo circle centre is (180, 330); small circles hug its right edge, innovation sits out right */
+.why-circle--sustainability { width: 220px; height: 220px; left: 300px; top: 80px; }
+.why-circle--precision      { width: 220px; height: 220px; left: 315px; top: 405px; }
+.why-circle--innovation     { width: 210px; height: 210px; left: 545px; top: 245px; }
 
 .why-circle--center {
     width: 260px;
@@ -896,8 +897,8 @@
     .why__cluster {
         transform: scale(0.8);
         transform-origin: top left;
-        margin-right: -144px;    /* reclaim freed width (720*0.2) */
-        margin-bottom: -124px;   /* reclaim freed height (620*0.2) */
+        margin-right: -152px;    /* reclaim freed width (760*0.2) */
+        margin-bottom: -128px;   /* reclaim freed height (640*0.2) */
     }
 }
 
