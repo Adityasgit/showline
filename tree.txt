@@ -1,43 +1,85 @@
 .
 ├── about-us.html
 ├── css
+│   ├── about-us.css
+│   ├── common
+│   │   ├── buttons.css
+│   │   ├── footer.css
+│   │   ├── header.css
+│   │   ├── reset.css
+│   │   ├── typography.css
+│   │   ├── utilities.css
+│   │   └── variables.css
+│   └── global.css
 ├── Design
-│   ├── about-us-mobile.pdf
-│   ├── about-us-mobile.png
-│   ├── about-us-mobile.svg
-│   ├── About us.pdf
-│   ├── About us.png
-│   └── About us.svg
+│   ├── about
+│   │   ├── about-us-mobile.pdf
+│   │   ├── about-us-mobile.png
+│   │   ├── about-us-mobile.svg
+│   │   ├── About us.pdf
+│   │   ├── About us.png
+│   │   └── About us.svg
+│   └── home
+│       ├── home-page-mobile.pdf
+│       ├── home-page-mobile.png
+│       ├── home-page-mobile.svg
+│       ├── Home page - V5.pdf
+│       ├── Home page - V5.png
+│       └── Home page - V5.svg
 ├── fonts
 ├── images
 │   ├── about-us
 │   │   ├── hero-section-bg.jpg
 │   │   ├── hero-section-overlay.png
 │   │   └── our-commitment.jpg
+│   ├── home
+│   │   ├── 01-exibition.jpg
+│   │   ├── 02-event.jpg
+│   │   ├── Automechanika.png
+│   │   ├── From-Concept-to-Reality.png
+│   │   ├── gitex.png
+│   │   ├── hero-bg-image.jpg
+│   │   ├── hero-section-overlay.png
+│   │   ├── Medical-Congress-Stand.png
+│   │   ├── modular-advantage.png
+│   │   ├── Retail-Brand-Activation.png
+│   │   ├── Saudi-Pavilion-EXPO.png
+│   │   ├── what-we-do.jpg
+│   │   └── Why-Modular-Stands-Are-Replacing-Traditional-Wooden-Booths.png
 │   ├── icons
 │   │   ├── icon-arrow-navbar.svg
+│   │   ├── icon-build.svg
 │   │   ├── icon-customer-focus-ix_customer.svg
+│   │   ├── icon-design.svg
+│   │   ├── icon-discover-search.svg
+│   │   ├── icon-engineer.svg
 │   │   ├── icon-inovation-hugeicons_ai-innovation-03.svg
+│   │   ├── icon-install.svg
 │   │   ├── icon-intigraity-streamline-cyber_business-handshake-deal.svg
 │   │   ├── icon-our-mission-mage_goals.svg
 │   │   ├── icon-ourvision-eye.svg
 │   │   ├── icon-qualitystreamline_star-badge.svg
+│   │   ├── icon-rebuild.svg
 │   │   ├── icon-safety-si_shield-health-safety-line.png
 │   │   ├── icon-safety-si_shield-health-safety-line.svg
 │   │   ├── icon-social-facebook.svg
 │   │   ├── icon-social-instagram.svg
 │   │   ├── icon-social-linkedin.svg
 │   │   ├── icon-social-twitter.svg
+│   │   ├── icon-store.svg
 │   │   └── icon-sustainability-carbon_sustainability.svg
 │   ├── logo
 │   │   ├── showline-logo-symbol.png
 │   │   ├── showline-logo-text.png
+│   │   ├── showline-logo-text-white.png
 │   │   └── showline-navbar-logo.png
 │   └── team-members
 │       ├── 1.png
 │       └── 2.png
 ├── index.html
 ├── js
+│   ├── navbar.js
+│   └── quotation-form.js
 └── tree.txt
 
-10 directories, 31 files
+14 directories, 69 files
