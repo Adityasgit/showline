@@ -660,6 +660,7 @@
 .oneroof-pill {
     position: absolute;
     display: inline-flex;
+    width: max-content;
     align-items: center;
     gap: 0.5rem;
     white-space: nowrap;
