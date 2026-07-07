@@ -101,13 +101,16 @@
 .home-intro__watermark {
     position: absolute;
     left: 50%;
-    top: 42%;
+    top: 55%;
     transform: translate(-50%, -50%);
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: clamp(4rem, 15vw, 14rem);
+    font-family: var(--font-heading);   /* Instrument Sans */
+    font-weight: 600;
+    font-size: 200px;
     line-height: 1;
-    color: rgba(255, 255, 255, 0.06);
+    letter-spacing: 0;
+    text-align: center;
+    color: #A41E33;
+    mix-blend-mode: darken;   /* Figma fill is #A41E33; blended so it reads as a soft tint */
     white-space: nowrap;
     pointer-events: none;
     z-index: 0;
@@ -118,9 +121,11 @@
     margin-inline: auto;
     text-align: center;
     color: var(--color-white);
-    font-family: var(--font-body);
-    font-size: clamp(1.05rem, 1.6vw, 1.5rem);
-    line-height: 1.6;
+    font-family: var(--font-body);      /* Manrope */
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 38px;
+    letter-spacing: 0;
 }
 
 .stats {
@@ -1046,6 +1051,19 @@
 
     .home-hero__actions .btn {
         width: 100%;
+    }
+
+    /* Intro copy + watermark: smaller type, watermark sits at the top peeking up */
+    .home-intro__lead {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .home-intro__watermark {
+        mix-blend-mode: lighten;
+        top: 1rem;
+        transform: translateX(-50%);
+        font-size: 60px;
     }
 
     /* Stats -> single column, dividers become top borders */
