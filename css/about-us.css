@@ -751,6 +751,139 @@
     box-shadow: 0 0 0 3px rgba(180, 36, 59, 0.12);
 }
 
+/* ---- Custom select (enhances native <select>; trigger mirrors the field) ---- */
+.select {
+    position: relative;
+    width: 100%;
+}
+
+/* Native select stays in the DOM for form submission, hidden from view */
+.select__native {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+/* Trigger is a 1:1 visual match of .form-field select */
+.select__trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    font-family: var(--font-button);   /* Geist */
+    font-size: 0.875rem;               /* 14px */
+    line-height: 1;
+    color: var(--color-ink);
+    text-align: left;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-md);
+    padding: 0.85rem 1rem;
+    cursor: pointer;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.select__value {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.select__value--placeholder {
+    color: var(--color-muted);
+}
+
+.select__trigger::after {
+    content: "";
+    flex: 0 0 auto;
+    width: 16px;
+    height: 16px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23AAAAAA' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") center / contain no-repeat;
+    transition: transform var(--transition-base);
+}
+
+.select--open .select__trigger,
+.select__trigger:focus-visible {
+    outline: none;
+    border-color: var(--color-red);
+    box-shadow: 0 0 0 3px rgba(180, 36, 59, 0.12);
+}
+
+.select--open .select__trigger::after {
+    transform: rotate(180deg);
+}
+
+/* Popper */
+.select__menu {
+    position: absolute;
+    top: calc(100% + 0.4rem);
+    left: 0;
+    right: 0;
+    z-index: var(--z-overlay);
+    max-height: 240px;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0.35rem;
+    list-style: none;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+    /* closed */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity var(--transition-fast), transform var(--transition-fast),
+                visibility var(--transition-fast);
+}
+
+.select--open .select__menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.select__option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 0.85rem;
+    font-family: var(--font-button);   /* Geist */
+    font-size: 0.875rem;
+    line-height: 1.2;
+    color: var(--color-body);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.select__option.is-active,
+.select__option:hover {
+    background-color: var(--color-surface);
+    color: var(--color-ink);
+}
+
+.select__option[aria-selected="true"] {
+    color: var(--color-red);
+    font-weight: 600;
+}
+
+.select__option[aria-selected="true"]::after {
+    content: "";
+    margin-left: auto;
+    width: 16px;
+    height: 16px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23B4243B' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
 .contact-form__actions {
     display: flex;
     align-items: center;
@@ -1021,8 +1154,24 @@
         line-height: 1.7;
     }
 
+    /* Contact: red area encloses the form and meets the footer with no overlap */
+    .contact {
+        background-color: var(--color-red);
+        padding-bottom: 2.5rem;   /* red gap below the card, up to the footer */
+    }
+
+    .contact__band {
+        min-height: 0;
+        padding-block: 2.5rem 1.5rem;   /* intro spacing; gap before the card */
+    }
+
+    .contact-form {
+        margin: 0 auto;   /* sits inside the red, no negative overlap into the footer */
+    }
+
+    /* Hide the SHOWLINE watermark on mobile */
     .contact__watermark {
-        font-size: clamp(4rem, 22vw, 8rem);
+        display: none;
     }
 }
 
