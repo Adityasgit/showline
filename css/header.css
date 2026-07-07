@@ -127,6 +127,7 @@
 
     .site-header__inner {
         position: relative;
+        z-index: var(--z-header);   /* header is position:static on mobile — keep the dropdown above page content */
         max-width: none;
         border-radius: 0;
         box-shadow: none;
