@@ -4,11 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Showline Projects — Smart Modular Solutions for Exhibitions & Events</title>
+    <meta name="description"
+        content="SHOWLINE Projects delivers premium modular solutions for exhibitions, events, retail, and commercial spaces — designed, built, stored, and rebuilt with precision.">
+
     <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
 
 <body>
+
     <!-- ============================ HEADER ============================ -->
     <header class="site-header">
         <div class="site-header__inner">
@@ -18,11 +23,11 @@
 
             <nav class="site-nav" id="site-nav" aria-label="Primary">
                 <ul class="site-nav__list">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about-us.html" aria-current="page">About</a></li>
+                    <li><a href="index.html" aria-current="page">Home</a></li>
+                    <li><a href="about-us.html">About</a></li>
                     <li><a href="#">Services</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Knowledge Centre</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#knowledge">Knowledge Centre</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -43,7 +48,512 @@
         </div>
     </header>
 
-    <div style="height:500px"></div>
+    <main>
+
+        <!-- ============================ HERO ============================ -->
+        <section class="home-hero" aria-labelledby="hero-title">
+            <img class="home-hero__bg" src="images/home/hero-bg-image.jpg" alt="" aria-hidden="true">
+            <img class="home-hero__overlay" src="images/home/hero-section-overlay.png" alt="" aria-hidden="true">
+            <div class="container home-hero__content">
+                <h1 id="hero-title" class="home-hero__title">Design. Build. Store.Rebuild</h1>
+                <p class="home-hero__subtitle">Smart Modular Solutions for Exhibitions, Events &amp; Experiential
+                    Environments</p>
+                <div class="home-hero__actions">
+                    <a href="#contact" class="btn btn-primary">Request A Consultation</a>
+                    <a href="#projects" class="btn btn-outline-light">View Our Projects</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== INTRO + STATS ===================== -->
+        <section class="home-intro red-block" aria-label="Company overview">
+            <span class="home-intro__watermark" aria-hidden="true">Who are We?</span>
+            <div class="container">
+                <p class="home-intro__lead">SHOWLINE Projects delivers premium modular solutions for exhibitions,
+                    events, retail, and commercial spaces across India. As an Authorized D-Alu Systems Partner, we
+                    combine innovative modular technology with creative design and expert execution to deliver
+                    sustainable, visually impactful environments that can be built, reused, and reimagined for years
+                    to come.</p>
+
+                <ul class="stats">
+                    <li class="stat">
+                        <p class="stat__value">90%<span class="stat__suffix">+</span></p>
+                        <p class="stat__label">Reusable Components</p>
+                    </li>
+                    <li class="stat">
+                        <p class="stat__value">50% <span class="stat__suffix">Faster</span></p>
+                        <p class="stat__label">Installation Time</p>
+                    </li>
+                    <li class="stat">
+                        <p class="stat__value">70% <span class="stat__suffix">Less</span></p>
+                        <p class="stat__label">Material Waste</p>
+                    </li>
+                    <li class="stat">
+                        <p class="stat__value">100%</p>
+                        <p class="stat__label">Turnkey Project Delivery</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ===================== WHAT WE DO ===================== -->
+        <section class="services section" aria-labelledby="services-title">
+            <div class="container services__grid">
+                <div class="services__intro">
+                    <h2 id="services-title" class="services__title">What <span class="accent">We Do</span></h2>
+                    <img class="services__image" src="images/home/what-we-do.jpg"
+                        alt="Busy modular exhibition hall built by Showline Projects." loading="lazy">
+                    <p class="services__text"><strong>Complete Turnkey Modular Solutions</strong><br>
+                        From concept development to final execution, SHOWLINE Projects delivers integrated solutions
+                        that simplify every stage of your project. Our services combine innovative design, advanced
+                        modular systems, professional project management, and precision installation to create
+                        environments that inspire, engage, and perform.</p>
+                    <div class="btn-pair">
+                        <a href="#contact" class="btn btn-primary">Get a Quote</a>
+                        <a href="#contact" class="btn-icon" aria-label="Get a Quote">
+                            <img src="images/icons/icon-arrow-navbar.svg" alt="" width="24" height="24">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="services__cards">
+                    <article class="service-card">
+                        <div class="service-card__body">
+                            <p class="service-card__eyebrow">01 — Exhibitions</p>
+                            <h3 class="service-card__title">Exhibition &amp; Trade shows</h3>
+                            <p class="service-card__desc">Premium modular exhibition stands, shell scheme systems,
+                                country pavilions, feature areas, registration counters, organiser offices, and
+                                complete exhibition infrastructure.</p>
+                            <a class="link-cta" href="#">Explore Exhibition Solutions
+                                <span class="link-cta__icon" aria-hidden="true"></span></a>
+                        </div>
+                        <img class="service-card__image" src="images/home/01-exibition.jpg"
+                            alt="Exhibition and trade show stands." loading="lazy">
+                    </article>
+
+                    <article class="service-card service-card--reverse">
+                        <img class="service-card__image" src="images/home/02-event.jpg"
+                            alt="Corporate event and experiential environment." loading="lazy">
+                        <div class="service-card__body">
+                            <p class="service-card__eyebrow service-card__eyebrow--right">02 — Events</p>
+                            <h3 class="service-card__title">Events &amp; Experiences</h3>
+                            <p class="service-card__desc">Creative environments for conferences, product launches,
+                                corporate events, awards, experiential marketing, roadshows, entertainment, and
+                                brand activations.</p>
+                            <a class="link-cta link-cta--right" href="#">Explore Event Solutions
+                                <span class="link-cta__icon" aria-hidden="true"></span></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== WHY CHOOSE US ===================== -->
+        <section class="why section" aria-labelledby="why-title">
+            <div class="container why__inner">
+                <div class="why__intro">
+                    <h2 id="why-title" class="why__title">Why <span class="accent">Choose<br>Us?</span></h2>
+                    <p class="why__text">Transforming ideas into exceptional environments with world-class modular
+                        systems and end-to-end project excellence.</p>
+                </div>
+
+                <div class="why__cluster">
+                    <span class="why__photo" aria-hidden="true"></span>
+
+                    <article class="why-circle why-circle--center">
+                        <div class="why-circle__inner">
+                            <img class="why-circle__icon" src="images/icons/icon-customer-focus-ix_customer.svg"
+                                alt="" width="40" height="40">
+                            <h3 class="why-circle__name">Expertise</h3>
+                            <p class="why-circle__desc">Years of experience delivering impactful exhibition and event
+                                environments.</p>
+                        </div>
+                    </article>
+
+                    <article class="why-circle why-circle--sustainability">
+                        <div class="why-circle__inner">
+                            <img class="why-circle__icon" src="images/icons/icon-sustainability-carbon_sustainability.svg"
+                                alt="" width="40" height="40">
+                            <h3 class="why-circle__name">Sustainability</h3>
+                            <p class="why-circle__desc">Reusable systems that reduce waste and maximize long-term
+                                value.</p>
+                        </div>
+                    </article>
+
+                    <article class="why-circle why-circle--innovation">
+                        <div class="why-circle__inner">
+                            <img class="why-circle__icon" src="images/icons/icon-inovation-hugeicons_ai-innovation-03.svg"
+                                alt="" width="40" height="40">
+                            <h3 class="why-circle__name">Innovation</h3>
+                            <p class="why-circle__desc">Smart modular solutions designed for flexibility and
+                                performance.</p>
+                        </div>
+                    </article>
+
+                    <article class="why-circle why-circle--precision">
+                        <div class="why-circle__inner">
+                            <img class="why-circle__icon" src="images/icons/icon-our-mission-mage_goals.svg" alt=""
+                                width="40" height="40">
+                            <h3 class="why-circle__name">Precision</h3>
+                            <p class="why-circle__desc">Meticulous execution from plan to project handover.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== FEATURED PROJECTS ===================== -->
+        <section class="projects section" id="projects" aria-labelledby="projects-title">
+            <div class="container">
+                <h2 id="projects-title" class="projects__title">Featured <span class="accent">Projects</span></h2>
+
+                <div class="projects__grid">
+                    <article class="project-card project-card--gitex">
+                        <img class="project-card__img" src="images/home/gitex.png"
+                            alt="GITEX Global 2024 exhibition stand in Dubai." loading="lazy">
+                        <div class="project-card__overlay">
+                            <span class="project-card__badge">Tech Exhibition</span>
+                            <h3 class="project-card__name">GITEX Global 2024</h3>
+                            <p class="project-card__loc">Dubai, UAE</p>
+                        </div>
+                    </article>
+
+                    <article class="project-card project-card--auto">
+                        <img class="project-card__img" src="images/home/Automechanika.png"
+                            alt="Automechanika 2024 automotive stand in Frankfurt." loading="lazy">
+                        <div class="project-card__overlay">
+                            <span class="project-card__badge">Automotive</span>
+                            <h3 class="project-card__name">Automechanika 2024</h3>
+                            <p class="project-card__loc">Frankfurt, DE</p>
+                        </div>
+                    </article>
+
+                    <article class="project-card project-card--medical">
+                        <img class="project-card__img" src="images/home/Medical-Congress-Stand.png"
+                            alt="Medical Congress Stand in Geneva." loading="lazy">
+                        <div class="project-card__overlay">
+                            <span class="project-card__badge">Healthcare</span>
+                            <h3 class="project-card__name">Medical Congress Stand</h3>
+                            <p class="project-card__loc">Geneva, CH</p>
+                        </div>
+                    </article>
+
+                    <article class="project-card project-card--saudi">
+                        <img class="project-card__img" src="images/home/Saudi-Pavilion-EXPO.png"
+                            alt="Saudi Pavilion at EXPO in Osaka." loading="lazy">
+                        <div class="project-card__overlay">
+                            <span class="project-card__badge">Country Pavilion</span>
+                            <h3 class="project-card__name">Saudi Pavilion EXPO</h3>
+                            <p class="project-card__loc">Osaka, JP</p>
+                        </div>
+                    </article>
+
+                    <article class="project-card project-card--retail">
+                        <img class="project-card__img" src="images/home/Retail-Brand-Activation.png"
+                            alt="Retail brand activation in Riyadh." loading="lazy">
+                        <div class="project-card__overlay">
+                            <span class="project-card__badge">Commercial Interior</span>
+                            <h3 class="project-card__name">Retail Brand Activation</h3>
+                            <p class="project-card__loc">Riyadh, KSA</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="projects__cta btn-pair">
+                    <a href="#" class="btn btn-primary">View All Projects</a>
+                    <a href="#" class="btn-icon" aria-label="View all projects">
+                        <img src="images/icons/icon-arrow-navbar.svg" alt="" width="24" height="24">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== OUR PROCESS ===================== -->
+        <section class="process red-block" aria-labelledby="process-title">
+            <div class="container">
+                <div class="process__head">
+                    <h2 id="process-title" class="process__title">Our Process</h2>
+                    <p class="process__tag">From Vision to Reality</p>
+                </div>
+
+                <ol class="process__steps">
+                    <li class="process-step">
+                        <img class="process-step__icon" src="images/icons/icon-discover-search.svg" alt="" width="32"
+                            height="32">
+                        <span class="process-step__label">Discover</span>
+                    </li>
+                    <li class="process-step">
+                        <img class="process-step__icon" src="images/icons/icon-design.svg" alt="" width="32"
+                            height="32">
+                        <span class="process-step__label">Design</span>
+                    </li>
+                    <li class="process-step">
+                        <img class="process-step__icon" src="images/icons/icon-engineer.svg" alt="" width="32"
+                            height="32">
+                        <span class="process-step__label">Engineer</span>
+                    </li>
+                    <li class="process-step">
+                        <img class="process-step__icon" src="images/icons/icon-build.svg" alt="" width="32"
+                            height="32">
+                        <span class="process-step__label">Build</span>
+                    </li>
+                    <li class="process-step">
+                        <img class="process-step__icon" src="images/icons/icon-install.svg" alt="" width="32"
+                            height="32">
+                        <span class="process-step__label">Install</span>
+                    </li>
+                    <li class="process-step">
+                        <img class="process-step__icon" src="images/icons/icon-store.svg" alt="" width="32"
+                            height="32">
+                        <span class="process-step__label">Store</span>
+                    </li>
+                    <li class="process-step">
+                        <img class="process-step__icon" src="images/icons/icon-rebuild.svg" alt="" width="32"
+                            height="32">
+                        <span class="process-step__label">Rebuild</span>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ===================== EVERYTHING UNDER ONE ROOF ===================== -->
+        <section class="oneroof section" aria-labelledby="oneroof-title">
+            <div class="container oneroof__inner">
+                <div class="oneroof__intro">
+                    <h2 id="oneroof-title" class="oneroof__title">Everything <span class="accent">Under One
+                            Roof</span></h2>
+                    <p class="oneroof__text">Every project is delivered as a complete turnkey solution, including:</p>
+                </div>
+
+                <div class="oneroof__diagram" role="list" aria-label="Turnkey services">
+                    <span class="oneroof__ring oneroof__ring--outer" aria-hidden="true"></span>
+                    <span class="oneroof__ring oneroof__ring--inner" aria-hidden="true"></span>
+
+                    <span class="oneroof__center" role="listitem">SHOWLINE PROJECTS</span>
+
+                    <span class="oneroof-pill oneroof-pill--concept" role="listitem">
+                        <img src="images/icons/icon-design.svg" alt="" width="18" height="18">Concept Development</span>
+                    <span class="oneroof-pill oneroof-pill--reinstall" role="listitem">
+                        <img src="images/icons/icon-rebuild.svg" alt="" width="18" height="18">Reinstallation</span>
+                    <span class="oneroof-pill oneroof-pill--filled oneroof-pill--refurb" role="listitem">
+                        <img src="images/icons/icon-build.svg" alt="" width="18" height="18">Refurbishment</span>
+                    <span class="oneroof-pill oneroof-pill--filled oneroof-pill--creative" role="listitem">
+                        <img src="images/icons/icon-design.svg" alt="" width="18" height="18">3D — Creative Design</span>
+                    <span class="oneroof-pill oneroof-pill--storage" role="listitem">
+                        <img src="images/icons/icon-store.svg" alt="" width="18" height="18">Storage</span>
+                    <span class="oneroof-pill oneroof-pill--tech" role="listitem">
+                        <img src="images/icons/icon-engineer.svg" alt="" width="18" height="18">Technical — Manufacturing</span>
+                    <span class="oneroof-pill oneroof-pill--dismantle" role="listitem">
+                        <img src="images/icons/icon-install.svg" alt="" width="18" height="18">Dismantling</span>
+                    <span class="oneroof-pill oneroof-pill--pm" role="listitem">
+                        <img src="images/icons/icon-our-mission-mage_goals.svg" alt="" width="18" height="18">Project Management</span>
+                    <span class="oneroof-pill oneroof-pill--filled oneroof-pill--install" role="listitem">
+                        <img src="images/icons/icon-install.svg" alt="" width="18" height="18">Installation</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== KNOWLEDGE CENTRE ===================== -->
+        <section class="knowledge section" id="knowledge" aria-labelledby="knowledge-title">
+            <div class="container">
+                <div class="knowledge__head">
+                    <h2 id="knowledge-title" class="knowledge__title">Knowledge Centre</h2>
+                    <a class="link-cta" href="#">Visit Knowledge Centre
+                        <span class="link-cta__icon" aria-hidden="true"></span></a>
+                </div>
+                <p class="knowledge__intro">Explore expert articles on modular construction, exhibitions,
+                    sustainability, and event innovation.</p>
+
+                <div class="knowledge__grid">
+                    <article class="blog-card">
+                        <div class="blog-card__head">
+                            <span class="blog-card__cat">Exhibitions</span>
+                            <span class="btn-icon btn-icon--sm blog-card__arrow" aria-hidden="true">
+                                <img src="images/icons/icon-arrow-navbar.svg" alt="" width="20" height="20"></span>
+                        </div>
+                        <h3 class="blog-card__title">The Modular Advantage</h3>
+                        <p class="blog-card__excerpt">Why leading brands are moving away from traditional fabrication
+                            and embracing modular exhibition systems.</p>
+                        <img class="blog-card__img" src="images/home/modular-advantage.png"
+                            alt="Modular exhibition display banners." loading="lazy">
+                    </article>
+
+                    <article class="blog-card blog-card--low">
+                        <div class="blog-card__head">
+                            <span class="blog-card__cat">Events</span>
+                            <span class="btn-icon btn-icon--sm blog-card__arrow" aria-hidden="true">
+                                <img src="images/icons/icon-arrow-navbar.svg" alt="" width="20" height="20"></span>
+                        </div>
+                        <h3 class="blog-card__title">Why Modular Stands Are Replacing Traditional Wooden Booths</h3>
+                        <p class="blog-card__excerpt">How smart event infrastructure transforms ordinary gatherings
+                            into memorable experiences.</p>
+                        <img class="blog-card__img"
+                            src="images/home/Why-Modular-Stands-Are-Replacing-Traditional-Wooden-Booths.png"
+                            alt="Contemporary event stage environment." loading="lazy">
+                    </article>
+
+                    <article class="blog-card">
+                        <div class="blog-card__head">
+                            <span class="blog-card__cat">Sustainability</span>
+                            <span class="btn-icon btn-icon--sm blog-card__arrow" aria-hidden="true">
+                                <img src="images/icons/icon-arrow-navbar.svg" alt="" width="20" height="20"></span>
+                        </div>
+                        <h3 class="blog-card__title">Build. Reuse. Repeat.</h3>
+                        <p class="blog-card__excerpt">Exploring how reusable modular systems reduce waste while
+                            delivering premium event environments.</p>
+                        <img class="blog-card__img"
+                            src="images/home/Why-Modular-Stands-Are-Replacing-Traditional-Wooden-Booths.png"
+                            alt="Reusable modular event set." loading="lazy">
+                    </article>
+
+                    <article class="blog-card blog-card--low">
+                        <div class="blog-card__head">
+                            <span class="blog-card__cat">Execution</span>
+                            <span class="btn-icon btn-icon--sm blog-card__arrow" aria-hidden="true">
+                                <img src="images/icons/icon-arrow-navbar.svg" alt="" width="20" height="20"></span>
+                        </div>
+                        <h3 class="blog-card__title">From Concept to Reality</h3>
+                        <p class="blog-card__excerpt">A behind-the-scenes look at the planning, coordination, and
+                            precision required for flawless project delivery.</p>
+                        <img class="blog-card__img" src="images/home/From-Concept-to-Reality.png"
+                            alt="Boardroom prepared for a project handover." loading="lazy">
+                    </article>
+                </div>
+
+                <div class="knowledge__foot hide-desktop">
+                    <a class="link-cta" href="#">View All Posts
+                        <span class="link-cta__icon" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== TESTIMONIALS + CONTACT ===================== -->
+        <section class="testimonials" aria-labelledby="testimonials-title">
+            <span class="testimonials__watermark" aria-hidden="true">What did<br>They Say</span>
+            <div class="container">
+                <h2 id="testimonials-title" class="sr-only">What clients say about Showline Projects</h2>
+
+                <div class="testimonials__viewport">
+                    <ul class="testimonials__track" id="testimonials-track">
+                        <li class="testimonial">
+                            <span class="testimonial__mark" aria-hidden="true">&ldquo;</span>
+                            <p class="testimonial__quote">SHOWLINE delivered our 800sqm pavilion at GITEX with
+                                extraordinary precision. Every detail exceeded expectations — from design to
+                                delivery.</p>
+                            <div class="testimonial__person">
+                                <img class="testimonial__avatar" src="images/team-members/2.png" alt="" loading="lazy">
+                                <div>
+                                    <p class="testimonial__name">ABC</p>
+                                    <p class="testimonial__role">Head of Exhibitions, GITEX Technology</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="testimonial">
+                            <span class="testimonial__mark" aria-hidden="true">&ldquo;</span>
+                            <p class="testimonial__quote">A fully turnkey build handled end to end — engineered,
+                                installed, and dismantled without a single surprise. Our stand looked flawless for
+                                the entire show.</p>
+                            <div class="testimonial__person">
+                                <img class="testimonial__avatar" src="images/team-members/1.png" alt="" loading="lazy">
+                                <div>
+                                    <p class="testimonial__name">Marco Rossi</p>
+                                    <p class="testimonial__role">Brand Director, Automechanika</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="testimonial">
+                            <span class="testimonial__mark" aria-hidden="true">&ldquo;</span>
+                            <p class="testimonial__quote">The reusable modular system saved us weeks of build time
+                                across three cities. Sustainable, cost-effective, and consistently world-class.</p>
+                            <div class="testimonial__person">
+                                <img class="testimonial__avatar" src="images/team-members/2.png" alt="" loading="lazy">
+                                <div>
+                                    <p class="testimonial__name">Sara Al Amin</p>
+                                    <p class="testimonial__role">Events Lead, Expo Group</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="testimonials__dots" role="tablist" aria-label="Choose testimonial"></div>
+            </div>
+        </section>
+
+        <!-- ===================== CONSULTATION FORM ===================== -->
+        <section class="contact" id="contact" aria-labelledby="contact-title">
+            <div class="container">
+                <form class="contact-form" id="contact-form" novalidate>
+                    <h2 id="contact-title" class="contact-form__title">Request a Consultation</h2>
+
+                    <div class="contact-form__row">
+                        <div class="form-field">
+                            <label for="full-name">Full Name</label>
+                            <input type="text" id="full-name" name="full-name" placeholder="Abc Xyz" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company" placeholder="Enter company">
+                        </div>
+                    </div>
+
+                    <div class="contact-form__row">
+                        <div class="form-field">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="abc@example.com" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+00 000 0000">
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="project-type">Project Type</label>
+                        <select id="project-type" name="project-type">
+                            <option value="" disabled selected>Select project category</option>
+                            <option>Exhibition Stand</option>
+                            <option>Corporate Event</option>
+                            <option>Retail Environment</option>
+                            <option>Product Launch</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="budget">Project Budget</label>
+                        <select id="budget" name="budget">
+                            <option value="" disabled selected>Select budget range</option>
+                            <option>Under $10k</option>
+                            <option>$10k – $50k</option>
+                            <option>$50k – $100k</option>
+                            <option>$100k+</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4"
+                            placeholder="Tell us about your project requirements…"></textarea>
+                    </div>
+
+                    <div class="contact-form__actions">
+                        <button type="submit" class="btn btn-primary btn-block">Get a Quote</button>
+                        <span class="btn-icon" aria-hidden="true">
+                            <img src="images/icons/icon-arrow-navbar.svg" alt="" width="24" height="24">
+                        </span>
+                    </div>
+
+                    <p class="contact-form__note">Your information is secure and will never be shared.</p>
+
+                    <p class="contact-form__status" id="form-status" role="status" hidden>
+                        Thank you — your request has been received. We'll be in touch shortly.
+                    </p>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
     <!-- ============================ FOOTER ============================ -->
     <footer class="site-footer">
         <div class="container site-footer__inner">
@@ -57,9 +567,9 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about-us.html">About</a></li>
                     <li><a href="#">Services</a></li>
-                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#projects">Gallery</a></li>
                     <li><a href="#">Partners</a></li>
-                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#testimonials-title">Testimonials</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -87,7 +597,10 @@
             </div>
         </div>
     </footer>
+
     <script type="module" src="js/navbar.js"></script>
+    <script type="module" src="js/quotation-form.js"></script>
+    <script type="module" src="js/testimonials.js"></script>
 </body>
 
 </html>
