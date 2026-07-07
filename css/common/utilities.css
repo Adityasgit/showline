@@ -22,24 +22,12 @@
     padding-block: var(--section-pad-y-sm);
 }
 
-/* Full-bleed red block with subtle grid texture */
+/* Full-bleed red block */
 .red-block {
     position: relative;
     background-color: var(--color-red);
     color: var(--color-white);
     overflow: hidden;
-}
-
-.red-block::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image:
-        linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
-    background-size: 96px 96px;
-    pointer-events: none;
-    z-index: 0;
 }
 
 .red-block > * {

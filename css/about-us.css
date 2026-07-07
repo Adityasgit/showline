@@ -9,6 +9,19 @@
     padding: 1.25rem;
 }
 
+/* Subtle grid texture — hero only (was previously a shared .red-block rule) */
+.hero.red-block::before,.intro.red-block::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+    background-size: 96px 96px;
+    pointer-events: none;
+    z-index: 0;
+}
+
 .hero__frame {
     position: relative;
     min-height: 400px;
