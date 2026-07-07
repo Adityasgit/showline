@@ -173,8 +173,11 @@
 }
 
 .services__title {
-    font-size: clamp(2.5rem, 4.5vw, 4rem);
-    font-weight: 600;
+    font-family: var(--font-heading);
+    font-weight: 500;
+    font-size: 70px;
+    line-height: 1;
+    letter-spacing: 0;
     margin-bottom: 1.75rem;
 }
 
@@ -188,8 +191,11 @@
 
 .services__text {
     color: var(--color-body);
-    font-size: 1.05rem;
-    line-height: 1.7;
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: 0;
     margin-bottom: 1.75rem;
 }
 
@@ -240,23 +246,31 @@
 
 .service-card__eyebrow {
     color: var(--color-red);
-    font-family: var(--font-body);
-    font-weight: 700;
-    font-size: 0.8rem;
-    letter-spacing: 0.12em;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     margin-bottom: 1rem;
 }
 
 .service-card__title {
-    font-size: clamp(1.5rem, 2.2vw, 2rem);
-    font-weight: 600;
+    font-family: var(--font-heading);
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1;
+    letter-spacing: 0;
     margin-bottom: 1rem;
 }
 
 .service-card__desc {
     color: var(--color-body);
-    line-height: 1.6;
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0;
     margin-bottom: 1.25rem;
 }
 
@@ -266,9 +280,11 @@
     align-items: center;
     gap: 0.6rem;
     color: var(--color-red);
-    font-family: var(--font-body);
-    font-weight: 600;
-    font-size: 0.95rem;
+    font-family: var(--font-ui);   /* Inter */
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 0;
 }
 
 .link-cta__icon {
@@ -1064,6 +1080,32 @@
         top: 1rem;
         transform: translateX(-50%);
         font-size: 60px;
+    }
+
+    /* What We Do -> mobile type scale */
+    .services__title {
+        font-size: 42px;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+    }
+
+    .services__text {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .service-card__eyebrow {
+        font-size: 14px;
+    }
+
+    .service-card__title {
+        font-size: 36px;
+        line-height: 1.1;
+        letter-spacing: -0.01em;
+    }
+
+    .service-card__desc {
+        font-size: 14px;
     }
 
     /* Stats -> single column, dividers become top borders */
