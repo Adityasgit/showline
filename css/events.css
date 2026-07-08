@@ -1065,3 +1065,361 @@
         font-size: 1.75rem;
     }
 }
+/* ============================================================
+   EVENTS — page-specific overrides & new sections
+   (appended to the shared exhibition base above; only the
+   sections that differ from Exhibition are (re)defined here)
+   ============================================================ */
+
+/* ---------- MOBILE BENEFITS (replaces stand-types slider) ---------- */
+.ev-benefits {
+    padding: 2rem var(--container-pad) 1rem;
+}
+
+.ev-benefits__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.ev-benefit__num {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-red);
+    margin-bottom: 0.35rem;
+}
+
+.ev-benefit__name {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--color-ink);
+    margin-bottom: 0.5rem;
+}
+
+.ev-benefit__desc {
+    color: #555;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+}
+
+/* ---------- EVENT MANAGEMENT SERVICES (image + numbered list) ---------- */
+.ev-manage {
+    padding: 37px clamp(2rem, 5vw, 4rem);
+}
+
+.ev-manage__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: clamp(2rem, 5vw, 4rem);
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.ev-manage__title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.25rem, 4.4vw, 4.375rem);
+    font-weight: 500;
+    color: var(--color-ink);
+    line-height: 1.05;
+    max-width: 14ch;
+}
+
+.ev-manage__tag {
+    max-width: 42ch;
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.55;
+    margin-top: 0.75rem;
+}
+
+.ev-manage__body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: start;
+}
+
+.ev-manage__photo {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.ev-manage__photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 460px;
+    object-fit: cover;
+}
+
+.ev-manage__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+.ev-manage-item__num {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--color-red);
+    margin-bottom: 0.4rem;
+}
+
+.ev-manage-item__name {
+    font-family: var(--font-heading);
+    font-size: clamp(1.375rem, 2vw, 1.875rem);
+    font-weight: 500;
+    color: var(--color-ink);
+}
+
+/* ---------- EVENT DELIVERY PROCESS — circle grid (replaces steps.png) ---------- */
+.ev-steps {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(3rem, 6vw, 5rem);
+}
+
+.ev-steps__row {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+/* faint connector line running through the first row of circles */
+.ev-steps__row--line::before {
+    content: "";
+    position: absolute;
+    top: 46px;
+    left: 46px;
+    right: 46px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.35);
+    z-index: 0;
+}
+
+.ev-step {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+}
+
+.ev-step__num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 255, 255, 0.7);
+    background-color: var(--color-red);
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    font-size: 1.875rem;
+    font-weight: 600;
+}
+
+.ev-step__label {
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    font-size: 1.375rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+/* ---------- WHY MODULAR FOR EVENTS / OUR EVENT EXPERTISE ---------- */
+.ev-modular {
+    padding: 37px clamp(2rem, 5vw, 4rem);
+}
+
+.ev-modular__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: clamp(2rem, 5vw, 4rem);
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.ev-modular__title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.25rem, 4.4vw, 4.375rem);
+    font-weight: 500;
+    color: var(--color-ink);
+    line-height: 1.05;
+    max-width: 12ch;
+}
+
+.ev-modular__tag {
+    max-width: 40ch;
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.55;
+    margin-top: 0.75rem;
+}
+
+.ev-modular__track {
+    display: flex;
+    align-items: stretch;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding-bottom: 0.5rem;
+}
+
+.ev-modular__track::-webkit-scrollbar {
+    display: none;
+}
+
+/* .ev-modular-card also carries .ex-service-card so the shared carousel JS
+   can measure/scroll it; these rules override the exhibition card visuals */
+.ev-modular-card {
+    flex: 0 0 auto;
+    width: 316px;
+    height: auto;
+    min-height: 372px;
+    padding: 1.75rem;
+    background-color: var(--color-white);
+    border: 1.5px dashed var(--color-red);
+    border-radius: 16px;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    overflow: hidden;
+}
+
+.ev-modular-card__title {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: var(--color-ink);
+    line-height: 1.1;
+    margin: 0;
+    max-width: 200px;
+}
+
+.ev-modular-card__desc {
+    color: #666;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    max-width: 190px;
+}
+
+.ev-modular-card__img {
+    margin-top: auto;
+    align-self: flex-end;
+    width: 190px;
+    height: 150px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.ev-modular-card__img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ev-modular__nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.ev-modular__nav .ex-carousel-btn {
+    background-color: transparent;
+    border: 1.5px solid var(--color-red);
+    opacity: 0.5;
+}
+
+.ev-modular__nav .ex-carousel-btn:not(.ex-carousel-btn--primary) img {
+    filter: none;
+}
+
+.ev-modular__nav .ex-carousel-btn:hover {
+    opacity: 0.85;
+    background-color: transparent;
+}
+
+.ev-modular__nav .ex-carousel-btn--primary {
+    background-color: var(--color-red);
+    border-color: var(--color-red);
+    opacity: 1;
+}
+
+.ev-modular__nav .ex-carousel-btn--primary img {
+    filter: brightness(0) invert(1);
+}
+
+.ev-modular__nav .ex-carousel-btn--primary:hover {
+    background-color: var(--color-red-dark);
+    opacity: 1;
+}
+
+/* ============================================================
+   EVENTS RESPONSIVE
+   ============================================================ */
+@media (max-width: 992px) {
+    .ev-manage__head {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .ev-manage__body {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2rem;
+    }
+
+    .ev-manage__photo img {
+        min-height: 300px;
+    }
+
+    .ev-steps__row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem 1.5rem;
+    }
+
+    .ev-steps__row--line::before {
+        display: none;
+    }
+
+    .ev-modular__head {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .ev-modular {
+        padding-inline: var(--container-pad);
+    }
+
+    .ev-modular__title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .ev-manage__title {
+        font-size: 2.25rem;
+    }
+
+    .ev-modular__title {
+        font-size: 2rem;
+    }
+}
