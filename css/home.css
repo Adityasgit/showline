@@ -98,7 +98,7 @@
     padding-block: clamp(3rem, 6vw, 5rem);
 }
 
-.home-intro__watermark {
+.home-intro > span {
     position: absolute;
     left: 50%;
     top: 55%;
@@ -152,7 +152,7 @@
     margin-bottom: 0.6rem;
 }
 
-.stat__suffix {
+.stat__value > span {
     font-weight: 500;
     font-size: 0.5em;
     letter-spacing: 0;
@@ -287,7 +287,7 @@
     letter-spacing: 0;
 }
 
-.link-cta__icon {
+.link-cta > span {
     flex: 0 0 auto;
     width: 2rem;
     height: 2rem;
@@ -297,7 +297,7 @@
     transition: background-color var(--transition-base);
 }
 
-.link-cta:hover .link-cta__icon {
+.link-cta:hover > span {
     background-color: var(--color-red);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='5' y1='12' x2='19' y2='12'/%3E%3Cpolyline points='12 5 19 12 12 19'/%3E%3C/svg%3E");
 }
@@ -340,7 +340,7 @@
     /* sits right after the intro (no margin-left:auto) so it reads closer to the text */
 }
 
-.why__photo {
+.why__cluster > span {
     position: absolute;
     left: 0;
     top: 150px;
@@ -478,7 +478,7 @@
     color: var(--color-white);
 }
 
-.project-card__badge {
+.project-card__overlay > span {
     display: inline-block;
     background-color: var(--color-red);
     color: var(--color-white);
@@ -573,7 +573,7 @@
     filter: brightness(0) invert(1);
 }
 
-.process-step__label {
+.process-step > span {
     color: var(--color-white);
     font-family: var(--font-body);
     font-weight: 600;
@@ -600,7 +600,7 @@
     margin-bottom: 1.5rem;
 }
 
-.oneroof__title .accent {
+.oneroof__title > span {
     display: block;
 }
 
@@ -621,7 +621,9 @@
     margin-inline: auto;
 }
 
-.oneroof__ring {
+/* Diagram children are (in source order): rings 1-4, centre (5), then the
+   9 pills (6-14). Class-less spans are addressed by their position. */
+.oneroof__diagram > span:nth-child(-n+4) {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -632,12 +634,12 @@
 }
 
 /* concentric ellipses as % of the outer bounding box (all share the centre) */
-.oneroof__ring--r1 { width: 100%;    height: 100%; }
-.oneroof__ring--r2 { width: 73.1%;   height: 76.47%; }
-.oneroof__ring--r3 { width: 55.16%;  height: 52.94%; }
-.oneroof__ring--r4 { width: 28.25%;  height: 29.41%; }
+.oneroof__diagram > span:nth-child(1) { width: 100%;    height: 100%; }
+.oneroof__diagram > span:nth-child(2) { width: 73.1%;   height: 76.47%; }
+.oneroof__diagram > span:nth-child(3) { width: 55.16%;  height: 52.94%; }
+.oneroof__diagram > span:nth-child(4) { width: 28.25%;  height: 29.41%; }
 
-.oneroof__center {
+.oneroof__diagram > span:nth-child(5) {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -657,7 +659,7 @@
     white-space: nowrap;
 }
 
-.oneroof-pill {
+.oneroof__diagram > span:nth-child(n+6) {
     position: absolute;
     display: inline-flex;
     width: max-content;
@@ -676,31 +678,36 @@
     z-index: 2;
 }
 
-.oneroof-pill img {
+.oneroof__diagram > span:nth-child(n+6) img {
     width: 18px;
     height: 18px;
 }
 
-.oneroof-pill--filled {
+/* filled pills: refurb (8), creative (9), install (14) */
+.oneroof__diagram > span:nth-child(8),
+.oneroof__diagram > span:nth-child(9),
+.oneroof__diagram > span:nth-child(14) {
     background-color: var(--color-red);
     border-color: var(--color-red);
     color: var(--color-white);
 }
 
-.oneroof-pill--filled img {
+.oneroof__diagram > span:nth-child(8) img,
+.oneroof__diagram > span:nth-child(9) img,
+.oneroof__diagram > span:nth-child(14) img {
     filter: brightness(0) invert(1);
 }
 
 /* orbit placement (within the 729×460 diagram box; each pill centred on its point) */
-.oneroof-pill--concept   { top: 6.33%;  left: 60.16%; transform: translate(-50%, -50%); }
-.oneroof-pill--reinstall { top: 17.63%; left: 32.82%; transform: translate(-50%, -50%); }
-.oneroof-pill--refurb    { top: 27.37%; left: 12.18%; transform: translate(-50%, -50%); }
-.oneroof-pill--creative  { top: 31.04%; left: 78.91%; transform: translate(-50%, -50%); }
-.oneroof-pill--storage   { top: 50.78%; left: 11.25%; transform: translate(-50%, -50%); }
-.oneroof-pill--tech      { top: 50.78%; left: 85.47%; transform: translate(-50%, -50%); }
-.oneroof-pill--dismantle { top: 72.37%; left: 21.87%; transform: translate(-50%, -50%); }
-.oneroof-pill--pm        { top: 70.26%; left: 81.25%; transform: translate(-50%, -50%); }
-.oneroof-pill--install   { top: 82.11%; left: 49.68%; transform: translate(-50%, -50%); }
+.oneroof__diagram > span:nth-child(6)  { top: 6.33%;  left: 60.16%; transform: translate(-50%, -50%); } /* concept */
+.oneroof__diagram > span:nth-child(7)  { top: 17.63%; left: 32.82%; transform: translate(-50%, -50%); } /* reinstall */
+.oneroof__diagram > span:nth-child(8)  { top: 27.37%; left: 12.18%; transform: translate(-50%, -50%); } /* refurb */
+.oneroof__diagram > span:nth-child(9)  { top: 31.04%; left: 78.91%; transform: translate(-50%, -50%); } /* creative */
+.oneroof__diagram > span:nth-child(10) { top: 50.78%; left: 11.25%; transform: translate(-50%, -50%); } /* storage */
+.oneroof__diagram > span:nth-child(11) { top: 50.78%; left: 85.47%; transform: translate(-50%, -50%); } /* tech */
+.oneroof__diagram > span:nth-child(12) { top: 72.37%; left: 21.87%; transform: translate(-50%, -50%); } /* dismantle */
+.oneroof__diagram > span:nth-child(13) { top: 70.26%; left: 81.25%; transform: translate(-50%, -50%); } /* pm */
+.oneroof__diagram > span:nth-child(14) { top: 82.11%; left: 49.68%; transform: translate(-50%, -50%); } /* install */
 
 /* ===================== KNOWLEDGE CENTRE ===================== */
 .knowledge__head {
@@ -762,7 +769,7 @@
     margin-bottom: 1.25rem;
 }
 
-.blog-card__cat {
+.blog-card__head > span:first-child {
     background-color: var(--color-red);
     color: var(--color-white);
     font-family: var(--font-body);
@@ -772,12 +779,12 @@
     border-radius: var(--radius-pill);
 }
 
-.blog-card__arrow {
+.blog-card__head > span:last-child {
     width: 2rem;
     height: 2rem;
 }
 
-.blog-card__arrow img {
+.blog-card__head > span:last-child img {
     width: 1.1rem;
     height: 1.1rem;
 }
@@ -822,7 +829,7 @@
     overflow: hidden;
 }
 
-.testimonials__watermark {
+.testimonials > span {
     position: absolute;
     left: 0;
     top: 0;
@@ -863,7 +870,7 @@
     padding: 2.25rem;
 }
 
-.testimonial__mark {
+.testimonial > span {
     display: block;
     font-family: var(--font-heading);
     font-size: 3rem;
@@ -1012,7 +1019,7 @@
         line-height: 1.4;
     }
 
-    .oneroof__center {
+    .oneroof__diagram > span:nth-child(5) {
         font-size: 15px;
     }
 
@@ -1025,17 +1032,16 @@
         gap: 0.75rem;
     }
 
-    .oneroof__ring {
+    .oneroof__diagram > span:nth-child(-n+4) {
         display: none;
     }
 
-    .oneroof__center,
-    .oneroof-pill {
+    .oneroof__diagram > span:nth-child(n+5) {
         position: static;
         transform: none;
     }
 
-    .oneroof__center {
+    .oneroof__diagram > span:nth-child(5) {
         flex-basis: 100%;
         text-align: center;
         order: -1;
@@ -1068,7 +1074,7 @@
         gap: 1.25rem;
     }
 
-    .why__photo {
+    .why__cluster > span {
         display: none;
     }
 
@@ -1147,7 +1153,7 @@
         line-height: 1.6;
     }
 
-    .home-intro__watermark {
+    .home-intro > span {
         mix-blend-mode: lighten;
         top: 1rem;
         transform: translateX(-50%);
@@ -1281,7 +1287,7 @@
         margin-left: 0;   /* drop the desktop overlap when wrapping */
     }
 
-    .process-step__label {
+    .process-step > span {
         font-size: 14px;
     }
 }

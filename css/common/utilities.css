@@ -78,9 +78,25 @@
     border: 0;
 }
 
-.hide-desktop { display: none; }
+/* The trailing structural selectors are the (now class-less) desktop/mobile
+   label-swap spans inside CTAs and contact headings — they carry the same
+   hide-desktop behaviour the class used to give them. */
+.hide-desktop,
+.site-header__cta > span:last-child,
+.contact__title > span:last-child,
+.contact-form__title > span:last-child,
+.contact-hero__title > span:last-child { display: none; }
 
 @media (max-width: 768px) {
-    .hide-mobile { display: none !important; }
-    .hide-desktop { display: revert; }
+    .hide-mobile,
+    .site-header__cta > span:first-child,
+    .contact__title > span:first-child,
+    .contact-form__title > span:first-child,
+    .contact-hero__title > span:first-child { display: none !important; }
+
+    .hide-desktop,
+    .site-header__cta > span:last-child,
+    .contact__title > span:last-child,
+    .contact-form__title > span:last-child,
+    .contact-hero__title > span:last-child { display: revert; }
 }

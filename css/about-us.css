@@ -99,7 +99,7 @@
     line-height: 1;
 }
 
-.intro__title-strong {
+.intro__title > span {
     font-weight: 500;      /* "Showline" */
 }
 
@@ -177,17 +177,23 @@
     justify-content: flex-end;
 }
 
-.pillar__label {
+/* The label is the 2nd child of .pillar__title in both left & right variants. */
+.pillar__title > span:nth-child(2) {
     white-space: nowrap;
 }
 
-.pillar__marker {
+/* The marker is the span that wraps the line+dot: first child on the left
+   pillar, last child on the right pillar. */
+.pillar--left .pillar__title > span:first-child,
+.pillar--right .pillar__title > span:last-child {
     display: flex;
     align-items: center;
     flex: 0 0 auto;   /* don't grow — keep the title at the edge, not pushed to center */
 }
 
-.pillar__dot {
+/* dot: 2nd inner span on the left marker, 1st inner span on the right marker */
+.pillar--left .pillar__title > span:first-child > span:last-child,
+.pillar--right .pillar__title > span:last-child > span:first-child {
     width: 12px;
     height: 12px;
     border-radius: 50%;
@@ -195,7 +201,9 @@
     flex-shrink: 0;
 }
 
-.pillar__line {
+/* line: 1st inner span on the left marker, 2nd inner span on the right marker */
+.pillar--left .pillar__title > span:first-child > span:first-child,
+.pillar--right .pillar__title > span:last-child > span:last-child {
     height: 1.5px;
     width: 50vw;   /* fixed; extends off-screen and is clipped by .identity overflow:hidden */
     background-color: var(--color-red);
@@ -203,12 +211,12 @@
 }
 
 /* left: line runs off-screen left, dot sits at its end (joined) beside the label */
-.pillar--left .pillar__marker {
+.pillar--left .pillar__title > span:first-child {
     margin-left: -50vw;
 }
 
 /* right: dot beside the label, line runs off-screen right (joined) */
-.pillar--right .pillar__marker {
+.pillar--right .pillar__title > span:last-child {
     margin-right: -50vw;
 }
 
@@ -632,7 +640,7 @@
     overflow: hidden;
 }
 
-.contact__watermark {
+.contact__band > span {
     position: absolute;
     left: 1rem;
     top: 50%;
@@ -721,11 +729,11 @@
         flex-direction: row;
     }
 
-    .pillar--right .pillar__marker {
+    .pillar--right .pillar__title > span:last-child {
         display: none;
     }
 
-    .pillar--left .pillar__marker {
+    .pillar--left .pillar__title > span:first-child {
         display: none;
     }
 
@@ -946,7 +954,7 @@
     }
 
     /* Hide the SHOWLINE watermark on mobile */
-    .contact__watermark {
+    .contact__band > span {
         display: none;
     }
 }

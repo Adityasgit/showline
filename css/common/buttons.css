@@ -2,7 +2,8 @@
    buttons.css — reusable button styles (Geist)
    ============================================================ */
 
-.btn {
+.btn,
+.projects__cta > span:first-child {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -21,17 +22,20 @@
     white-space: nowrap;
 }
 
-.btn:active {
+.btn:active,
+.projects__cta > span:first-child:active {
     transform: translateY(1px);
 }
 
 /* Solid red pill */
-.btn-primary {
+.btn-primary,
+.projects__cta > span:first-child {
     background-color: var(--color-red);
     color: var(--color-white);
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+.projects__cta > span:first-child:hover {
     background-color: var(--color-red-dark);
     box-shadow: var(--shadow-btn);
 }
@@ -54,7 +58,10 @@
 }
 
 /* Circular icon button (arrow) */
-.btn-icon {
+.btn-icon,
+.projects__cta > span:last-child,
+.contact-form__actions > span,
+.blog-card__head > span:last-child {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -67,18 +74,25 @@
                 transform var(--transition-base);
 }
 
-.btn-icon:hover {
+.btn-icon:hover,
+.projects__cta > span:last-child:hover,
+.contact-form__actions > span:hover,
+.blog-card__head > span:last-child:hover {
     background-color: var(--color-red-dark);
     transform: rotate(45deg);
 }
 
-.btn-icon img {
+.btn-icon img,
+.projects__cta > span:last-child img,
+.contact-form__actions > span img,
+.blog-card__head > span:last-child img {
     width: 1.5rem;
     height: 1.5rem;
     filter: brightness(0) invert(1); /* white arrow */
 }
 
-.btn-icon--sm {
+.btn-icon--sm,
+.blog-card__head > span:last-child {
     width: 2.5rem;
     height: 2.5rem;
 }
