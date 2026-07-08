@@ -13,9 +13,11 @@
 │   │   ├── utilities.css
 │   │   └── variables.css
 │   ├── contact-us.css
+│   ├── events.css
 │   ├── exhibition.css
 │   ├── global.css
 │   ├── home.css
+│   ├── knowledge-center.css
 │   ├── lib
 │   │   └── aos.css
 │   ├── privacy-policy.css
@@ -43,13 +45,26 @@
 │   │   ├── Exhibition Stand.pdf
 │   │   ├── Exhibition Stand.png
 │   │   └── Exhibition Stand.svg
-│   └── home
-│       ├── home-page-mobile.pdf
-│       ├── home-page-mobile.png
-│       ├── home-page-mobile.svg
-│       ├── Home page - V5.pdf
-│       ├── Home page - V5.png
-│       └── Home page - V5.svg
+│   ├── home
+│   │   ├── home-page-mobile.pdf
+│   │   ├── home-page-mobile.png
+│   │   ├── home-page-mobile.svg
+│   │   ├── Home page - V5.pdf
+│   │   ├── Home page - V5.png
+│   │   └── Home page - V5.svg
+│   ├── knowledge-center
+│   │   ├── blogs-listing-mobile.pdf
+│   │   ├── blogs-listing-mobile.png
+│   │   ├── blogs-listing-mobile.svg
+│   │   ├── Blogs Listing V2.pdf
+│   │   ├── Blogs Listing V2.png
+│   │   └── Blogs Listing V2.svg
+│   └── knowledge-center-blog-details
+│       ├── blog-detail-mobile.png
+│       ├── blog-detail-mobile.svg
+│       ├── Blogs (1).png
+│       ├── Blogs.png
+│       └── Blogs.svg
 ├── events.html
 ├── exhibition.html
 ├── favicon.ico
@@ -94,6 +109,7 @@
 │   ├── icons
 │   │   ├── icon-3D -Creative Design.svg
 │   │   ├── icon-arrow-navbar.svg
+│   │   ├── icon-arrow-right-dark.svg
 │   │   ├── icon-build.svg
 │   │   ├── icon-Concept Development.svg
 │   │   ├── icon-customer-focus-ix_customer.svg
@@ -130,6 +146,17 @@
 │   │   ├── left-arrow.svg
 │   │   ├── right-arrow-red.svg
 │   │   └── right-arrow.svg
+│   ├── knowledge-center
+│   │   ├── 1.png
+│   │   ├── 2.png
+│   │   ├── 3.png
+│   │   ├── 4.png
+│   │   ├── 5.png
+│   │   ├── 6.png
+│   │   ├── 7.png
+│   │   ├── david-park.png
+│   │   └── markdus.png
+│   ├── knowledge-center-blog-details
 │   ├── logo
 │   │   ├── showline-logo-symbol.png
 │   │   ├── showline-logo-text.png
@@ -177,9 +204,11 @@
 │   ├── projects.js
 │   ├── quotation-form.js
 │   └── testimonials.js
+├── knowledge-center.html
+├── PLAN-events-mobile-parity.md
 ├── privacy-policy.html
 ├── projects.html
 ├── terms-conditions.html
 └── tree.txt
 
-20 directories, 163 files
+24 directories, 188 files
