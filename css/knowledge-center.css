@@ -309,20 +309,21 @@
     transition: var(--transition-base);
 }
 
-.kc-card:hover .kc-card__btn {
+.kc-card:hover .kc-card__btn,
+.kc-card__btn:hover {
     background: var(--color-ink);
+    transform: none; /* Prevent .btn-icon rotation */
 }
 
-.kc-card__btn-icon--hover {
-    display: none;
+.kc-card__btn .kc-card__btn-icon {
+    transition: transform 0.3s ease, filter 0.3s ease;
+    transform: rotate(45deg);
+    filter: brightness(0) !important;
 }
 
-.kc-card:hover .kc-card__btn-icon--default {
-    display: none;
-}
-
-.kc-card:hover .kc-card__btn-icon--hover {
-    display: block;
+.kc-card:hover .kc-card__btn .kc-card__btn-icon {
+    transform: rotate(0);
+    filter: brightness(0) invert(1) !important;
 }
 
 /* ============================================================
