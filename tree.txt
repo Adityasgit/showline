@@ -1,8 +1,10 @@
 .
 ├── about-us.html
+├── blog-detail.html
 ├── contact-us.html
 ├── css
 │   ├── about-us.css
+│   ├── blog-detail.css
 │   ├── common
 │   │   ├── buttons.css
 │   │   ├── footer.css
@@ -59,12 +61,19 @@
 │   │   ├── Blogs Listing V2.pdf
 │   │   ├── Blogs Listing V2.png
 │   │   └── Blogs Listing V2.svg
-│   └── knowledge-center-blog-details
-│       ├── blog-detail-mobile.png
-│       ├── blog-detail-mobile.svg
-│       ├── Blogs (1).png
-│       ├── Blogs.png
-│       └── Blogs.svg
+│   ├── knowledge-center-blog-details
+│   │   ├── blog-detail-mobile.png
+│   │   ├── blog-detail-mobile.svg
+│   │   ├── Blogs (1).png
+│   │   ├── Blogs.png
+│   │   └── Blogs.svg
+│   └── Testimonial
+│       ├── testimonials-mobile.pdf
+│       ├── testimonials-mobile.png
+│       ├── testimonials-mobile.svg
+│       ├── Testimonials.pdf
+│       ├── Testimonials.png
+│       └── Testimonials.svg
 ├── events.html
 ├── exhibition.html
 ├── favicon.ico
@@ -211,4 +220,4 @@
 ├── terms-conditions.html
 └── tree.txt
 
-24 directories, 188 files
+25 directories, 196 files
