@@ -35,7 +35,16 @@
                 <ul class="site-nav__list">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about-us.html">About</a></li>
-                    <li><a href="index.html#services">Services</a></li>
+                    <li class="site-nav__item nav-dropdown">
+                        <button type="button" class="site-nav__link nav-dropdown__toggle" aria-haspopup="true" aria-expanded="false">
+                            Services
+                            <span class="nav-dropdown__chevron" aria-hidden="true"></span>
+                        </button>
+                        <ul class="nav-dropdown__menu">
+                            <li><a href="exhibition.html">Exhibition &amp; Trade shows</a></li>
+                            <li><a href="events.html">Events and Experiences</a></li>
+                        </ul>
+                    </li>
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="knowledge-center.html">Knowledge Centre</a></li>
                     <li><a href="contact-us.html">Contact</a></li>
