@@ -9,7 +9,7 @@
     right: 0;
     z-index: var(--z-header);
     background-color: transparent;
-    padding: 2.25rem var(--container-pad) 0;
+    padding: 2.25rem 58px 0;
 }
 
 .site-header__inner {
@@ -20,7 +20,7 @@
     justify-content: space-between;
     gap: 1.5rem;
     background-color: var(--color-white);
-    border-radius: var(--radius-pill);
+    border-radius: 14px;
     padding: 0.75rem 0.75rem 0.75rem 1.75rem;
     box-shadow: var(--shadow-soft);
 }
@@ -61,7 +61,7 @@
 }
 
 /* the standalone round arrow button next to the CTA is desktop-only */
-.site-header__actions > .btn-icon {
+.site-header__actions>.btn-icon {
     display: inline-flex;
 }
 
@@ -117,6 +117,7 @@
 }
 
 @media (max-width: 768px) {
+
     /* Plain white full-width bar (no floating pill / red frame) */
     .site-header {
         position: static;
@@ -127,7 +128,8 @@
 
     .site-header__inner {
         position: relative;
-        z-index: var(--z-header);   /* header is position:static on mobile — keep the dropdown above page content */
+        z-index: var(--z-header);
+        /* header is position:static on mobile — keep the dropdown above page content */
         max-width: none;
         border-radius: 0;
         box-shadow: none;
@@ -153,7 +155,7 @@
         opacity: 0;
         visibility: hidden;
         transition: max-height var(--transition-base), opacity var(--transition-base),
-                    visibility var(--transition-base);
+            visibility var(--transition-base);
     }
 
     .site-nav.is-open {
@@ -183,7 +185,7 @@
     }
 
     /* Standalone arrow button collapses on mobile (hamburger takes over) */
-    .site-header__actions > .btn-icon {
+    .site-header__actions>.btn-icon {
         display: none;
     }
 }

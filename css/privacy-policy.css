@@ -1,0 +1,209 @@
+/* ============================================================
+   privacy-policy.css — page sections only
+   (no header / footer / utility / button styles)
+   ============================================================ */
+
+/* ============================ HERO ============================ */
+.hero {
+    /* background-color: var(--color-red); */
+    padding: 1.25rem;
+}
+
+.hero__frame {
+    position: relative;
+    min-height: 384px;
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+}
+
+.hero__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero__scrim {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 45%, #000 100%);
+}
+
+.hero__content {
+    position: relative;
+    z-index: 2;
+    padding: 3rem clamp(2rem, 4vw, 3.5rem);
+    width: 100%;
+    color: var(--color-white);
+}
+
+.hero__title {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    color: var(--color-white);
+    font-size: var(--fs-h1);
+    font-weight: 500;
+}
+
+.hero__title::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.65);
+}
+
+/* ===================== POLICY CONTENT ===================== */
+.policy {
+    padding-top: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.policy__copy {
+    max-width: 1240px;
+    margin-inline: auto;
+}
+
+.policy__copy p {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    /* 24px */
+    font-weight: 400;
+    line-height: 35px;
+    color: var(--color-ink);
+}
+
+/* ===================== CONTACT ===================== */
+.contact {
+    position: relative;
+    margin-top: 8rem;
+    padding-bottom: 11rem;
+}
+
+.contact__band {
+    position: relative;
+    min-height: 486px;
+    display: flex;
+    align-items: center;
+    padding-block: clamp(3rem, 6vw, 5rem);
+    overflow: hidden;
+}
+
+/* Floating form card — visual base lives in common/forms.css; page floats it over the band */
+.contact-form {
+    position: relative;
+    z-index: 5;
+    width: 560px;
+    max-width: 100%;
+    min-height: 731px;
+    margin-left: auto;
+    margin-top: -650px;
+    margin-bottom: -9rem;
+}
+
+.contact__watermark {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 250px;
+    line-height: 0.9;
+    color: rgba(255, 255, 255, 0.08);
+    letter-spacing: -0.02em;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.contact__inner {
+    position: relative;
+    z-index: 1;
+}
+
+.contact__intro {
+    max-width: 60%;
+}
+
+.contact__title {
+    color: var(--color-white);
+    font-family: var(--font-body);
+    font-size: 2.5rem;
+    /* 40px */
+    font-weight: 600;
+    line-height: 1.5;
+    /* 150% */
+    margin-bottom: 1.5rem;
+}
+
+.contact__lines {
+    color: var(--color-white);
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    /* 20px */
+    font-weight: 400;
+    line-height: 1.5;
+    /* 150% */
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 992px) {
+    .contact {
+        padding-bottom: 0;
+    }
+
+    .contact__intro {
+        max-width: 100%;
+    }
+
+    .contact-form {
+        width: min(100%, 620px);
+        margin: 2rem auto -3rem;
+    }
+
+    .contact__band {
+        padding-bottom: 6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 0;
+        background-color: transparent;
+    }
+
+    .hero__frame {
+        min-height: 300px;
+        border-radius: 0;
+    }
+
+    .policy__copy p {
+        font-size: 1.125rem;
+        line-height: 1.7;
+    }
+
+    .contact {
+        background-color: var(--color-red);
+        padding-bottom: 2.5rem;
+    }
+
+    .contact__band {
+        min-height: 0;
+        padding-block: 2.5rem 1.5rem;
+    }
+
+    .contact-form {
+        margin: 0 auto;
+    }
+
+    .contact__watermark {
+        display: none;
+    }
+}
