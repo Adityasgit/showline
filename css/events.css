@@ -84,22 +84,7 @@
     font-size: var(--fs-lead);
 }
 
-.ex-hero__mobile-title {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    padding: 1.25rem;
-}
 
-.ex-hero__mobile-title p {
-    color: var(--color-white);
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
-    font-weight: 500;
-    line-height: 1;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-    padding-bottom: 1rem;
-}
 
 .ex-hero__body {
     display: grid;
@@ -129,19 +114,7 @@
     margin-top: 1.25rem;
 }
 
-.ex-hero__mobile-lead {
-    color: rgba(255, 255, 255, 0.85);
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
-}
 
-.ex-hero__mobile-text {
-    color: var(--color-white);
-    font-size: 1.125rem;
-    line-height: 1.5;
-}
 
 /* ===================== WHO WE SERVE (desktop carousel) ===================== */
 .ex-serve__head {
@@ -524,64 +497,6 @@
     z-index: 1;
 }
 
-/* ===================== HOW WE WORK (mobile) ===================== */
-.ex-work {
-    padding-block: clamp(2.5rem, 6vw, 3.5rem);
-}
-
-.ex-work__title {
-    color: var(--color-white);
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
-    font-weight: 500;
-    margin-bottom: 0.75rem;
-}
-
-.ex-work__tag {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.9375rem;
-    margin-bottom: 2rem;
-}
-
-.ex-work__list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.ex-work-step {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.ex-work-step__num {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    border: 1.5px solid var(--color-white);
-    background-color: var(--color-red);
-    color: var(--color-white);
-    font-family: var(--font-body);
-    font-size: 1.5rem;
-    font-weight: 800;
-    flex-shrink: 0;
-}
-
-.ex-work-step__body h3 {
-    color: var(--color-white);
-    font-size: 1.25rem;
-    margin-bottom: 0.25rem;
-}
-
-.ex-work-step__body p {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.8125rem;
-}
 
 /* ===================== WHY OUR EXHIBITION STANDS PERFORM ===================== */
 .ex-perform {
@@ -1005,8 +920,20 @@
         padding: 2.5rem var(--container-pad) 0;
     }
 
+    .ex-hero__content {
+        padding: 2rem 1.25rem;
+    }
+
+    .ex-hero__frame-title {
+        flex-wrap: wrap;
+    }
+
+    .ex-hero__text p {
+        font-size: 1.125rem;
+    }
+
     .ex-faq,
-    .ex-work {
+    .ex-process {
         padding-inline: var(--container-pad);
     }
 
@@ -1071,40 +998,6 @@
    sections that differ from Exhibition are (re)defined here)
    ============================================================ */
 
-/* ---------- MOBILE BENEFITS (replaces stand-types slider) ---------- */
-.ev-benefits {
-    padding: 2rem var(--container-pad) 1rem;
-}
-
-.ev-benefits__list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.ev-benefit__num {
-    display: block;
-    font-family: var(--font-body);
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--color-red);
-    margin-bottom: 0.35rem;
-}
-
-.ev-benefit__name {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: var(--color-ink);
-    margin-bottom: 0.5rem;
-}
-
-.ev-benefit__desc {
-    color: #555;
-    font-size: 0.9375rem;
-    line-height: 1.55;
-}
 
 /* ---------- EVENT MANAGEMENT SERVICES (image + numbered list) ---------- */
 .ev-manage {
@@ -1181,11 +1074,12 @@
 
 /* ---------- EVENT DELIVERY PROCESS — circle grid (replaces steps.png) ---------- */
 .ev-steps {
+    --ev-row-gap: clamp(3rem, 6vw, 5rem);
     position: relative;
     z-index: 1;
     display: flex;
     flex-direction: column;
-    gap: clamp(3rem, 6vw, 5rem);
+    gap: var(--ev-row-gap);
 }
 
 .ev-steps__row {
@@ -1195,18 +1089,6 @@
     gap: 1.5rem;
 }
 
-/* faint connector line running through the first row of circles */
-.ev-steps__row--line::before {
-    content: "";
-    position: absolute;
-    top: 46px;
-    left: 46px;
-    right: 46px;
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.35);
-    z-index: 0;
-}
-
 .ev-step {
     position: relative;
     z-index: 1;
@@ -1214,6 +1096,35 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 1.25rem;
+}
+
+/* Path connectors — circle centre sits at 46px (half of the 92px circle).
+   Horizontal segment from each circle to the next within a row. */
+.ev-steps__row .ev-step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 46px;
+    left: 46px;
+    width: calc(100% + 1.5rem);
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.35);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Curved turn from step 04 (end of row 1) down to step 05 (end of row 2),
+   completing the 01 → 08 snake path. */
+.ev-steps__row--line .ev-step:last-child::after {
+    content: "";
+    position: absolute;
+    top: 46px;
+    left: 94px;
+    width: 200px;
+    height: calc(100% + var(--ev-row-gap) );
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 100' preserveAspectRatio='none'%3E%3Cpath d='M0 0 C34 26 34 74 0 100' fill='none' stroke='%23ffffff' stroke-opacity='0.35' stroke-width='1'/%3E%3C/svg%3E") no-repeat;
+    background-size: 100% 100%;
+    z-index: 0;
+    pointer-events: none;
 }
 
 .ev-step__num {
@@ -1389,12 +1300,41 @@
         min-height: 300px;
     }
 
-    .ev-steps__row {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem 1.5rem;
+    .ev-steps {
+        gap: 1.25rem;
     }
 
-    .ev-steps__row--line::before {
+    .ev-steps__row {
+        display: contents;
+    }
+
+    .ev-steps__row--line .ev-step:nth-child(1) { order: 1; }
+    .ev-steps__row--line .ev-step:nth-child(2) { order: 2; }
+    .ev-steps__row--line .ev-step:nth-child(3) { order: 3; }
+    .ev-steps__row--line .ev-step:nth-child(4) { order: 4; }
+
+    .ev-steps__row:not(.ev-steps__row--line) .ev-step:nth-child(1) { order: 8; }
+    .ev-steps__row:not(.ev-steps__row--line) .ev-step:nth-child(2) { order: 7; }
+    .ev-steps__row:not(.ev-steps__row--line) .ev-step:nth-child(3) { order: 6; }
+    .ev-steps__row:not(.ev-steps__row--line) .ev-step:nth-child(4) { order: 5; }
+
+    .ev-step {
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .ev-step__num {
+        width: 56px;
+        height: 56px;
+        font-size: 1.25rem;
+    }
+
+    .ev-step__label {
+        font-size: 1.125rem;
+    }
+
+    .ev-steps__row .ev-step::after {
         display: none;
     }
 
