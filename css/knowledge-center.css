@@ -6,6 +6,9 @@
 .kc-hero .ex-hero__inner {
     padding-bottom: 0;
 }
+.kc-hero .ex-hero__frame {
+    margin-bottom: 0;
+}
 
 /* ---- Filters Section ---- */
 .kc-filters {
@@ -310,8 +313,16 @@
     background: var(--color-ink);
 }
 
-.kc-card:hover .kc-card__btn img {
-    filter: brightness(0) invert(1);
+.kc-card__btn-icon--hover {
+    display: none;
+}
+
+.kc-card:hover .kc-card__btn-icon--default {
+    display: none;
+}
+
+.kc-card:hover .kc-card__btn-icon--hover {
+    display: block;
 }
 
 /* ============================================================
