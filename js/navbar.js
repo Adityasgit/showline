@@ -18,3 +18,37 @@ if (toggle && nav) {
         }
     });
 }
+
+/* ---- Services dropdown (click toggle for touch + accessibility;
+   CSS handles hover-open on desktop) ---- */
+document.querySelectorAll('.nav-dropdown').forEach((dropdown) => {
+    const trigger = dropdown.querySelector('.nav-dropdown__toggle');
+    if (!trigger) return;
+
+    trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        const open = dropdown.classList.toggle('is-open');
+        trigger.setAttribute('aria-expanded', String(open));
+    });
+});
+
+// Close any open dropdown when clicking outside of it
+document.addEventListener('click', (e) => {
+    document.querySelectorAll('.nav-dropdown.is-open').forEach((dropdown) => {
+        if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove('is-open');
+            dropdown.querySelector('.nav-dropdown__toggle')
+                ?.setAttribute('aria-expanded', 'false');
+        }
+    });
+});
+
+// Close dropdowns on Escape
+document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    document.querySelectorAll('.nav-dropdown.is-open').forEach((dropdown) => {
+        dropdown.classList.remove('is-open');
+        dropdown.querySelector('.nav-dropdown__toggle')
+            ?.setAttribute('aria-expanded', 'false');
+    });
+});

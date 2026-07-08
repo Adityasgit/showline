@@ -36,9 +36,18 @@
                 <ul class="site-nav__list">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about-us.html">About</a></li>
-                    <li><a href="index.html#services">Services</a></li>
-                    <li><a href="projects.html" aria-current="page">Projects</a></li>
-                    <li><a href="index.html#knowledge">Knowledge Centre</a></li>
+                    <li class="site-nav__item nav-dropdown">
+                        <button type="button" class="site-nav__link nav-dropdown__toggle" aria-haspopup="true" aria-expanded="false">
+                            Services
+                            <span class="nav-dropdown__chevron" aria-hidden="true"></span>
+                        </button>
+                        <ul class="nav-dropdown__menu">
+                            <li><a href="exhibition.html" aria-current="page">Exhibition &amp; Trade shows</a></li>
+                            <li><a href="events.html">Events and Experiences</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="knowledge-center.html">Knowledge Centre</a></li>
                     <li><a href="contact-us.html">Contact</a></li>
                 </ul>
             </nav>
@@ -67,7 +76,8 @@
                 <div class="ex-hero__frame">
                     <img class="ex-hero__bg" src="images/about-us/hero-section-bg.jpg"
                         alt="Exhibition stand interior with dramatic red lighting">
-                    <div class="ex-hero__overlay"></div>
+                    <img class="ex-hero__overlay" src="images/about-us/hero-section-overlay.png" alt=""
+                        aria-hidden="true">
                     <div class="ex-hero__content hide-mobile">
                         <p class="ex-hero__frame-title">Exhibition &amp; Trade shows</p>
                         <p class="ex-hero__frame-subtitle">Smart Modular Solutions for the Exhibition Industry</p>
@@ -600,10 +610,7 @@
 
             <div class="container">
                 <form class="contact-form" id="ex-contact-form" novalidate>
-                    <h3 class="contact-form__title">
-                        <span class="hide-mobile">Request a Consultation</span>
-                        <span class="hide-desktop">Contact Us</span>
-                    </h3>
+                    <h3 class="contact-form__title">Request a Consultation</h3>
 
                     <div class="contact-form__row">
                         <div class="form-field">
@@ -685,10 +692,8 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about-us.html">About</a></li>
-                    <li><a href="index.html#services">Services</a></li>
-                    <li><a href="projects.html">Gallery</a></li>
-                    <li><a href="#">Partners</a></li>
-                    <li><a href="index.html#testimonials">Testimonials</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
                     <li><a href="contact-us.html">Contact</a></li>
                 </ul>
             </nav>
@@ -710,7 +715,7 @@
                 <ul class="site-footer__legal">
                     <li><a href="privacy-policy.html">Privacy Policy</a></li>
                     <li><a href="terms-conditions.html">Terms &amp; Conditions</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li><a href="knowledge-center.html">Blog</a></li>
                 </ul>
                 <p class="site-footer__copy">© 2024 SHOWLINE Projects. All Rights Reserved.</p>
             </div>

@@ -34,10 +34,19 @@
                 <ul class="site-nav__list">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about-us.html">About</a></li>
-                    <li><a href="index.html#services">Services</a></li>
-                    <li><a href="projects.html" aria-current="page">Projects</a></li>
-                    <li><a href="index.html#knowledge">Knowledge Centre</a></li>
-                    <li><a href="#contact" aria-current="page">Contact</a></li>
+                    <li class="site-nav__item nav-dropdown">
+                        <button type="button" class="site-nav__link nav-dropdown__toggle" aria-haspopup="true" aria-expanded="false">
+                            Services
+                            <span class="nav-dropdown__chevron" aria-hidden="true"></span>
+                        </button>
+                        <ul class="nav-dropdown__menu">
+                            <li><a href="exhibition.html">Exhibition &amp; Trade shows</a></li>
+                            <li><a href="events.html">Events and Experiences</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="knowledge-center.html">Knowledge Centre</a></li>
+                    <li><a href="contact-us.html" aria-current="page">Contact</a></li>
                 </ul>
             </nav>
 
@@ -163,11 +172,9 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about-us.html">About</a></li>
-                    <li><a href="index.html#services">Services</a></li>
-                    <li><a href="projects.html">Gallery</a></li>
-                    <li><a href="#">Partners</a></li>
-                    <li><a href="index.html#testimonials">Testimonials</a></li>
-                    <li><a href="#contact" aria-current="page">Contact</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="contact-us.html" aria-current="page">Contact</a></li>
                 </ul>
             </nav>
 
@@ -188,7 +195,7 @@
                 <ul class="site-footer__legal">
                     <li><a href="privacy-policy.html">Privacy Policy</a></li>
                     <li><a href="terms-conditions.html">Terms &amp; Conditions</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li><a href="knowledge-center.html">Blog</a></li>
                 </ul>
                 <p class="site-footer__copy">© 2024 SHOWLINE Projects. All Rights Reserved.</p>
             </div>

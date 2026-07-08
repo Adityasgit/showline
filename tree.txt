@@ -1,7 +1,10 @@
 .
 ├── about-us.html
+├── blog-detail.html
+├── contact-us.html
 ├── css
 │   ├── about-us.css
+│   ├── blog-detail.css
 │   ├── common
 │   │   ├── buttons.css
 │   │   ├── footer.css
@@ -11,7 +14,17 @@
 │   │   ├── typography.css
 │   │   ├── utilities.css
 │   │   └── variables.css
-│   └── global.css
+│   ├── contact-us.css
+│   ├── events.css
+│   ├── exhibition.css
+│   ├── global.css
+│   ├── home.css
+│   ├── knowledge-center.css
+│   ├── lib
+│   │   └── aos.css
+│   ├── privacy-policy.css
+│   ├── projects.css
+│   └── terms-conditions.css
 ├── Design
 │   ├── about
 │   │   ├── about-us-mobile.pdf
@@ -20,6 +33,13 @@
 │   │   ├── About us.pdf
 │   │   ├── About us.png
 │   │   └── About us.svg
+│   ├── events
+│   │   ├── events-mobile.pdf
+│   │   ├── events-mobile.png
+│   │   ├── events-mobile.svg
+│   │   ├── Events.pdf
+│   │   ├── Events.png
+│   │   └── Events.svg
 │   ├── exibition
 │   │   ├── exhibition-stand-mobile.pdf
 │   │   ├── exhibition-stand-mobile.png
@@ -27,24 +47,64 @@
 │   │   ├── Exhibition Stand.pdf
 │   │   ├── Exhibition Stand.png
 │   │   └── Exhibition Stand.svg
-│   └── home
-│       ├── home-page-mobile.pdf
-│       ├── home-page-mobile.png
-│       ├── home-page-mobile.svg
-│       ├── Home page - V5.pdf
-│       ├── Home page - V5.png
-│       └── Home page - V5.svg
+│   ├── home
+│   │   ├── home-page-mobile.pdf
+│   │   ├── home-page-mobile.png
+│   │   ├── home-page-mobile.svg
+│   │   ├── Home page - V5.pdf
+│   │   ├── Home page - V5.png
+│   │   └── Home page - V5.svg
+│   ├── knowledge-center
+│   │   ├── blogs-listing-mobile.pdf
+│   │   ├── blogs-listing-mobile.png
+│   │   ├── blogs-listing-mobile.svg
+│   │   ├── Blogs Listing V2.pdf
+│   │   ├── Blogs Listing V2.png
+│   │   └── Blogs Listing V2.svg
+│   ├── knowledge-center-blog-details
+│   │   ├── blog-detail-mobile.png
+│   │   ├── blog-detail-mobile.svg
+│   │   ├── Blogs (1).png
+│   │   ├── Blogs.png
+│   │   └── Blogs.svg
+│   └── Testimonial
+│       ├── testimonials-mobile.pdf
+│       ├── testimonials-mobile.png
+│       ├── testimonials-mobile.svg
+│       ├── Testimonials.pdf
+│       ├── Testimonials.png
+│       └── Testimonials.svg
+├── events.html
 ├── exhibition.html
+├── favicon.ico
+├── favicon.svg
 ├── fonts
 ├── images
 │   ├── about-us
 │   │   ├── hero-section-bg.jpg
 │   │   ├── hero-section-overlay.png
 │   │   └── our-commitment.jpg
+│   ├── exibition
+│   │   ├── design-agencies.png
+│   │   ├── exhibitors.jpg
+│   │   ├── exibition-venues.jpg
+│   │   ├── Industries-We-Serve-bg.png
+│   │   ├── service-budget-coordination.png
+│   │   ├── service-contractor-coordination.png
+│   │   ├── service-project-planning.png
+│   │   ├── service-venue-liaison.png
+│   │   ├── stand-corner.png
+│   │   ├── stand-island.png
+│   │   ├── stand-linear.png
+│   │   ├── stand-peninsula.png
+│   │   ├── steps.png
+│   │   ├── trade-show-organizer.jpg
+│   │   └── Why-Our-Exhibition-Stands-Perform.png
 │   ├── home
 │   │   ├── 01-exibition.jpg
 │   │   ├── 02-event.jpg
 │   │   ├── Automechanika.png
+│   │   ├── expertise-image-bg-circle.png
 │   │   ├── From-Concept-to-Reality.png
 │   │   ├── gitex.png
 │   │   ├── hero-bg-image.jpg
@@ -56,39 +116,108 @@
 │   │   ├── what-we-do.jpg
 │   │   └── Why-Modular-Stands-Are-Replacing-Traditional-Wooden-Booths.png
 │   ├── icons
+│   │   ├── icon-3D -Creative Design.svg
 │   │   ├── icon-arrow-navbar.svg
+│   │   ├── icon-arrow-right-dark.svg
 │   │   ├── icon-build.svg
+│   │   ├── icon-Concept Development.svg
 │   │   ├── icon-customer-focus-ix_customer.svg
 │   │   ├── icon-design.svg
 │   │   ├── icon-discover-search.svg
+│   │   ├── icon-Dismantling.svg
 │   │   ├── icon-engineer.svg
+│   │   ├── Icon-Home-Automation.svg
+│   │   ├── icon-home-expertise.svg
+│   │   ├── Icon-Home-Presicion.svg
+│   │   ├── icon-home-Sustainability.svg
 │   │   ├── icon-inovation-hugeicons_ai-innovation-03.svg
+│   │   ├── icon-Installation.svg
 │   │   ├── icon-install.svg
 │   │   ├── icon-intigraity-streamline-cyber_business-handshake-deal.svg
 │   │   ├── icon-our-mission-mage_goals.svg
 │   │   ├── icon-ourvision-eye.svg
+│   │   ├── icon-Project Management.svg
 │   │   ├── icon-qualitystreamline_star-badge.svg
 │   │   ├── icon-rebuild.svg
+│   │   ├── icon-Refurbishment.svg
+│   │   ├── icon-Reinstallation.svg
 │   │   ├── icon-safety-si_shield-health-safety-line.png
 │   │   ├── icon-safety-si_shield-health-safety-line.svg
 │   │   ├── icon-social-facebook.svg
 │   │   ├── icon-social-instagram.svg
 │   │   ├── icon-social-linkedin.svg
 │   │   ├── icon-social-twitter.svg
+│   │   ├── icon-Storage.svg
 │   │   ├── icon-store.svg
-│   │   └── icon-sustainability-carbon_sustainability.svg
+│   │   ├── icon-sustainability-carbon_sustainability.svg
+│   │   ├── icon-Technical - Manufacturing.svg
+│   │   ├── left-arrow-red.svg
+│   │   ├── left-arrow.svg
+│   │   ├── right-arrow-red.svg
+│   │   └── right-arrow.svg
+│   ├── knowledge-center
+│   │   ├── 1.png
+│   │   ├── 2.png
+│   │   ├── 3.png
+│   │   ├── 4.png
+│   │   ├── 5.png
+│   │   ├── 6.png
+│   │   ├── 7.png
+│   │   ├── david-park.png
+│   │   └── markdus.png
+│   ├── knowledge-center-blog-details
 │   ├── logo
 │   │   ├── showline-logo-symbol.png
 │   │   ├── showline-logo-text.png
 │   │   ├── showline-logo-text-white.png
 │   │   └── showline-navbar-logo.png
+│   ├── projects
+│   │   ├── card-aura-m.png
+│   │   ├── card-aura.png
+│   │   ├── card-kinetic-m.png
+│   │   ├── card-kinetic.png
+│   │   ├── card-lumina-m.png
+│   │   ├── card-lumina.png
+│   │   ├── card-nextera-m.png
+│   │   ├── card-nextera.png
+│   │   ├── card-prism-m.png
+│   │   ├── card-prism.png
+│   │   ├── card-steel.png
+│   │   ├── card-techsumm-m.png
+│   │   ├── card-techsumm.png
+│   │   ├── card-vortex.png
+│   │   ├── feat-bg-1.png
+│   │   ├── feat-bg-2.png
+│   │   ├── feat-bg-3.png
+│   │   ├── feat-bg-4.png
+│   │   ├── feat-hero-bg.png
+│   │   ├── feat-hero-img.png
+│   │   ├── feat-img-1.png
+│   │   ├── feat-img-2.png
+│   │   ├── feat-img-3.png
+│   │   ├── feat-img-4.png
+│   │   ├── feat-m-automotive.png
+│   │   ├── feat-m-energy.png
+│   │   ├── feat-m-smartcity.png
+│   │   ├── hero-bg.jpg
+│   │   └── hero-bg-mobile.jpg
 │   └── team-members
 │       ├── 1.png
 │       └── 2.png
 ├── index.html
 ├── js
+│   ├── exhibition.js
+│   ├── lib
+│   │   └── aos.js
 │   ├── navbar.js
-│   └── quotation-form.js
+│   ├── projects.js
+│   ├── quotation-form.js
+│   └── testimonials.js
+├── knowledge-center.html
+├── PLAN-events-mobile-parity.md
+├── privacy-policy.html
+├── projects.html
+├── terms-conditions.html
 └── tree.txt
 
-15 directories, 77 files
+25 directories, 196 files
