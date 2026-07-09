@@ -61,7 +61,7 @@ if (track && dotsWrap) {
     const next = () => { if (animating) return; animating = true; goTo(index + 1); };
 
     // ---- Auto-advance ---- (respects reduced-motion; pauses on hover/focus)
-    const AUTO_MS = 4000;
+    const AUTO_MS = 2500;
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let timer = null;
     const stop = () => { clearInterval(timer); timer = null; };
@@ -176,8 +176,8 @@ if (tTrack && tPrev && tNext && tViewport) {
         animating = false;
     });
 
-    tPrev.addEventListener('click', () => go(-1));
-    tNext.addEventListener('click', () => go(1));
+    tPrev.addEventListener('click', () => { go(-1); tStart(); });
+    tNext.addEventListener('click', () => { go(1); tStart(); });
 
     window.addEventListener('resize', () => place(false));
 
@@ -186,11 +186,27 @@ if (tTrack && tPrev && tNext && tViewport) {
     tTrack.addEventListener('pointerup', (e) => {
         if (tStartX === null) return;
         const dx = e.clientX - tStartX;
-        if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1);
+        if (Math.abs(dx) > 40) { go(dx < 0 ? 1 : -1); tStart(); }
         tStartX = null;
     });
 
-    // Centre once layout is ready.
+    // ---- Auto-advance ---- (respects reduced-motion; pauses on hover/focus)
+    const T_AUTO_MS = 2000;
+    const tReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let tTimer = null;
+    const tStop = () => { clearInterval(tTimer); tTimer = null; };
+    const tStart = () => {
+        if (tReduceMotion || realCount < 2) return;
+        tStop();
+        tTimer = setInterval(() => go(1), T_AUTO_MS);
+    };
+    tCarousel.addEventListener('pointerenter', tStop);
+    tCarousel.addEventListener('pointerleave', tStart);
+    tCarousel.addEventListener('focusin', tStop);
+    tCarousel.addEventListener('focusout', tStart);
+
+    // Centre once layout is ready, then begin auto-rotation.
     setActive(pos);
     requestAnimationFrame(() => place(false));
+    tStart();
 }
