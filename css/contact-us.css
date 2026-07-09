@@ -58,6 +58,26 @@
     margin-bottom: 2.5rem;
 }
 
+/* Desktop-label / mobile-label swap (formerly .hide-mobile / .hide-desktop
+   on the two <span> children — now targeted via the parent instead) */
+.contact-hero__title span:first-child {
+    display: revert;
+}
+
+.contact-hero__title span:last-child {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .contact-hero__title span:first-child {
+        display: none !important;
+    }
+
+    .contact-hero__title span:last-child {
+        display: revert;
+    }
+}
+
 .contact-hero__meta p {
     color: var(--color-white);
     font-family: var(--font-body);

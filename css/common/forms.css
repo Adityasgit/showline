@@ -215,6 +215,28 @@
     margin-bottom: 1.75rem;
 }
 
+/* Desktop-label / mobile-label swap for pages that split the title into two
+   <span> children (formerly .hide-mobile / .hide-desktop on each span —
+   now targeted via the parent instead). Titles with a single text node are
+   unaffected since :first-child/:last-child then both resolve to nothing. */
+.contact-form__title span:first-child {
+    display: revert;
+}
+
+.contact-form__title span:last-child {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .contact-form__title span:first-child {
+        display: none !important;
+    }
+
+    .contact-form__title span:last-child {
+        display: revert;
+    }
+}
+
 .contact-form__row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -226,6 +248,31 @@
     align-items: center;
     gap: 0.75rem;
     margin-top: 0.5rem;
+}
+
+/* Formerly .btn-icon on the trailing arrow <span> — now targeted via its
+   parent .contact-form__actions instead */
+.contact-form__actions span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: var(--color-red);
+    flex-shrink: 0;
+    transition: background-color var(--transition-base), transform var(--transition-base);
+}
+
+.contact-form__actions span:hover {
+    background-color: var(--color-red-dark);
+    transform: rotate(45deg);
+}
+
+.contact-form__actions span img {
+    width: 1.5rem;
+    height: 1.5rem;
+    filter: brightness(0) invert(1);
 }
 
 .contact-form__note {

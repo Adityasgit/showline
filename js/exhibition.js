@@ -136,6 +136,13 @@ if (faqList) {
                 item.classList.add('is-open');
                 header.setAttribute('aria-expanded', 'true');
             }
+
+            // FAQ open/close changes page height — let AOS re-measure trigger points
+            if (window.AOS) AOS.refresh();
         });
     });
 }
+
+/* ---- Let AOS know about nodes cloned/resized above (infinite carousels,
+   SVG border sizing) so scroll-triggered animations account for them ---- */
+if (window.AOS) AOS.refresh();
