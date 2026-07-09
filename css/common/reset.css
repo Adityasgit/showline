@@ -7,6 +7,9 @@
 *::after {
     box-sizing: border-box;
 }
+body {
+    overflow-x: hidden;
+}
 
 html {
     -webkit-text-size-adjust: 100%;
