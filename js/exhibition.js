@@ -210,6 +210,14 @@ const wireFixedSlotCarousel = (trackId, prevId, nextId, cardSelector, activeSlot
     };
 
     const rotate = (direction) => {
+        // Mobile: this carousel is a simple one-card scroll-snap strip — advance by
+        // scrolling one card rather than the desktop transform/grow-active animation.
+        if (window.matchMedia('(max-width: 768px)').matches) {
+            const gap = parseFloat(getComputedStyle(track).columnGap || '0') || 0;
+            track.scrollBy({ left: direction * (cards[0].getBoundingClientRect().width + gap), behavior: 'smooth' });
+            return;
+        }
+
         if (isAnimating) return;
         isAnimating = true;
 
