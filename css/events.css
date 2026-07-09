@@ -103,14 +103,16 @@
     line-height: 1.1;
 }
 
-.ex-hero__title-line {
+/* Hero title lines — spans are class-less (WordPress strips inline classes),
+   so target them structurally as the direct children of .ex-hero__title. */
+.ex-hero__title > span {
     display: block;
     opacity: 0;
     transform: translateX(-60px);
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.ex-hero__title-line.is-in {
+.ex-hero__title > span.is-in {
     opacity: 1;
     transform: translateX(0);
 }
@@ -150,7 +152,7 @@
 @media (prefers-reduced-motion: reduce) {
 
     .reveal-section,
-    .ex-hero__title-line,
+    .ex-hero__title > span,
     .ex-hero__text p {
         opacity: 1;
         transform: none;

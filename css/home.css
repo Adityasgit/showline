@@ -60,8 +60,11 @@
     margin-bottom: 1rem;
 }
 
-/* Rise-up word-by-word animation for Hero Title */
-.hero-word-reveal {
+/* Rise-up word-by-word animation for Hero Title.
+   Spans are class-less (WordPress strips inline classes) — targeted structurally:
+   .home-hero__title > span   = the word wrapper (was .hero-word-reveal)
+   .home-hero__title > span > span = the rising word (was .hero-word) */
+.home-hero__title > span {
     display: inline-block;
     overflow: hidden;
     vertical-align: bottom;
@@ -71,7 +74,7 @@
     margin-right: -0.22em;  /* Adjust spacing to compensate for padding-right */
 }
 
-.hero-word {
+.home-hero__title > span > span {
     display: inline-block;
     opacity: 0;
     transform: translateY(100%);
@@ -79,16 +82,16 @@
 }
 
 /* Staggered animation delays for each word */
-.hero-word-reveal:nth-child(1) .hero-word {
+.home-hero__title > span:nth-child(1) > span {
     animation-delay: 0.15s;
 }
-.hero-word-reveal:nth-child(2) .hero-word {
+.home-hero__title > span:nth-child(2) > span {
     animation-delay: 0.35s;
 }
-.hero-word-reveal:nth-child(3) .hero-word {
+.home-hero__title > span:nth-child(3) > span {
     animation-delay: 0.55s;
 }
-.hero-word-reveal:nth-child(4) .hero-word {
+.home-hero__title > span:nth-child(4) > span {
     animation-delay: 0.75s;
 }
 
