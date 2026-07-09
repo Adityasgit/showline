@@ -1052,7 +1052,9 @@
     }
 
     .ex-faq,
-    .ex-work {
+    .ex-work,
+    .ex-perform,
+    .ex-stands {
         padding-inline: var(--container-pad);
     }
 
@@ -1068,6 +1070,21 @@
     .ex-faq-item__body p {
         margin-left: 0;
         font-size: 0.875rem;
+    }
+
+    .ex-perform__head {
+        gap: clamp(1rem, 2vw, 1.5rem);
+        margin-bottom: clamp(1.5rem, 3vw, 2rem);
+    }
+
+    .ex-perform__title {
+        flex: 1 1 auto;
+        font-size: clamp(1.75rem, 5vw, 2.5rem);
+    }
+
+    .ex-perform__photo {
+        flex: 1 1 100%;
+        max-width: 100%;
     }
 
     .ex-perform__grid {
@@ -1091,6 +1108,26 @@
 
     .contact-form {
         margin: 0 auto;
+    }
+
+    .ex-industries {
+        margin: var(--container-pad);
+    }
+
+    .ex-industries__body {
+        padding-inline: 0;
+    }
+
+    .ex-industries__list {
+        margin-top: 1.5rem;
+    }
+
+    .ex-industries__list li {
+        padding: 1.5rem 0;
+    }
+
+    .ex-industries__item-head {
+        font-size: 1.125rem;
     }
 }
 
