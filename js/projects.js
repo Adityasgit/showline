@@ -3,15 +3,68 @@
    (vanilla JS, no dependencies)
    ============================================================ */
 
-/* ---- Filter pills (visual active-state toggle) ---- */
-document.querySelectorAll('.pr-filter__pills').forEach((group) => {
+/* ---- Filter pills ---- */
+const filterGroups = Array.from(document.querySelectorAll('.pr-filter__pills'));
+const desktopCards = Array.from(document.querySelectorAll('.pr-grid .pr-card'));
+const desktopRows = Array.from(document.querySelectorAll('.pr-grid .pr-row'));
+const desktopCols = Array.from(document.querySelectorAll('.pr-grid .pr-col'));
+const mobileCards = Array.from(document.querySelectorAll('.pr-grid-m .pr-card'));
+const mobileRows = Array.from(document.querySelectorAll('.pr-grid-m .pr-grid-m__row'));
+const totalCount = document.getElementById('pr-total-count');
+
+const setActiveFilter = (filter) => {
+    filterGroups.forEach((group) => {
+        group.querySelectorAll('.pr-pill').forEach((pill) => {
+            pill.classList.toggle('is-active', pill.dataset.filter === filter);
+        });
+    });
+};
+
+const cardMatches = (card, filter) => {
+    if (filter === 'all') return true;
+    const categories = (card.dataset.categories || '')
+        .split(/\s+/)
+        .map((item) => item.trim())
+        .filter(Boolean);
+    return categories.includes(filter);
+};
+
+const updateGroupVisibility = (cards, rows, columns, filter) => {
+    cards.forEach((card) => {
+        card.classList.toggle('is-filter-hidden', !cardMatches(card, filter));
+    });
+
+    rows.forEach((row) => {
+        const visibleCards = row.querySelectorAll('.pr-card:not(.is-filter-hidden)');
+        row.classList.toggle('is-filter-hidden', visibleCards.length === 0);
+    });
+
+    columns.forEach((col) => {
+        const visibleCards = col.querySelectorAll('.pr-card:not(.is-filter-hidden)');
+        col.classList.toggle('is-filter-hidden', visibleCards.length === 0);
+    });
+};
+
+const applyFilter = (filter) => {
+    setActiveFilter(filter);
+    updateGroupVisibility(desktopCards, desktopRows, desktopCols, filter);
+    updateGroupVisibility(mobileCards, mobileRows, [], filter);
+
+    if (totalCount) {
+        const visibleCount = desktopCards.filter((card) => !card.classList.contains('is-filter-hidden')).length;
+        totalCount.textContent = String(visibleCount);
+    }
+};
+
+filterGroups.forEach((group) => {
     group.addEventListener('click', (e) => {
         const btn = e.target.closest('.pr-pill');
         if (!btn) return;
-        group.querySelectorAll('.pr-pill').forEach((p) => p.classList.remove('is-active'));
-        btn.classList.add('is-active');
+        applyFilter(btn.dataset.filter || 'all');
     });
 });
+
+applyFilter('all');
 
 /* ---- Desktop: fanned coverflow carousel ----
    Each card keeps its own image permanently; sliding is done by smoothly

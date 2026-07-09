@@ -1183,67 +1183,124 @@
 
 .ev-modular__track {
     display: flex;
-    align-items: stretch;
+    align-items: flex-start;
     gap: 1.5rem;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
-    padding-bottom: 0.5rem;
+    padding-bottom: 55px;
+    justify-content: center;
+    /* Pin to the active card's full height so the outgoing/incoming cards
+       crossfading in opposite directions never leave the track shorter
+       than the active card mid-transition (see .ex-services__track on the
+       exhibition page, which this section mirrors exactly). */
+    min-height: 445px;
 }
 
 .ev-modular__track::-webkit-scrollbar {
     display: none;
 }
 
-/* .ev-modular-card also carries .ex-service-card so the shared carousel JS
-   can measure/scroll it; these rules override the exhibition card visuals */
-.ev-modular-card {
+/* Exact copy of the Exhibition Management Services card component
+   (.ex-service-card in exhibition.css) so this carousel looks and animates
+   identically — only the title/image content differs. */
+.ex-service-card {
     flex: 0 0 auto;
-    width: 316px;
-    height: auto;
-    min-height: 372px;
-    padding: 1.75rem;
+    width: 284px;
+    height: 283px;
+    position: relative;
     background-color: var(--color-white);
-    border: 1.5px dashed var(--color-red);
-    border-radius: 16px;
+    border-radius: 14px;
+    padding: 28px 17px;
     scroll-snap-align: start;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
     overflow: hidden;
+    transition: width var(--transition-slow), height var(--transition-slow), transform var(--transition-slow);
 }
 
-.ev-modular-card__title {
+.ex-service-card__border {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.ex-service-card.is-active {
+    width: 391px;
+    height: 390px;
+    overflow: visible;
+    z-index: 2;
+}
+
+.ex-service-card__title {
+    position: relative;
+    z-index: 1;
     font-family: var(--font-heading);
-    font-size: 1.75rem;
+    font-size: 1.875rem;
     font-weight: 500;
     color: var(--color-ink);
-    line-height: 1.1;
+    line-height: 1.15;
     margin: 0;
-    max-width: 200px;
+    max-width: 245px;
+    transition: font-size var(--transition-slow), max-width var(--transition-slow);
 }
 
-.ev-modular-card__desc {
-    color: #666;
-    font-size: 0.9375rem;
-    line-height: 1.5;
-    max-width: 190px;
+.ex-service-card.is-active .ex-service-card__title {
+    font-size: 3rem;
+    max-width: 304px;
 }
 
-.ev-modular-card__img {
-    margin-top: auto;
-    align-self: flex-end;
-    width: 190px;
-    height: 150px;
-    border-radius: 12px;
+.ex-service-card span {
+    position: absolute;
+    z-index: 1;
+    right: 17px;
+    bottom: 16px;
+    width: 226px;
+    height: 215px;
+    display: block;
     overflow: hidden;
+    border-radius: 14px;
+    transition: right var(--transition-slow), bottom var(--transition-slow), width var(--transition-slow), height var(--transition-slow), border-radius var(--transition-slow);
 }
 
-.ev-modular-card__img img {
+.ex-service-card span img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.ex-service-card span::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(180, 36, 59, 0) 50%, var(--color-red) 100%);
+    pointer-events: none;
+}
+
+.ex-service-card--corner span {
+    right: -1.5px;
+    bottom: -1.5px;
+    width: 203px;
+    height: 191px;
+    border-radius: 20px 0 0 0;
+    border-style: solid;
+}
+
+.ex-service-card--corner-sm span {
+    width: 165px;
+    height: 154px;
+}
+
+.ex-service-card.is-active span {
+    right: -20px;
+    bottom: -10px;
+    width: 313px;
+    height: 223px;
+    border-radius: 14px;
+    border: 0;
 }
 
 .ev-modular__nav {

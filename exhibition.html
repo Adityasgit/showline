@@ -259,7 +259,7 @@
                 </div>
 
                 <div class="ex-services__track" id="ex-services-track">
-                    <article class="ex-service-card">
+                    <article class="ex-service-card ex-service-card--corner">
                         <svg class="ex-service-card__border" viewBox="0 0 100 100" preserveAspectRatio="none"
                             aria-hidden="true" focusable="false">
                             <rect class="ex-service-card__border-rect" x="1" y="1" width="98" height="98" rx="14"
@@ -272,7 +272,7 @@
                         </span>
                     </article>
 
-                    <article class="ex-service-card ex-service-card--wide">
+                    <article class="ex-service-card ex-service-card--corner is-active">
                         <svg class="ex-service-card__border" viewBox="0 0 100 100" preserveAspectRatio="none"
                             aria-hidden="true" focusable="false">
                             <rect class="ex-service-card__border-rect" x="1" y="1" width="98" height="98" rx="14"
@@ -382,8 +382,7 @@
         <section class="ex-perform section" aria-labelledby="ex-perform-title">
             <div class="">
                 <div class="ex-perform__head">
-                    <h2 id="ex-perform-title" class="ex-perform__title">Why Our <span>Exhibition
-                            Stands</span> Perform?</h2>
+                    <h2 id="ex-perform-title" class="ex-perform__title">Why Our <span>Exhibition Stands</span> Perform?</h2>
                     <div class="ex-perform__photo">
                         <img src="images/exibition/Why-Our-Exhibition-Stands-Perform.png"
                             alt="Exhibition stand build in progress">
@@ -432,45 +431,56 @@
         </section>
 
         <!-- ===================== INDUSTRIES WE SERVE ===================== -->
-        <section class="ex-industries red-block" aria-labelledby="ex-industries-title">
+        <section class="ex-industries" aria-labelledby="ex-industries-title">
             <img class="ex-industries__bg" src="images/exibition/Industries-We-Serve-bg.png"
                 alt="Industry exhibition stand">
             <div class="ex-industries__overlay" aria-hidden="true"></div>
             <div class="container ex-industries__body">
-                <h2 id="ex-industries-title" class="ex-industries__title">Industries We Serve</h2>
+                <div class="ex-industries__desktop hide-mobile">
+                    <h2 id="ex-industries-title" class="ex-industries__title">Industries We Serve</h2>
 
-                <p class="ex-industries__text hide-mobile">From emerging startups to global enterprises, we partner with
-                    brands across a diverse range of industries to create spaces that inspire, engage, and deliver
-                    results. Whether it's technology, manufacturing, healthcare, retail, education, automotive,
-                    hospitality, or any other sector, our approach is never one-size-fits-all. We understand the unique
-                    goals of every industry and craft exhibition stands, experiential environments, and branded spaces
-                    that reflect each brand's identity while creating meaningful experiences.</p>
+                    <p class="ex-industries__text">From emerging startups to global enterprises, we partner with
+                        brands across a diverse range of industries to create spaces that inspire, engage, and deliver
+                        results. Whether it's technology, manufacturing, healthcare, retail, education, automotive,
+                        hospitality, or any other sector, our approach is never one-size-fits-all. We understand the unique
+                        goals of every industry and craft exhibition stands, experiential environments, and branded spaces
+                        that reflect each brand's identity while creating meaningful experiences.</p>
+                </div>
 
-                <p class="ex-industries__text hide-desktop">From global enterprises to emerging brands, we deliver
-                    tailored modular solutions across diverse industries.</p>
+                <div class="ex-industries__mobile hide-desktop">
+                    <div class="ex-industries__mobile-copy">
+                        <h2 class="ex-industries__title">Industries We Serve</h2>
+                        <p class="ex-industries__text">From global enterprises to emerging brands, we deliver
+                            tailored modular solutions across diverse industries.</p>
+                    </div>
 
-                <ul class="ex-industries__list hide-desktop">
-                    <li>
-                        <div class="ex-industries__item-head"><span></span>Technology</div>
-                        <p>Empowering tech brands with innovative exhibition spaces and immersive event experiences.</p>
-                    </li>
-                    <li>
-                        <div class="ex-industries__item-head"><span></span>Manufacturing
-                        </div>
-                        <p>Creating impactful environments for industrial exhibitions and machinery displays.</p>
-                    </li>
-                    <li>
-                        <div class="ex-industries__item-head"><span></span>Healthcare &amp;
-                            Pharma</div>
-                        <p>Professional exhibition and conference solutions for healthcare and medical organizations.
-                        </p>
-                    </li>
-                    <li>
-                        <div class="ex-industries__item-head"><span></span>Retail &amp;
-                            Consumer Brands</div>
-                        <p>Designing engaging retail displays and brand activations that drive interaction.</p>
-                    </li>
-                </ul>
+                    <img class="ex-industries__mobile-img" src="images/exibition/Industries-We-Serve-bg.png"
+                        alt="Industry exhibition stand">
+
+                    <ul class="ex-industries__list">
+                        <li>
+                            <div class="ex-industries__item-head"><span></span>Technology</div>
+                            <p>Empowering tech brands with innovative exhibition spaces and immersive event experiences.</p>
+                        </li>
+                        <li>
+                            <div class="ex-industries__item-head"><span></span>Manufacturing
+                            </div>
+                            <p>Creating impactful environments for industrial exhibitions and machinery displays.</p>
+                        </li>
+                        <li>
+                            <div class="ex-industries__item-head"><span></span>Healthcare &amp;
+                                Pharma</div>
+                            <p>Professional exhibition and conference solutions for healthcare and medical organizations.
+                            </p>
+                        </li>
+                        <li>
+                            <div class="ex-industries__item-head"><span></span>Retail &amp;
+                                Consumer Brands</div>
+                            <p>Designing engaging retail displays and brand activations that drive interaction.</p>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
         </section>
 
