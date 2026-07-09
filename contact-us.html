@@ -71,7 +71,7 @@
         <!-- ===================== CONTACT ===================== -->
         <section class="contact-hero red-block" id="contact" aria-labelledby="contact-title">
             <div class="container contact-hero__inner">
-                <div class="contact-hero__intro">
+                <div class="contact-hero__intro" data-aos="fade-right">
                     <h1 id="contact-title" class="contact-hero__title">
                         <span>Have a question for us? Let's talk.</span>
                         <span>Have a question? Let's talk.</span>
@@ -86,7 +86,7 @@
                     </p>
                 </div>
 
-                <form class="contact-form" id="contact-form" novalidate>
+                <form class="contact-form" id="contact-form" novalidate data-aos="fade-left" data-aos-delay="200">
                     <h2 class="contact-form__title">
                         <span>Request a Consultation</span>
                         <span>Contact Us</span>
@@ -204,6 +204,15 @@
 
     <script src="js/navbar.js"></script>
     <script src="js/quotation-form.js"></script>
+    <script src="js/lib/aos.js"></script>
+    <script>
+        AOS?.init({
+            once: true,
+            duration: 700,
+            easing: 'ease-out-cubic',
+            offset: 80,
+        });
+    </script>
 </body>
 
 </html>
