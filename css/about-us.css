@@ -719,15 +719,9 @@
 }
 
 @media (max-width: 992px) {
-    /* Vision & Mission -> stacked, no diagonal */
+    /* Vision & Mission stack, but keep the mirrored alignment (Mission right) */
     .pillar--right {
         margin-top: 3rem;
-        text-align: left;
-    }
-
-    .pillar--right .pillar__title {
-        justify-content: flex-start;
-        flex-direction: row;
     }
 
     .pillar--right .pillar__title > span:last-child {
@@ -972,14 +966,7 @@
         margin-left: 0;
     }
 
-    /* Right pillar reads left-aligned when stacked */
-    .pillar--right {
-        text-align: left;
-    }
-
-    .pillar--right .pillar__title {
-        justify-content: flex-start;
-    }
+    /* Right pillar keeps its right-aligned (mirrored) look even when stacked */
 
     /* Scale the large headings down for narrow screens */
     .identity__eyebrow {
