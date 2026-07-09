@@ -837,7 +837,7 @@
     font-weight: 700;
     font-size: clamp(4rem, 13vw, 12rem);
     line-height: 0.9;
-    color: rgba(180, 36, 59, 0.16);
+    color: rgba(180, 36, 59, 0.06);
     pointer-events: none;
     z-index: 0;
 }
@@ -845,6 +845,7 @@
 .testimonials .container--testimonial {
     position: relative;
     z-index: 1;
+    margin-top:200px
 }
 
 /* Cards span the full width and slide UNDER the floating form, which sits on
@@ -909,8 +910,10 @@
     font-size: 0.85rem;
 }
 
+/* Dots are a mobile-only pagination affordance — hidden on the desktop
+   overlap layout, re-enabled in the stacked (<=1024px) view below. */
 .testimonials__dots {
-    display: flex;
+    display: none;
     gap: 0.5rem;
     margin-top: 1.75rem;
 }
@@ -940,7 +943,7 @@
     width: 520px;
     max-width: 100%;
     margin-left: auto;
-    margin-top: -440px;
+    margin-top: -670px;
     margin-bottom: clamp(2rem, 5vw, 5rem);
     position: relative;
     z-index: 5;
@@ -1099,13 +1102,37 @@
         margin-bottom: 0.75rem;
     }
 
-    /* Testimonials -> full-width single card slider; form no longer overlaps */
+    /* Testimonials -> a fixed full-width red panel whose text swaps in place;
+       the form drops below it and pagination dots appear. */
     .testimonials__viewport {
         max-width: 100%;
     }
 
+    /* Contain the card on both sides (desktop only pads the left so cards can
+       bleed under the floating form) */
+    .testimonials .container--testimonial {
+        padding-inline-end: var(--container-pad);
+    }
+
+    /* One card fills the panel; no inter-card gap so only the text appears to
+       scroll as it advances (no white sliver between cards) */
+    .testimonials__track {
+        gap: 0;
+    }
+
     .testimonial {
         flex-basis: 100%;
+    }
+
+    /* Watermark headline is a desktop flourish — it overwhelms the phone panel */
+    .testimonials > span {
+        display: none;
+    }
+
+    /* Pagination dots are shown only in this stacked/mobile layout */
+    .testimonials__dots {
+        display: flex;
+        justify-content: center;
     }
 
     .contact .contact-form {
@@ -1305,3 +1332,4 @@
         padding: 1.75rem;
     }
 }
+

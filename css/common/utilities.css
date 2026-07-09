@@ -14,8 +14,10 @@
     max-width: var(--container-max);
     margin-inline: auto;
     padding-inline-start:var(--container-pad) ;
+    background-color: transparent;
     
 }
+
 
 .container--wide {
     max-width: 1360px;
@@ -107,4 +109,9 @@
     .contact__title > span:last-child,
     .contact-form__title > span:last-child,
     .contact-hero__title > span:last-child { display: revert; }
+}
+
+
+.bg-transparent {
+    background: transparent !important;
 }
