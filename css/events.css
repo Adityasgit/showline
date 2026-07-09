@@ -98,7 +98,7 @@
 .ex-hero__title {
     color: rgba(255, 255, 255, 0.85);
     font-family: var(--font-heading);
-    font-size: clamp(2.25rem, 4.4vw, 4.375rem);
+    font-size: var(--fs-h1);   /* match the About Us hero title (same clamp) */
     font-weight: 500;
     line-height: 1.1;
 }

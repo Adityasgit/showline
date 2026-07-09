@@ -95,7 +95,7 @@
 .intro__title {
     color: var(--color-white);
     font-family: var(--font-heading);
-    font-size: 4.875rem;   /* 78px */
+    font-size: var(--fs-h1);   /* match the "About Us" hero title (same clamp) */
     font-weight: 400;      /* "Projects" */
     line-height: 1;
 }
@@ -961,7 +961,7 @@
     }
 
     .intro__title {
-        font-size: 3.25rem;   /* 52px */
+        font-size: 2.25rem;   /* match the "About Us" hero title on mobile */
     }
 
     .intro__text {
