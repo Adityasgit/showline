@@ -1111,23 +1111,62 @@
     }
 
     .ex-industries {
-        margin: var(--container-pad);
+        margin: 0;
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ex-industries__bg,
+    .ex-industries__overlay {
+        display: none;
     }
 
     .ex-industries__body {
-        padding-inline: 0;
+        padding-inline: var(--container-pad);
+        position: relative;
+        z-index: 1;
+    }
+
+    .ex-industries__title,
+    .ex-industries__text {
+        color: var(--color-white);
+        background: linear-gradient(180deg, rgba(129, 27, 43, 0.95) 0%, rgba(180, 36, 59, 0.95) 100%);
+        padding: 2rem var(--container-pad);
+        margin: 0;
+    }
+
+    .ex-industries__text {
+        padding-top: 0;
+        padding-bottom: 1.5rem;
     }
 
     .ex-industries__list {
-        margin-top: 1.5rem;
+        background-color: var(--color-white);
+        padding: 2rem var(--container-pad);
+        margin: 0;
     }
 
     .ex-industries__list li {
         padding: 1.5rem 0;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .ex-industries__list li:last-child {
+        border-bottom: none;
     }
 
     .ex-industries__item-head {
         font-size: 1.125rem;
+        color: var(--color-ink);
+    }
+
+    .ex-industries__item-head>span {
+        background-color: var(--color-red);
+    }
+
+    .ex-industries__list p {
+        color: #666;
     }
 }
 
