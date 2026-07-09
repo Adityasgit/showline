@@ -435,7 +435,9 @@
 
 /* photo circle centre is (180, 330); small circles hug its right edge, innovation sits out right */
 .why-circle--sustainability { width: 220px; height: 220px; left: 300px; top: 80px; }
-.why-circle--precision      { width: 220px; height: 220px; left: 315px; top: 405px; }
+/* Vertical mirror of sustainability about the photo-circle centre (y=330): same x,
+   symmetric y, so it overlaps the red Expertise circle by the same amount. */
+.why-circle--precision      { width: 220px; height: 220px; left: 300px; top: 360px; }
 .why-circle--innovation     { width: 210px; height: 210px; left: 545px; top: 245px; }
 
 .why-circle--center {

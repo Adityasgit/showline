@@ -86,6 +86,7 @@
 
 .intro__inner {
     display: grid;
+    margin:0 20px;
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
     gap: clamp(2rem, 6vw, 6rem);
     align-items: start;

@@ -113,19 +113,21 @@
 .ex-hero__title {
     color: rgba(255, 255, 255, 0.85);
     font-family: var(--font-heading);
-    font-size: clamp(2.25rem, 4.4vw, 4.375rem);
+    /* font-size: clamp(2.25rem, 4.4vw, 4.375rem); */
+    font-size: clamp(2rem, 4.4vw, 4.125rem);
     font-weight: 500;
     line-height: 1.1;
 }
 
-.ex-hero__title-line {
+.ex-hero__title > span {
     display: block;
     opacity: 0;
     transform: translateX(-60px);
+   font-size: clamp(2rem, 4vw, 4.125rem);
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.ex-hero__title-line.is-in {
+.ex-hero__title > span.is-in {
     opacity: 1;
     transform: translateX(0);
 }
