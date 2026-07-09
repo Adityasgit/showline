@@ -46,7 +46,10 @@ if (track && dotsWrap) {
 }
 
 /* ============================================================
-   Testimonials Page - Center-aligned Carousel
+   Testimonials Page - centred, elevated-card looping carousel
+   The active card sits centred and enlarged; a faded card peeks
+   on both sides. First/last clones make the loop seamless so a
+   neighbour is always present even with only three real slides.
    ============================================================ */
 const tTrack = document.getElementById('t-track');
 const tPrev = document.getElementById('t-prev');
@@ -54,50 +57,86 @@ const tNext = document.getElementById('t-next');
 const tViewport = document.querySelector('.t-carousel__viewport');
 
 if (tTrack && tPrev && tNext && tViewport) {
-    const tSlides = Array.from(tTrack.children);
-    let tIndex = 0;
+    const tCarousel = tTrack.closest('.t-carousel');
+    const realSlides = Array.from(tTrack.children);
+    const realCount = realSlides.length;
 
-    const getCenterOffset = (slide) => {
+    // Edge buffers: clone last before the first and first after the last.
+    const firstClone = realSlides[0].cloneNode(true);
+    const lastClone = realSlides[realCount - 1].cloneNode(true);
+    [firstClone, lastClone].forEach((c) => {
+        c.classList.remove('is-active');
+        c.setAttribute('aria-hidden', 'true');
+    });
+    tTrack.appendChild(firstClone);
+    tTrack.insertBefore(lastClone, realSlides[0]);
+
+    const slides = Array.from(tTrack.children); // [lastClone, ...real, firstClone]
+    let pos = 1;            // track index of the current slide (real slide 0)
+    let animating = false;
+
+    const centerOffset = (slide) => {
+        const trackLeft = tTrack.getBoundingClientRect().left;
         const slideRect = slide.getBoundingClientRect();
-        const viewportRect = tViewport.getBoundingClientRect();
-        // Calculate offset to center the slide in the viewport
-        const offset = (slideRect.left - tTrack.getBoundingClientRect().left) - (viewportRect.width / 2) + (slideRect.width / 2);
-        return offset;
+        const viewportW = tViewport.getBoundingClientRect().width;
+        return (slideRect.left - trackLeft) - (viewportW / 2) + (slideRect.width / 2);
     };
 
-    const goT = (i) => {
-        tIndex = (i + tSlides.length) % tSlides.length;
-        
-        // Update classes and ARIA
-        tSlides.forEach((slide, idx) => {
-            if (idx === tIndex) {
-                slide.classList.add('is-active');
-                slide.setAttribute('aria-hidden', 'false');
-            } else {
-                slide.classList.remove('is-active');
-                slide.setAttribute('aria-hidden', 'true');
-            }
+    const setActive = (activePos) => {
+        slides.forEach((slide, i) => {
+            const on = i === activePos;
+            slide.classList.toggle('is-active', on);
+            slide.setAttribute('aria-hidden', String(!on));
         });
-        
-        // Shift track to center
-        const offset = getCenterOffset(tSlides[tIndex]);
-        tTrack.style.transform = `translateX(${-offset}px)`;
     };
 
-    tPrev.addEventListener('click', () => goT(tIndex - 1));
-    tNext.addEventListener('click', () => goT(tIndex + 1));
+    const place = (animate) => {
+        tTrack.style.transition = animate ? '' : 'none';
+        tTrack.style.transform = `translateX(${-centerOffset(slides[pos])}px)`;
+        if (!animate) {
+            void tTrack.offsetHeight; // reflow so the next move can animate
+            tTrack.style.transition = '';
+        }
+    };
 
-    window.addEventListener('resize', () => goT(tIndex));
+    const go = (dir) => {
+        if (animating) return;
+        animating = true;
+        pos += dir;
+        setActive(pos);
+        place(true);
+    };
+
+    // When a clone lands in the centre, snap to its real twin. Freezing the
+    // card transitions during the jump makes the swap invisible (no resize/fade).
+    tTrack.addEventListener('transitionend', (e) => {
+        if (e.target !== tTrack || e.propertyName !== 'transform') return;
+        if (pos === slides.length - 1 || pos === 0) {
+            pos = pos === 0 ? realCount : 1;
+            tCarousel.classList.add('is-snapping');
+            place(false);
+            setActive(pos);
+            void tTrack.offsetHeight; // commit the no-transition state
+            tCarousel.classList.remove('is-snapping');
+        }
+        animating = false;
+    });
+
+    tPrev.addEventListener('click', () => go(-1));
+    tNext.addEventListener('click', () => go(1));
+
+    window.addEventListener('resize', () => place(false));
 
     let tStartX = null;
     tTrack.addEventListener('pointerdown', (e) => { tStartX = e.clientX; });
     tTrack.addEventListener('pointerup', (e) => {
         if (tStartX === null) return;
         const dx = e.clientX - tStartX;
-        if (Math.abs(dx) > 40) goT(tIndex + (dx < 0 ? 1 : -1));
+        if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1);
         tStartX = null;
     });
 
-    // Initial setup needs a tiny delay to ensure layout is complete for bounding rects
-    setTimeout(() => goT(0), 50);
+    // Centre once layout is ready.
+    setActive(pos);
+    requestAnimationFrame(() => place(false));
 }

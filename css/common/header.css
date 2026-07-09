@@ -3,7 +3,7 @@
    ============================================================ */
 
 .site-header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -260,9 +260,10 @@
 
 @media (max-width: 768px) {
 
-    /* Plain white full-width bar (no floating pill / red frame) */
+    /* Plain white full-width bar (no floating pill / red frame), stuck to top */
     .site-header {
-        position: static;
+        position: sticky;
+        top: 0;
         background-color: var(--color-white);
         padding: 0;
         box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
