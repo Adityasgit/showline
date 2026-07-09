@@ -3,8 +3,73 @@
    (vanilla JS, no dependencies)
    ============================================================ */
 
+/* ---- Scroll reveal: whole-section fade/slide-up, fires once when the
+   element is ~20-30% into the viewport ---- */
+if ('IntersectionObserver' in window) {
+    const sectionObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-in');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.25 });
+
+    document.querySelectorAll('.reveal-section').forEach((section) => sectionObserver.observe(section));
+} else {
+    document.querySelectorAll('.reveal-section').forEach((section) => section.classList.add('is-in'));
+}
+
+/* ---- Hero heading: reveal each line independently, staggered 100ms apart ---- */
+const heroTitle = document.querySelector('.ex-hero__title');
+if (heroTitle) {
+    const titleLines = Array.from(heroTitle.querySelectorAll('.ex-hero__title-line'));
+
+    if (titleLines.length && 'IntersectionObserver' in window) {
+        const titleObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    titleLines.forEach((line, i) => {
+                        window.setTimeout(() => line.classList.add('is-in'), i * 100);
+                    });
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.25 });
+
+        titleObserver.observe(heroTitle);
+    } else {
+        titleLines.forEach((line) => line.classList.add('is-in'));
+    }
+}
+
+/* ---- Hero paragraphs: reveal in reading order at 300ms / 500ms / 700ms ---- */
+const heroText = document.querySelector('.ex-hero__text');
+if (heroText) {
+    const paragraphs = Array.from(heroText.querySelectorAll('p'));
+    const paragraphDelays = [300, 500, 700];
+
+    if (paragraphs.length && 'IntersectionObserver' in window) {
+        const textObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    paragraphs.forEach((p, i) => {
+                        const delay = paragraphDelays[i] ?? paragraphDelays[paragraphDelays.length - 1] + (i - paragraphDelays.length + 1) * 200;
+                        window.setTimeout(() => p.classList.add('is-in'), delay);
+                    });
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.25 });
+
+        textObserver.observe(heroText);
+    } else {
+        paragraphs.forEach((p) => p.classList.add('is-in'));
+    }
+}
+
 /* ---- Generic "scroll by one card" wiring for a track + prev/next pair ---- */
-const wireCarousel = (trackId, prevId, nextId, cardSelector, infinite = false, startIndex = 0) => {
+const wireCarousel = (trackId, prevId, nextId, cardSelector, infinite = false, startIndex = 0, autoPlay = false) => {
     const track = document.getElementById(trackId);
     const prevBtn = document.getElementById(prevId);
     const nextBtn = document.getElementById(nextId);
@@ -69,6 +134,49 @@ const wireCarousel = (trackId, prevId, nextId, cardSelector, infinite = false, s
         window.addEventListener('resize', () => {
             measure();
         });
+    }
+
+    // Auto-advance continuously while the track is in view — pauses when it
+    // scrolls off-screen, resumes when it scrolls back, and stops for good
+    // the moment the user touches it themselves.
+    if (autoPlay && 'IntersectionObserver' in window) {
+        let autoInterval = null;
+        let stoppedByUser = false;
+
+        const stopAutoPlay = () => {
+            if (autoInterval) {
+                window.clearInterval(autoInterval);
+                autoInterval = null;
+            }
+        };
+
+        const startAutoPlay = () => {
+            if (autoInterval || stoppedByUser) return;
+            autoInterval = window.setInterval(() => scrollByCard(1), 2000);
+        };
+
+        const cancelAutoPlay = () => {
+            stoppedByUser = true;
+            stopAutoPlay();
+        };
+
+        const autoObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    startAutoPlay();
+                } else {
+                    stopAutoPlay();
+                }
+            });
+        }, { threshold: 0.25 });
+
+        autoObserver.observe(track);
+
+        ['pointerdown', 'wheel', 'touchstart'].forEach((evt) => {
+            track.addEventListener(evt, cancelAutoPlay, { passive: true });
+        });
+        prevBtn.addEventListener('click', cancelAutoPlay);
+        nextBtn.addEventListener('click', cancelAutoPlay);
     }
 };
 
@@ -164,7 +272,7 @@ const wireFixedSlotCarousel = (trackId, prevId, nextId, cardSelector, activeSlot
     setActiveAt();
 };
 
-wireCarousel('ex-serve-track', 'ex-serve-prev', 'ex-serve-next', '.ex-serve-card', true);
+wireCarousel('ex-serve-track', 'ex-serve-prev', 'ex-serve-next', '.ex-serve-card', true, 0, true);
 wireFixedSlotCarousel('ex-services-track', 'ex-services-prev', 'ex-services-next', '.ex-service-card', 1);
 
 /* ---- SVG dashed borders: size each card's viewBox to its real pixel

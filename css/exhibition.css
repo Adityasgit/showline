@@ -118,12 +118,32 @@
     line-height: 1.1;
 }
 
+.ex-hero__title-line {
+    display: block;
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.ex-hero__title-line.is-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 .ex-hero__text p {
     color: var(--color-white);
     font-family: var(--font-heading);
     font-size: 1.5rem;
     font-weight: 400;
     line-height: 1.5;
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.ex-hero__text p.is-in {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .ex-hero__text p+p {
@@ -142,6 +162,29 @@
     color: var(--color-white);
     font-size: 1.125rem;
     line-height: 1.5;
+}
+
+/* ---- Scroll reveal ---- */
+.reveal-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-section.is-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .reveal-section,
+    .ex-hero__title-line,
+    .ex-hero__text p {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 }
 
 /* ===================== WHO WE SERVE (desktop carousel) ===================== */
