@@ -847,10 +847,10 @@
     z-index: 1;
 }
 
-/* Keep the cards to the left of the floating form so none slides under it
-   (form is 520px, right-aligned; leave a 60px gutter between). */
+/* Cards span the full width and slide UNDER the floating form, which sits on
+   top (z-index) with its opaque card background — matches the Figma overlap. */
 .testimonials__viewport {
-    max-width: calc(100% - 580px);
+    max-width: 100%;
     overflow: hidden;
 }
 
