@@ -214,133 +214,6 @@
     border-bottom: none;
 }
 
-/* ===================== EXHIBITION MANAGEMENT SERVICES ===================== */
-.ex-services__head {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 2rem;
-    margin-bottom: clamp(2rem, 4vw, 3rem);
-}
-
-.ex-services__title {
-    font-family: var(--font-heading);
-    font-size: clamp(2.25rem, 4vw, 4.375rem);
-    font-weight: 500;
-    color: var(--color-ink);
-    max-width: 16ch;
-}
-
-.ex-services {
-    padding: 37px clamp(2rem, 5vw, 4rem);
-}
-
-.ex-services__tag {
-    max-width: 44ch;
-    color: #666;
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-.ex-services__track {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.5rem;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    padding-bottom: 45px;
-}
-
-.ex-services__track::-webkit-scrollbar {
-    display: none;
-}
-
-.ex-service-card {
-    flex: 0 0 auto;
-    width: 284px;
-    height: 283px;
-    position: relative;
-    background-color: var(--color-white);
-    border-radius: 14px;
-    padding: 28px 17px;
-    scroll-snap-align: start;
-    display: flex;
-    flex-direction: column;
-    overflow: visible;
-}
-
-.ex-service-card__border {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
-
-.ex-service-card--wide {
-    width: 391px;
-    height: 390px;
-}
-
-.ex-service-card__title {
-    position: relative;
-    z-index: 1;
-    font-family: var(--font-heading);
-    font-size: 1.875rem;
-    font-weight: 500;
-    color: var(--color-ink);
-    line-height: 1.15;
-    margin: 0;
-    max-width: 245px;
-}
-
-.ex-service-card--wide .ex-service-card__title {
-    font-size: 3rem;
-    max-width: 304px;
-}
-
-/* (exhibition service-card image rules were copied here originally but are
-   unused on events pages — removed for the class-less refactor. Events'
-   modular-card images are styled by .ev-modular-card > span below.) */
-
-.ex-services__nav {
-    display: flex;
-    justify-content: flex-end;
-    gap: 0.75rem;
-    margin-top: 1.5rem;
-}
-
-.ex-services__nav .ex-carousel-btn {
-    background-color: transparent;
-    border: 1.5px solid var(--color-red);
-    opacity: 0.5;
-}
-
-.ex-services__nav .ex-carousel-btn:not(.ex-carousel-btn--primary) img {
-    filter: none;
-}
-
-.ex-services__nav .ex-carousel-btn:hover {
-    opacity: 0.8;
-    background-color: transparent;
-}
-
-.ex-services__nav .ex-carousel-btn--primary {
-    background-color: var(--color-red);
-    border-color: var(--color-red);
-    opacity: 1;
-}
-
-.ex-services__nav .ex-carousel-btn--primary img {
-    filter: brightness(0) invert(1);
-}
-
-.ex-services__nav .ex-carousel-btn--primary:hover {
-    background-color: var(--color-red-dark);
-    opacity: 1;
-}
-
 /* ===================== STAND TYPES (mobile carousel) ===================== */
 .ex-stands {
     padding-block: clamp(2rem, 6vw, 3rem);
@@ -1208,18 +1081,20 @@
     max-width: 304px;
 }
 
-.ev-modular-card > span {
-    margin-top: auto;
-    align-self: flex-end;
-    width: 190px;
-    height: 150px;
-    border-radius: 12px;
+.ex-service-card span {
+    position: absolute;
+    z-index: 1;
+    right: 17px;
+    bottom: 16px;
+    width: 226px;
+    height: 215px;
+    display: block;
     overflow: hidden;
     border-radius: 14px;
     transition: right var(--transition-slow), bottom var(--transition-slow), width var(--transition-slow), height var(--transition-slow), border-radius var(--transition-slow);
 }
 
-.ev-modular-card > span img {
+.ex-service-card span img {
     display: block;
     width: 100%;
     height: 100%;
