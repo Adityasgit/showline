@@ -281,7 +281,14 @@
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
-    padding-bottom: 45px;
+    padding-bottom: 55px;
+    justify-content: center;
+    /* Pin the track to the active card's full height so the outgoing card
+       shrinking and the incoming card growing at the same time never leave
+       a moment where both are shorter than the active height — otherwise
+       the track's intrinsic height dips mid-crossfade and everything below
+       (nav buttons) bounces down then back up. */
+    min-height: 445px;
 }
 
 .ex-services__track::-webkit-scrollbar {
@@ -299,7 +306,8 @@
     scroll-snap-align: start;
     display: flex;
     flex-direction: column;
-    overflow: visible;
+    overflow: hidden;
+    transition: width var(--transition-slow), height var(--transition-slow), transform var(--transition-slow);
 }
 
 .ex-service-card__border {
@@ -310,9 +318,11 @@
     pointer-events: none;
 }
 
-.ex-service-card--wide {
+.ex-service-card.is-active {
     width: 391px;
     height: 390px;
+    overflow: visible;
+    z-index: 2;
 }
 
 .ex-service-card__title {
@@ -325,9 +335,10 @@
     line-height: 1.15;
     margin: 0;
     max-width: 245px;
+    transition: font-size var(--transition-slow), max-width var(--transition-slow);
 }
 
-.ex-service-card--wide .ex-service-card__title {
+.ex-service-card.is-active .ex-service-card__title {
     font-size: 3rem;
     max-width: 304px;
 }
@@ -341,12 +352,13 @@
     position: absolute;
     z-index: 1;
     right: 17px;
-    bottom: -30px;
+    bottom: 16px;
     width: 226px;
     height: 215px;
     display: block;
     overflow: hidden;
     border-radius: 14px;
+    transition: right var(--transition-slow), bottom var(--transition-slow), width var(--transition-slow), height var(--transition-slow), border-radius var(--transition-slow);
 }
 
 .ex-service-card span img {
@@ -364,13 +376,6 @@
     pointer-events: none;
 }
 
-.ex-service-card--wide span {
-    right: 11px;
-    bottom: -10px;
-    width: 313px;
-    height: 223px;
-}
-
 /* Corner treatment (Venue Liaison / Contractor Coordination): solid border,
    only the top-left corner rounded, tucked into and overflowing the bottom-right corner */
 .ex-service-card--corner span {
@@ -385,6 +390,15 @@
 .ex-service-card--corner-sm span {
     width: 165px;
     height: 154px;
+}
+
+.ex-service-card.is-active span {
+    right: -9px;
+    bottom: -15px;
+    width: 313px;
+    height: 223px;
+    border-radius: 14px;
+    border: 0;
 }
 
 .ex-services__nav {
@@ -684,11 +698,12 @@
 
 /* ===================== INDUSTRIES WE SERVE ===================== */
 .ex-industries {
+    position: relative;
     margin: 60px;
     border-radius: var(--radius-2xl);
     overflow: hidden;
-    padding-top: clamp(3rem, 6vw, 5rem);
-    padding-bottom: clamp(3rem, 6vw, 5rem);
+    padding-top: clamp(2rem, 4vw, 3rem);
+    padding-bottom: clamp(2rem, 4vw, 3rem);
 }
 
 .ex-industries>.ex-industries__bg {
@@ -768,6 +783,15 @@
     line-height: 1.5;
 }
 
+.ex-industries__body {
+    position: relative;
+    z-index: 1;
+}
+
+.ex-industries__mobile {
+    display: none;
+}
+
 /* ===================== FAQ ===================== */
 .ex-faq {
     padding-top: 0;
@@ -776,7 +800,7 @@
 .ex-faq__head {
     text-align: center;
     max-width: 720px;
-    margin: 0 auto clamp(3rem, 5vw, 4rem);
+    margin: 0 auto clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .ex-faq__title {

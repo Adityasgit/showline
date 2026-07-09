@@ -72,8 +72,100 @@ const wireCarousel = (trackId, prevId, nextId, cardSelector, infinite = false, s
     }
 };
 
+const wireFixedSlotCarousel = (trackId, prevId, nextId, cardSelector, activeSlot = 1) => {
+    const track = document.getElementById(trackId);
+    const prevBtn = document.getElementById(prevId);
+    const nextBtn = document.getElementById(nextId);
+    if (!track || !prevBtn || !nextBtn) return;
+
+    let cards = Array.from(track.querySelectorAll(cardSelector));
+    if (!cards.length) return;
+
+    const slot = Math.min(Math.max(activeSlot, 0), cards.length - 1);
+    let isAnimating = false;
+
+    const setActiveAt = (activeIndex = slot) => {
+        cards.forEach((card, index) => {
+            card.classList.toggle('is-active', index === activeIndex);
+        });
+    };
+
+    const reorder = () => {
+        cards.forEach((card) => track.appendChild(card));
+
+        if (window.AOS) AOS.refresh();
+    };
+
+    const stepSize = () => {
+        const gap = parseFloat(getComputedStyle(track).columnGap || '0') || 0;
+        return cards[0].getBoundingClientRect().width + gap;
+    };
+
+    const rotate = (direction) => {
+        if (isAnimating) return;
+        isAnimating = true;
+
+        if (direction > 0) {
+            const distance = stepSize();
+
+            requestAnimationFrame(() => {
+                track.style.transition = 'transform 420ms cubic-bezier(0.4, 0, 0.2, 1)';
+                track.style.transform = `translateX(-${distance}px)`;
+            });
+
+            window.setTimeout(() => {
+                cards = [...cards.slice(1), cards[0]];
+                track.style.transition = 'none';
+                track.style.transform = 'translateX(0)';
+                reorder();
+
+                // Force a reflow so the slide is fully settled before the
+                // active card's grow/shrink transition starts — otherwise
+                // the resize and the slide run at once and the card jitters.
+                void track.offsetHeight;
+
+                requestAnimationFrame(() => {
+                    track.style.transition = '';
+                    setActiveAt();
+                    isAnimating = false;
+                });
+            }, 420);
+
+            return;
+        }
+
+        const distance = stepSize();
+
+        requestAnimationFrame(() => {
+            track.style.transition = 'transform 420ms cubic-bezier(0.4, 0, 0.2, 1)';
+            track.style.transform = `${distance}px`;
+        });
+
+        window.setTimeout(() => {
+            cards = [cards[cards.length - 1], ...cards.slice(0, -1)];
+            track.style.transition = 'none';
+            track.style.transform = 'translateX(0)';
+            reorder();
+
+            void track.offsetHeight;
+
+            requestAnimationFrame(() => {
+                track.style.transition = '';
+                setActiveAt();
+                isAnimating = false;
+            });
+        }, 420);
+    };
+
+    prevBtn.addEventListener('click', () => rotate(-1));
+    nextBtn.addEventListener('click', () => rotate(1));
+
+    reorder();
+    setActiveAt();
+};
+
 wireCarousel('ex-serve-track', 'ex-serve-prev', 'ex-serve-next', '.ex-serve-card', true);
-wireCarousel('ex-services-track', 'ex-services-prev', 'ex-services-next', '.ex-service-card', true, 1);
+wireFixedSlotCarousel('ex-services-track', 'ex-services-prev', 'ex-services-next', '.ex-service-card', 1);
 
 /* ---- SVG dashed borders: size each card's viewBox to its real pixel
    dimensions so the stroke width and corner radius never stretch/distort ---- */

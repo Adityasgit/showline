@@ -10,6 +10,7 @@ const desktopRows = Array.from(document.querySelectorAll('.pr-grid .pr-row'));
 const desktopCols = Array.from(document.querySelectorAll('.pr-grid .pr-col'));
 const mobileCards = Array.from(document.querySelectorAll('.pr-grid-m .pr-card'));
 const mobileRows = Array.from(document.querySelectorAll('.pr-grid-m .pr-grid-m__row'));
+const totalCount = document.getElementById('pr-total-count');
 
 const setActiveFilter = (filter) => {
     filterGroups.forEach((group) => {
@@ -48,6 +49,11 @@ const applyFilter = (filter) => {
     setActiveFilter(filter);
     updateGroupVisibility(desktopCards, desktopRows, desktopCols, filter);
     updateGroupVisibility(mobileCards, mobileRows, [], filter);
+
+    if (totalCount) {
+        const visibleCount = desktopCards.filter((card) => !card.classList.contains('is-filter-hidden')).length;
+        totalCount.textContent = String(visibleCount);
+    }
 };
 
 filterGroups.forEach((group) => {
