@@ -1291,6 +1291,42 @@
     .ev-modular__title {
         font-size: 2rem;
     }
+
+    /* Mobile: one card per view (scroll-snap) with the prev/next arrows, instead of the
+       desktop fixed-slot "enlarge active + peeking neighbours" layout that overflowed. */
+    .ev-modular__track {
+        justify-content: flex-start;   /* was center — that hid the first card on overflow */
+        min-height: 0;                 /* drop the 445px desktop pin */
+        gap: 1rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .ex-service-card,
+    .ex-service-card.is-active {
+        flex: 0 0 100%;                /* one card fills the viewport */
+        width: 100%;
+        height: 300px;                 /* uniform height — no active-grow on mobile */
+        scroll-snap-align: start;
+    }
+
+    /* Neutralise the enlarged-active styling so every card looks the same on mobile */
+    .ex-service-card.is-active .ex-service-card__title {
+        font-size: 1.875rem;
+        max-width: 245px;
+    }
+
+    .ex-service-card.is-active span {
+        right: -1.5px;
+        bottom: -1.5px;
+        width: 203px;
+        height: 191px;
+        border-radius: 20px 0 0 0;
+    }
+
+    .ev-modular__nav {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 576px) {
