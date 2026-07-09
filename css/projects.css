@@ -155,6 +155,10 @@
     color: var(--color-white);
 }
 
+.is-filter-hidden {
+    display: none !important;
+}
+
 /* Formerly .pr-filter__count on the <span> itself — now targeted via its
    parent .pr-filter__inner instead */
 .pr-filter__inner>span {
@@ -572,6 +576,11 @@
     cursor: pointer;
 }
 
+.pr-featured-m__stage {
+    position: relative;
+    padding-inline: var(--container-pad);
+}
+
 /* ===================== CONTACT (about-us floating-card pattern) ===================== */
 .contact {
     position: relative;
@@ -713,6 +722,84 @@
     .pr-hero__frame {
         border-radius: 0;
         min-height: 340px;
+    }
+
+    .pr-featured {
+        margin-top: 0;
+        padding-block: 2rem 3.25rem;
+    }
+
+    .pr-featured-m__inner {
+        gap: 1.25rem;
+        padding-block: 0 0.5rem;
+        padding-inline: 0;
+    }
+
+    .pr-featured-m__head {
+        padding-inline: var(--container-pad);
+    }
+
+    .pr-featured-m__track {
+        gap: 0.75rem;
+        padding-inline: 0;
+    }
+
+    .pr-featured-m__card {
+        width: 260px;
+    }
+
+    .pr-featured-m__card img {
+        height: 310px;
+        margin-bottom: 0.75rem;
+        border-radius: 20px;
+    }
+
+    .pr-featured-m__nav {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 52%;
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: space-between;
+        gap: 0;
+        pointer-events: none;
+    }
+
+    .pr-featured-m__btn {
+        pointer-events: auto;
+    }
+
+    .pr-filter {
+        padding-block: 1.25rem 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .pr-filter__pills-wrap {
+        margin-top: 0.25rem;
+    }
+
+    .pr-filter__pills--mobile {
+        gap: 0.5rem;
+        padding: 0 var(--container-pad) 0.25rem;
+    }
+
+    .pr-filter__pills--mobile .pr-pill {
+        height: 34px;
+        padding: 0 0.875rem;
+    }
+
+    .pr-grid-m__inner {
+        gap: 0.75rem;
+        padding-block: 1.5rem 2rem;
+    }
+
+    .pr-grid-m__row {
+        gap: 0.75rem;
+    }
+
+    .contact {
+        margin-top: 0;
     }
 
     .contact__band>span {

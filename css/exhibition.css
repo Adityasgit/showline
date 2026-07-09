@@ -1113,50 +1113,60 @@
     .ex-industries {
         margin: 0;
         border-radius: 0;
-        overflow: visible;
+        overflow: hidden;
         padding: 0;
     }
 
-    .ex-industries__bg {
-        position: static;
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-    }
-
+    .ex-industries__bg,
     .ex-industries__overlay {
-        position: static;
-        background: linear-gradient(180deg, rgba(129, 27, 43, 0.9) 0%, rgba(180, 36, 59, 0.9) 100%);
-        height: auto;
-        min-height: 0;
+        display: none !important;
     }
 
     .ex-industries__body {
         padding: 0;
-        position: static;
     }
 
-    .ex-industries__title {
+    .ex-industries__desktop {
+        display: none !important;
+    }
+
+    .ex-industries__mobile {
+        display: block;
+    }
+
+    .ex-industries__mobile-copy {
+        background-color: var(--color-red);
+        padding: 2rem var(--container-pad) 1.75rem;
+    }
+
+    .ex-industries__mobile-copy .ex-industries__title {
         color: var(--color-white);
-        background: linear-gradient(180deg, rgba(129, 27, 43, 0.9) 0%, rgba(180, 36, 59, 0.9) 100%);
-        padding: 2rem var(--container-pad);
-        margin: 0;
-        font-size: 2rem;
-        font-weight: 500;
+        margin: 0 0 1rem;
+        font-size: clamp(2.25rem, 8vw, 3.25rem);
+        line-height: 0.95;
+        letter-spacing: -0.02em;
+        max-width: 8ch;
     }
 
-    .ex-industries__text {
+    .ex-industries__mobile-copy .ex-industries__text {
         color: rgba(255, 255, 255, 0.9);
-        background: linear-gradient(180deg, rgba(129, 27, 43, 0.9) 0%, rgba(180, 36, 59, 0.9) 100%);
-        padding: 0 var(--container-pad) 2rem;
         margin: 0;
         font-size: 1rem;
-        line-height: 1.6;
+        line-height: 1.55;
+    }
+
+    .ex-industries__mobile-img {
+        display: block;
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        object-position: center;
     }
 
     .ex-industries__list {
+        display: block;
         background-color: var(--color-white);
-        padding: 2rem var(--container-pad);
+        padding: 0 var(--container-pad);
         margin: 0;
         list-style: none;
     }
@@ -1196,10 +1206,6 @@
 
 @media (max-width: 576px) {
     .ex-perform__title {
-        font-size: 2.25rem;
-    }
-
-    .ex-industries__title {
         font-size: 2.25rem;
     }
 
