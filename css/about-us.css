@@ -141,9 +141,13 @@
 
 .identity__grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(2rem, 5vw, 4rem);
-    max-width: 1040px;
+    /* Both columns widened so the left (Vision) wraps to 4 lines and the right (Mission)
+       caps at ~6 lines. The gap is small because each pillar hugs its outer edge (big
+       empty middle), so a narrow gap frees width for the copy without a visible change.
+       Restacks to one column at <=768px, so mobile is unaffected by these desktop widths. */
+    grid-template-columns: 1.09fr 1fr;
+    gap: 2rem;
+    max-width: 1380px;
     margin-inline: auto;
 }
 
@@ -151,10 +155,15 @@
     max-width: 460px;
 }
 
+.pillar--left {
+    max-width: 700px;   /* wider so Vision wraps to 4 lines; -> 100% on mobile */
+}
+
 .pillar--right {
     margin-top: 4.5rem;
     margin-left: auto;
     text-align: right;
+    max-width: 650px;   /* sized so Mission caps at ~6 lines; -> 100% on mobile */
 }
 
 .pillar__title {
@@ -233,7 +242,8 @@
 }
 
 .pillar--right p {
-    font-size: 1.75rem;    /* 28px */
+    font-size: 1.5rem;     /* 24px — trimmed so the Mission copy pulls up to 5 lines */
+    line-height: 1.55;
 }
 
 /* ===================== WHO WE ARE ===================== */
@@ -719,24 +729,29 @@
     }
 }
 
-@media (max-width: 992px) {
-    /* Vision & Mission stack, but keep the mirrored alignment (Mission right) */
-    .pillar--right {
-        margin-top: 3rem;
-    }
-
-    .pillar--right .pillar__title > span:last-child {
-        display: none;
-    }
-
-    .pillar--left .pillar__title > span:first-child {
-        display: none;
-    }
-
+@media (max-width: 1024px) {
+    /* Vision & Mission -> single-column stack (mirrored right-alignment kept).
+       Raised from 768px so the wide two-column copy doesn't get cramped on tablets. */
     .identity__grid {
+        grid-template-columns: 1fr;
         gap: 3rem;
     }
 
+    .pillar,
+    .pillar--right {
+        max-width: 100%;
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    /* Hide the connector line+dot markers once stacked */
+    .pillar--right .pillar__title > span:last-child,
+    .pillar--left .pillar__title > span:first-child {
+        display: none;
+    }
+}
+
+@media (max-width: 992px) {
     /* Leadership -> 2 columns */
     .leadership__grid {
         grid-template-columns: repeat(2, 1fr);
@@ -954,20 +969,10 @@
         line-height: 1.7;
     }
 
-    /* Vision & Mission -> single column stack */
+    /* Vision & Mission gap tightens on phones (the stack itself is set at 1024px) */
     .identity__grid {
-        grid-template-columns: 1fr;
         gap: 2.5rem;
     }
-
-    .pillar,
-    .pillar--right {
-        max-width: 100%;
-        margin-top: 0;
-        margin-left: 0;
-    }
-
-    /* Right pillar keeps its right-aligned (mirrored) look even when stacked */
 
     /* Scale the large headings down for narrow screens */
     .identity__eyebrow {
