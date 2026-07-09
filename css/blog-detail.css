@@ -37,7 +37,7 @@
     max-width: 65%;
 }
 
-.blog-hero__badge {
+.blog-hero__content-main > span {
     margin-bottom: var(--space-16);
     background-color: var(--color-red);
     color: var(--color-white);
@@ -57,11 +57,11 @@
     margin: 0;
 }
 
-.blog-hero__author .kc-author__name {
+.blog-hero__author .kc-author__meta > span:first-child {
     color: var(--color-white);
 }
 
-.blog-hero__author .kc-author__date {
+.blog-hero__author .kc-author__meta > span:last-child {
     color: rgba(255, 255, 255, 0.7);
 }
 

@@ -152,7 +152,9 @@
     justify-content: center;
 }
 
-.kc-badge {
+.kc-featured__content > span,
+.kc-card__content > span,
+.blog-hero__content-main > span {
     display: inline-block;
     padding: var(--space-4) var(--space-12);
     background: var(--color-red);
@@ -200,13 +202,13 @@
     gap: var(--space-4);
 }
 
-.kc-author__name {
+.kc-author__meta > span:first-child {
     font-weight: 600;
     color: var(--color-ink);
     font-size: 0.9375rem;
 }
 
-.kc-author__date {
+.kc-author__meta > span:last-child {
     font-size: 0.875rem;
     color: var(--color-muted);
 }
@@ -269,7 +271,7 @@
     flex-grow: 1;
 }
 
-.kc-card .kc-badge {
+.kc-card__content > span {
     margin-bottom: var(--space-16);
 }
 

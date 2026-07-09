@@ -71,7 +71,17 @@ b {
     color: var(--color-red);
 }
 
-/* Heading accent: black lead word + red remainder */
-.accent {
+/* Heading accent: black lead word + red remainder.
+   Targets the (now class-less) highlight span inside each titled heading. */
+.identity__title > span,
+.values__title > span,
+.network__title > span,
+.ex-serve__title > span,
+.services__title > span,
+.why__title > span,
+.projects__title > span,
+.oneroof__title > span,
+.ex-perform__title > span,
+.ex-perform-card h3 > span {
     color: var(--color-red);
 }

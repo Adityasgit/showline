@@ -99,7 +99,7 @@
     line-height: 1;
 }
 
-.intro__title-strong {
+.intro__title > span {
     font-weight: 500;      /* "Showline" */
 }
 
@@ -177,17 +177,23 @@
     justify-content: flex-end;
 }
 
-.pillar__label {
+/* The label is the 2nd child of .pillar__title in both left & right variants. */
+.pillar__title > span:nth-child(2) {
     white-space: nowrap;
 }
 
-.pillar__marker {
+/* The marker is the span that wraps the line+dot: first child on the left
+   pillar, last child on the right pillar. */
+.pillar--left .pillar__title > span:first-child,
+.pillar--right .pillar__title > span:last-child {
     display: flex;
     align-items: center;
     flex: 0 0 auto;   /* don't grow — keep the title at the edge, not pushed to center */
 }
 
-.pillar__dot {
+/* dot: 2nd inner span on the left marker, 1st inner span on the right marker */
+.pillar--left .pillar__title > span:first-child > span:last-child,
+.pillar--right .pillar__title > span:last-child > span:first-child {
     width: 12px;
     height: 12px;
     border-radius: 50%;
@@ -195,7 +201,9 @@
     flex-shrink: 0;
 }
 
-.pillar__line {
+/* line: 1st inner span on the left marker, 2nd inner span on the right marker */
+.pillar--left .pillar__title > span:first-child > span:first-child,
+.pillar--right .pillar__title > span:last-child > span:last-child {
     height: 1.5px;
     width: 50vw;   /* fixed; extends off-screen and is clipped by .identity overflow:hidden */
     background-color: var(--color-red);
@@ -203,12 +211,12 @@
 }
 
 /* left: line runs off-screen left, dot sits at its end (joined) beside the label */
-.pillar--left .pillar__marker {
+.pillar--left .pillar__title > span:first-child {
     margin-left: -50vw;
 }
 
 /* right: dot beside the label, line runs off-screen right (joined) */
-.pillar--right .pillar__marker {
+.pillar--right .pillar__title > span:last-child {
     margin-right: -50vw;
 }
 
@@ -502,10 +510,11 @@
 .commitment__text p {
     color: var(--color-white);
     font-family: var(--font-body);
-    font-size: 1.375rem;   /* 22px */
+    font-size: 22px;   /* 22px */
     font-weight: 500;
     line-height: 1;        /* 100% */
 }
+
 
 .commitment__text p + p {
     margin-top: 1.25rem;
@@ -632,7 +641,7 @@
     overflow: hidden;
 }
 
-.contact__watermark {
+.contact__band > span {
     position: absolute;
     left: 1rem;
     top: 50%;
@@ -710,22 +719,16 @@
 }
 
 @media (max-width: 992px) {
-    /* Vision & Mission -> stacked, no diagonal */
+    /* Vision & Mission stack, but keep the mirrored alignment (Mission right) */
     .pillar--right {
         margin-top: 3rem;
-        text-align: left;
     }
 
-    .pillar--right .pillar__title {
-        justify-content: flex-start;
-        flex-direction: row;
-    }
-
-    .pillar--right .pillar__marker {
+    .pillar--right .pillar__title > span:last-child {
         display: none;
     }
 
-    .pillar--left .pillar__marker {
+    .pillar--left .pillar__title > span:first-child {
         display: none;
     }
 
@@ -782,7 +785,7 @@
     }
 }
 
-/* ---- Mobile: Core Values becomes stacked pill cards ---- */
+/* ---- Mobile: Core Values -> featured circle + icon-row cards (Figma) ---- */
 @media (max-width: 992px) {
     .values .container {
         display: flex;
@@ -792,73 +795,134 @@
     }
 
     .values__title {
-        align-self: flex-start;
+        align-self: center;
+        text-align: center;
+        font-size: 1.875rem;   /* 30px */
+        line-height: 1.15;
     }
 
+    /* one line ("Our Core Values") on mobile */
+    .values__title br {
+        display: none;
+    }
+
+    .values__intro {
+        margin: 0.75rem auto 0;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        max-width: 36ch;
+        color: #666;
+    }
+
+    /* Cluster becomes a simple vertical stack */
     .values__cluster {
         transform: none;
         width: 100%;
-        max-width: 440px;
+        max-width: 460px;
         height: auto;
-        margin: 2.5rem 0 0;
+        margin: 2rem auto 0;
         display: flex;
         flex-direction: column;
-        gap: 1.25rem;
+        gap: 1rem;
     }
 
-    .value,
+    /* Reorder to the mock: Customer Focus, Sustainability, Innovation,
+       Quality, Safety, Integrity */
+    .value--center      { order: -1; }
+    .value:nth-child(4) { order: 1; }   /* Sustainability */
+    .value:nth-child(2) { order: 2; }   /* Innovation */
+    .value:nth-child(3) { order: 3; }   /* Quality */
+    .value:nth-child(5) { order: 4; }   /* Safety */
+    .value:nth-child(6) { order: 5; }   /* Integrity */
+
+    /* --- Featured "Customer Focus": image ring + red disc (keeps desktop bg) --- */
     .value--center {
+        position: static;
+        align-self: center;
+        width: min(280px, 82%);
+        height: auto;
+        aspect-ratio: 1;
+        border: none;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 0.5rem;
+    }
+
+    .value--center .value__inner {
+        width: 84%;
+        height: 84%;
+        margin: auto;
+        border-radius: 50%;
+        padding: 1.25rem;
+    }
+
+    .value--center .value__name {
+        font-size: 1.25rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .value--center .value__desc {
+        font-size: 0.8rem;
+        line-height: 1.3;
+        letter-spacing: 0;
+        text-align: center;
+    }
+
+    /* --- The other five values: white card, left icon badge, red title, grey copy --- */
+    .value:not(.value--center) {
         position: static;
         width: 100%;
         height: auto;
-        min-height: 150px;
-        border-radius: var(--radius-pill);
-        aspect-ratio: auto;
-        border: 1.5px solid var(--color-red);
+        min-height: 0;
+        border: none;
+        border-radius: var(--radius-lg);
+        background-color: var(--color-white);
+        box-shadow: var(--shadow-card);
+        text-align: left;
     }
 
-    .value__inner {
+    .value:not(.value--center) .value__inner {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 1rem;
+        row-gap: 0.25rem;
+        align-items: start;
+        width: 100%;
         max-width: none;
-        padding: 1.75rem;
+        padding: 1.125rem 1.25rem;
+        text-align: left;
     }
 
-    .value__icon {
-        width: 44px;
-        height: 44px;
-        margin-bottom: 0.75rem;
+    .value:not(.value--center) .value__icon {
+        grid-row: 1 / 3;
+        grid-column: 1;
+        align-self: start;
+        width: 48px;
+        height: 48px;
+        margin: 0;
+        padding: 11px;
+        border: 1px solid rgba(180, 36, 59, 0.22);
+        border-radius: 12px;
+        background-color: var(--color-white);
     }
 
-    .value__name {
-        font-size: 1.25rem;
+    .value:not(.value--center) .value__name {
+        grid-column: 2;
+        grid-row: 1;
+        color: var(--color-red);
+        font-size: 1.125rem;
+        margin-bottom: 0;
+        text-align: left;
     }
 
-    .value__desc {
-        font-size: 0.9rem;
-    }
-
-    /* Alternate filled / outlined like the mobile mock */
-    .value:nth-child(even) {
-        background: var(--color-red);
-        border-color: var(--color-red);
-        color: var(--color-white);
-    }
-
-    .value:nth-child(even) .value__name {
-        color: var(--color-white);
-    }
-
-    .value:nth-child(even) .value__desc {
-        color: rgba(255, 255, 255, 0.92);
-    }
-
-    .value:nth-child(even) .value__icon {
-        filter: brightness(0) invert(1);
-    }
-
-    .value--center {
-        background-image: none;
-        background-color: var(--color-red);
-        color: var(--color-white);
+    .value:not(.value--center) .value__desc {
+        grid-column: 2;
+        grid-row: 2;
+        color: #6b6b6b;
+        font-size: 0.85rem;
+        line-height: 1.45;
+        letter-spacing: 0;
+        text-align: left;
     }
 }
 
@@ -902,14 +966,7 @@
         margin-left: 0;
     }
 
-    /* Right pillar reads left-aligned when stacked */
-    .pillar--right {
-        text-align: left;
-    }
-
-    .pillar--right .pillar__title {
-        justify-content: flex-start;
-    }
+    /* Right pillar keeps its right-aligned (mirrored) look even when stacked */
 
     /* Scale the large headings down for narrow screens */
     .identity__eyebrow {
@@ -946,8 +1003,41 @@
     }
 
     /* Hide the SHOWLINE watermark on mobile */
-    .contact__watermark {
+    .contact__band > span {
         display: none;
+    }
+
+    /* ---- "Our Network" section — mobile typography (per Figma) ---- */
+    .network__title {
+        font-size: 2rem;        /* 32px */
+    }
+
+    .network__intro {
+        font-size: 1rem;        /* 16px */
+        text-align: center;
+    }
+
+    .info-card__title {
+        font-size: 1.5rem;      /* 24px */
+    }
+
+    .info-card p {
+        font-size: 0.875rem;    /* 14px */
+    }
+
+    .network__footnote {
+        font-size: 1rem;        /* 16px */
+    }
+
+    /* ---- "Our Commitment" section — mobile typography (per Figma) ----
+       Body paragraphs (.commitment__text p) already match the spec
+       (22px / 500 / 100%), so only the heading changes here. */
+    .commitment__title {
+        font-size: 2.5rem;      /* 40px */
+        line-height: 1.1;       /* 110% */
+    }
+    .commitment__text p {
+        font-size: 16px;
     }
 }
 
