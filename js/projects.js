@@ -98,3 +98,7 @@ if (featuredMTrack && featuredMPrev && featuredMNext) {
     featuredMPrev.addEventListener('click', () => scrollByCard(-1));
     featuredMNext.addEventListener('click', () => scrollByCard(1));
 }
+
+/* ---- Let AOS know about nodes cloned/resized above (infinite carousels,
+   dashed borders) so scroll-triggered animations account for them ---- */
+if (window.AOS) AOS.refresh();

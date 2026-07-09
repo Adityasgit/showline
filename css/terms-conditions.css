@@ -106,7 +106,9 @@
     margin-bottom: -9rem;
 }
 
-.contact__watermark {
+/* Formerly .contact__watermark on the <span> itself — now targeted via its
+   parent .contact__band instead */
+.contact__band>span {
     position: absolute;
     left: 1rem;
     top: 50%;
@@ -204,7 +206,7 @@
         margin: 0 auto;
     }
 
-    .contact__watermark {
+    .contact__band>span {
         display: none;
     }
 }

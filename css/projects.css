@@ -107,7 +107,9 @@
     flex-wrap: wrap;
 }
 
-.pr-filter__label {
+/* Formerly .pr-filter__label on the <span> itself — now targeted via its
+   parent .pr-filter__group instead */
+.pr-filter__group>span {
     font-family: var(--font-heading);
     font-size: 0.75rem;
     font-weight: 600;
@@ -153,7 +155,9 @@
     color: var(--color-white);
 }
 
-.pr-filter__count {
+/* Formerly .pr-filter__count on the <span> itself — now targeted via its
+   parent .pr-filter__inner instead */
+.pr-filter__inner>span {
     display: inline-flex;
     align-items: center;
     gap: 0.375rem;
@@ -166,7 +170,7 @@
     white-space: nowrap;
 }
 
-.pr-filter__count strong {
+.pr-filter__inner>span strong {
     font-size: 0.75rem;
     font-weight: 600;
 }
@@ -326,7 +330,10 @@
     white-space: nowrap;
 }
 
-.pr-card__tag {
+/* Formerly .pr-card__tag / .pr-card__sep on the two <span> children
+   themselves — now targeted via their parent .pr-card__meta, matched by
+   their fixed position (tag first, separator second) instead */
+.pr-card__meta span:first-child {
     font-family: var(--font-body);
     font-size: 0.6875rem;
     font-weight: 700;
@@ -335,7 +342,7 @@
     color: var(--color-red);
 }
 
-.pr-card__sep {
+.pr-card__meta span:nth-child(2) {
     width: 1px;
     height: 10px;
     background-color: #A0A0A0;
@@ -581,7 +588,9 @@
     overflow: hidden;
 }
 
-.contact__watermark {
+/* Formerly .contact__watermark (+ .hide-mobile) on the <span> itself —
+   now targeted via its parent .contact__band instead */
+.contact__band>span {
     position: absolute;
     left: 1rem;
     top: 50%;
@@ -612,6 +621,26 @@
     font-weight: 600;
     line-height: 1.5;
     margin-bottom: 1.5rem;
+}
+
+/* Desktop-label / mobile-label swap (formerly .hide-mobile / .hide-desktop
+   on the two <span> children — now targeted via the parent instead) */
+.contact__title span:first-child {
+    display: revert;
+}
+
+.contact__title span:last-child {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .contact__title span:first-child {
+        display: none !important;
+    }
+
+    .contact__title span:last-child {
+        display: revert;
+    }
 }
 
 .contact__lines,
@@ -686,8 +715,8 @@
         min-height: 340px;
     }
 
-    .contact__watermark {
-        display: none;
+    .contact__band>span {
+        display: none !important;
     }
 
     .contact {
