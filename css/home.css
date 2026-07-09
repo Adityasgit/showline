@@ -930,7 +930,7 @@
 
 .testimonials__dots button[aria-selected="true"] {
     width: 34px;
-    background-color: var(--color-red);
+    background-color: var(--color-white);
 }
 
 /* ===================== CONSULTATION FORM (floats over testimonials) ===================== */
@@ -1112,6 +1112,9 @@
        bleed under the floating form) */
     .testimonials .container--testimonial {
         padding-inline-end: var(--container-pad);
+        margin:0;
+        background-color: var(--color-red);
+        padding-bottom: 16px;
     }
 
     /* One card fills the panel; no inter-card gap so only the text appears to
@@ -1122,6 +1125,11 @@
 
     .testimonial {
         flex-basis: 100%;
+        border-radius: 0px;
+        padding-bottom: 0;
+    }
+    .testimonials {
+        padding-bottom:0 ;
     }
 
     /* Watermark headline is a desktop flourish — it overwhelms the phone panel */
@@ -1136,7 +1144,13 @@
     }
 
     .contact .contact-form {
-        margin: 2rem auto clamp(2rem, 5vw, 4rem);
+        margin: 2rem 0 clamp(2rem, 5vw, 4rem);
+        margin-top: 0px;
+        border-radius: 0;
+        width: 100%;
+    }
+    .contact > .container {
+        padding: 0px
     }
 }
 
