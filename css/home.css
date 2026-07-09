@@ -842,7 +842,7 @@
     z-index: 0;
 }
 
-.testimonials .container {
+.testimonials .container--testimonial {
     position: relative;
     z-index: 1;
 }
