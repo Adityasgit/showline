@@ -100,6 +100,7 @@
                         <button type="button" class="pr-pill" data-filter="pavilions">Country Pavilions</button>
                         <button type="button" class="pr-pill" data-filter="events">Events &amp; Experiences</button>
                         <button type="button" class="pr-pill" data-filter="retail">Retail &amp; Commercial</button>
+                        <button type="button" class="pr-pill" data-filter="healthcare">Healthcare</button>
                     </div>
                 </div>
                 <span><strong>Total:</strong> <span id="pr-total-count">8</span></span>
@@ -112,6 +113,23 @@
                     <button type="button" class="pr-pill" data-filter="events">Corporate Events</button>
                     <button type="button" class="pr-pill" data-filter="retail">Retail Displays</button>
                     <button type="button" class="pr-pill" data-filter="modular">Modular</button>
+                    <button type="button" class="pr-pill" data-filter="healthcare">Healthcare</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== EMPTY STATE ===================== -->
+        <section class="pr-empty" id="pr-empty" hidden aria-live="polite">
+            <div class="container">
+                <div class="pr-empty__card">
+                    <div class="pr-empty__icon" aria-hidden="true">
+                        <img src="images/icons/icon-discover-search.svg" alt="" width="40" height="40">
+                    </div>
+                    <h2 class="pr-empty__title">No projects in this category</h2>
+                    <p class="pr-empty__text">We couldn't find any projects matching
+                        <strong id="pr-empty-filter">this filter</strong>. Try another category or explore our full
+                        portfolio.</p>
+                    <button type="button" class="pr-pill pr-empty__btn" id="pr-empty-reset">View all projects</button>
                 </div>
             </div>
         </section>

@@ -5,12 +5,26 @@
 
 /* ---- Filter pills ---- */
 const filterGroups = Array.from(document.querySelectorAll('.pr-filter__pills'));
+const desktopGrid = document.querySelector('.pr-grid');
+const mobileGrid = document.querySelector('.pr-grid-m');
 const desktopCards = Array.from(document.querySelectorAll('.pr-grid .pr-card'));
 const desktopRows = Array.from(document.querySelectorAll('.pr-grid .pr-row'));
 const desktopCols = Array.from(document.querySelectorAll('.pr-grid .pr-col'));
 const mobileCards = Array.from(document.querySelectorAll('.pr-grid-m .pr-card'));
 const mobileRows = Array.from(document.querySelectorAll('.pr-grid-m .pr-grid-m__row'));
 const totalCount = document.getElementById('pr-total-count');
+const emptyState = document.getElementById('pr-empty');
+const emptyFilterLabel = document.getElementById('pr-empty-filter');
+const emptyResetBtn = document.getElementById('pr-empty-reset');
+
+const FILTER_LABELS = {
+    all: 'All Projects',
+    exhibition: 'Exhibition Stands',
+    pavilions: 'Country Pavilions',
+    events: 'Events & Experiences',
+    retail: 'Retail & Commercial',
+    modular: 'Modular',
+};
 
 const setActiveFilter = (filter) => {
     filterGroups.forEach((group) => {
@@ -45,15 +59,35 @@ const updateGroupVisibility = (cards, rows, columns, filter) => {
     });
 };
 
+const countVisible = (cards, filter) =>
+    cards.filter((card) => cardMatches(card, filter)).length;
+
 const applyFilter = (filter) => {
+    const isFiltering = filter !== 'all';
+
     setActiveFilter(filter);
+
+    desktopGrid?.classList.toggle('is-filtering', isFiltering);
+    mobileGrid?.classList.toggle('is-filtering', isFiltering);
+
     updateGroupVisibility(desktopCards, desktopRows, desktopCols, filter);
     updateGroupVisibility(mobileCards, mobileRows, [], filter);
 
+    const desktopVisible = countVisible(desktopCards, filter);
+    const mobileVisible = countVisible(mobileCards, filter);
+    const hasResults = desktopVisible > 0;
+
     if (totalCount) {
-        const visibleCount = desktopCards.filter((card) => !card.classList.contains('is-filter-hidden')).length;
-        totalCount.textContent = String(visibleCount);
+        totalCount.textContent = String(desktopVisible);
     }
+
+    if (emptyFilterLabel) {
+        emptyFilterLabel.textContent = FILTER_LABELS[filter] || filter;
+    }
+
+    desktopGrid?.toggleAttribute('hidden', !hasResults);
+    mobileGrid?.toggleAttribute('hidden', mobileVisible === 0);
+    emptyState?.toggleAttribute('hidden', hasResults);
 };
 
 filterGroups.forEach((group) => {
@@ -63,6 +97,8 @@ filterGroups.forEach((group) => {
         applyFilter(btn.dataset.filter || 'all');
     });
 });
+
+emptyResetBtn?.addEventListener('click', () => applyFilter('all'));
 
 applyFilter('all');
 
