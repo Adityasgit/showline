@@ -1227,7 +1227,7 @@
         font-size: clamp(2.25rem, 8vw, 3.25rem);
         line-height: 0.95;
         letter-spacing: -0.02em;
-        max-width: 8ch;
+        /* max-width: 8ch; */
     }
 
     .ex-industries__mobile-copy .ex-industries__text {
