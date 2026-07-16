@@ -215,8 +215,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 3rem;
-    height: 3rem;
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: 50%;
     background-color: var(--color-red);
     border: none;
@@ -227,10 +227,14 @@
 .ex-carousel-btn:hover {
     background-color: var(--color-red-dark);
 }
+.ex-carousel-btn:focus-visible,.ex-carousel-btn:focus {
+    outline:none;
+    border:none
+}
 
 .ex-carousel-btn img {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     filter: brightness(0) invert(1);
 }
 
@@ -551,12 +555,12 @@
 
 .ex-process > span {
     position: absolute;
-    left: 45%;
+    left: 50%;
     top: 58%;
-    transform: translate(-50%, -46%);
+    transform: translate(-50%, -50%);
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: clamp(6rem, 16vw, 10.625rem);
+    font-size: clamp(6rem, 22vw, 16.625rem);
     line-height: 0.9;
     color: rgba(0, 0, 0, 0.08);
     letter-spacing: -0.02em;
@@ -1015,7 +1019,11 @@
 .contact__title span:last-child {
     display: none;
 }
-
+@media (min-width:1600px) {
+   .ex-process > span {
+      font-size: clamp(6rem, 30vw, 20rem);
+   } 
+}
 @media (max-width: 768px) {
     .contact__title span:first-child {
         display: none !important;
@@ -1024,6 +1032,12 @@
     .contact__title span:last-child {
         display: revert;
     }
+}
+@media (max-width: 1400px) {
+   .ex-process > span {
+      font-size: 11rem;
+   }
+    
 }
 
 .contact__lines,
