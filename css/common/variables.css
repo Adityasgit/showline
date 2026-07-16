@@ -34,7 +34,7 @@
     --space-120: 7.5rem;
 
     /* ---- Section rhythm ---- */
-    --section-pad-y: 6rem;
+    --section-pad-y: 4rem;
     --section-pad-y-sm: 3.5rem;
 
     /* ---- Border radius ---- */
@@ -71,6 +71,12 @@
     :root {
         --container-pad: 2rem;
         --section-pad-y: 4rem;
+    }
+}
+
+@media (min-width: 1600px) {
+    :root {
+        --section-pad-y: 6rem;
     }
 }
 

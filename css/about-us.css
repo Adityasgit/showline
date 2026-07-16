@@ -81,7 +81,6 @@
 
 /* ===================== SHOWLINE INTRO ===================== */
 .intro {
-    padding-block: clamp(3rem, 6vw, 5.5rem);
 }
 
 .intro__inner {
@@ -234,7 +233,7 @@
     font-family: var(--font-heading);
     font-weight: 400;
     line-height: 40px;
-    color: var(--color-body);
+    color: #000000;
 }
 
 .pillar--left p {
@@ -491,7 +490,6 @@
 
 /* ===================== COMMITMENT ===================== */
 .commitment {
-    padding-block: clamp(3rem, 5vw, 4.5rem);
 }
 
 .commitment__image {
