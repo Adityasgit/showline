@@ -885,7 +885,7 @@
 }
 
 .ex-process {
-    margin: clamp(2rem, 4vw, 3rem) 60px;
+    /* margin: clamp(2rem, 4vw, 3rem) 60px; */
 }
 
 
