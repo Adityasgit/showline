@@ -190,7 +190,7 @@
 
 .stat__value {
     color: var(--color-white);
-    font-family: var(--font-heading);
+    font-family: var(--font-body);      /* Manrope */
     font-weight: 600;
     font-size: clamp(2.5rem, 4vw, 4rem);
     line-height: 1;
@@ -236,7 +236,7 @@
 }
 
 .services__text {
-    color: var(--color-body);
+    color: #000000;
     font-family: var(--font-body);
     font-weight: 400;
     font-size: 16px;
