@@ -876,10 +876,22 @@
    sections that differ from Exhibition are (re)defined here)
    ============================================================ */
 
+/* ---------- EVENTS SECTION RHYTHM (excluding contact) ---------- */
+.ex-serve.section,
+.ev-manage.section,
+.ev-modular.section,
+.ex-faq.section {
+    padding-block: clamp(2rem, 4vw, 3rem);
+}
+
+.ex-process {
+    margin: clamp(2rem, 4vw, 3rem) 60px;
+}
+
 
 /* ---------- EVENT MANAGEMENT SERVICES (image + numbered list) ---------- */
 .ev-manage {
-    padding: 37px clamp(2rem, 5vw, 4rem);
+    padding-inline: clamp(2rem, 5vw, 4rem);
 }
 
 .ev-manage__head {
@@ -1034,7 +1046,7 @@
 
 /* ---------- WHY MODULAR FOR EVENTS / OUR EVENT EXPERTISE ---------- */
 .ev-modular {
-    padding: 37px clamp(2rem, 5vw, 4rem);
+    padding-inline: clamp(2rem, 5vw, 4rem);
 }
 
 .ev-modular__head {
@@ -1284,6 +1296,10 @@
 }
 
 @media (max-width: 768px) {
+    .ex-process {
+        margin-block: 1.5rem;
+    }
+
     .ev-modular {
         padding-inline: var(--container-pad);
     }
