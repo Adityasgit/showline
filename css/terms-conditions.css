@@ -75,7 +75,7 @@
     /* 24px */
     font-weight: 400;
     line-height: 35px;
-    color: var(--color-ink);
+    color: #000000;
 }
 
 /* ===================== CONTACT ===================== */
@@ -188,7 +188,7 @@
     }
 
     .terms__copy p {
-        font-size: 1.125rem;
+        font-size: 16px;
         line-height: 1.7;
     }
 
