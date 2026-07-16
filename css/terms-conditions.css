@@ -64,6 +64,19 @@
     padding-top: clamp(2.5rem, 5vw, 3.5rem);
 }
 
+/* "Last updated" label — desktop */
+.terms__last-updated {
+    font-family: 'Manrope', var(--font-body), sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+    color: #555555;
+    margin-bottom: 2rem;
+    max-width: 1240px;
+    margin-inline: auto;
+}
+
 .terms__copy {
     max-width: 1240px;
     margin-inline: auto;
@@ -75,7 +88,7 @@
     /* 24px */
     font-weight: 400;
     line-height: 35px;
-    color: var(--color-ink);
+    color: #000000;
 }
 
 /* ===================== CONTACT ===================== */
@@ -129,28 +142,30 @@
 }
 
 .contact__intro {
-    max-width: 60%;
+    max-width: 48%;
 }
 
 .contact__title {
     color: var(--color-white);
     font-family: var(--font-body);
     font-size: 2.5rem;
-    /* 40px */
     font-weight: 600;
     line-height: 1.5;
-    /* 150% */
     margin-bottom: 1.5rem;
 }
 
-.contact__lines {
+
+.contact__lines,
+.contact__lines p {
     color: var(--color-white);
     font-family: var(--font-body);
     font-size: 1.25rem;
-    /* 20px */
     font-weight: 400;
     line-height: 1.5;
-    /* 150% */
+}
+
+.contact__lines p+p {
+    margin-top: 1rem;
 }
 
 /* ============================================================
@@ -167,7 +182,7 @@
     }
 
     .contact-form {
-        width: min(100%, 620px);
+        width: min(100%, 560px);
         margin: 2rem auto -3rem;
     }
 
@@ -187,12 +202,24 @@
         border-radius: 0;
     }
 
+    /* "Last updated" label — mobile (per design spec) */
+    .terms__last-updated {
+        font-family: 'Manrope', var(--font-body), sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.6;     /* 160% */
+        letter-spacing: 0;
+        color: #555555;
+        margin-bottom: 1.5rem;
+    }
+
     .terms__copy p {
-        font-size: 1.125rem;
+        font-size: 16px;
         line-height: 1.7;
     }
 
     .contact {
+        margin-top: 0;
         background-color: var(--color-red);
         padding-bottom: 2.5rem;
     }
@@ -207,6 +234,22 @@
     }
 
     .contact__band>span {
-        display: none;
+        display: none !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact__title {
+        font-size: 1.75rem;
+    }
+}
+
+/* ── Keep hero title on ONE line at small phones (425 → 320 px) ── */
+@media (max-width: 425px) {
+    .hero__title {
+        white-space: nowrap;
+        /* Scale smoothly: ~28px at 425px → ~20px at 320px */
+        font-size: clamp(1.25rem, 6.5vw, 1.75rem);
+        gap: 0.75rem;
     }
 }

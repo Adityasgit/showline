@@ -34,7 +34,7 @@
     --space-120: 7.5rem;
 
     /* ---- Section rhythm ---- */
-    --section-pad-y: 6rem;
+    --section-pad-y: 4rem;
     --section-pad-y-sm: 3.5rem;
 
     /* ---- Border radius ---- */
@@ -49,9 +49,10 @@
     --shadow-card: 0 20px 60px rgba(17, 17, 17, 0.08);
     --shadow-soft: 0 10px 30px rgba(17, 17, 17, 0.06);
     --shadow-btn: 0 8px 20px rgba(180, 36, 59, 0.25);
+    --shadow-project: 4px 4px 20px 0 #0000001a;
 
     /* ---- Layout ---- */
-    --container-max: 1455px;
+    --container-max: 1900px;
     --container-pad: 2rem;
 
     /* ---- Z-index ---- */
@@ -70,6 +71,12 @@
     :root {
         --container-pad: 2rem;
         --section-pad-y: 4rem;
+    }
+}
+
+@media (min-width: 1600px) {
+    :root {
+        --section-pad-y: 6rem;
     }
 }
 
