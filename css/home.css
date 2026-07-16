@@ -839,8 +839,10 @@
 .blog-card {
     display: flex;
     flex-direction: column;
-    border-top: 1px solid var(--color-line);
+    border-top: 1px solid var(--color-red);
+    border-bottom: 1px solid var(--color-red);
     padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
 }
 
 .blog-card--low {
@@ -900,9 +902,16 @@
 }
 
 .knowledge__foot {
-    display: flex;
+    display: none; /* mobile-only CTA — shown below 768px */
     justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
     margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.knowledge__foot .link-cta {
+    justify-content: center;
 }
 
 /* ===================== TESTIMONIALS ===================== */
@@ -1400,9 +1409,21 @@
         grid-column: auto;
     }
 
-    /* Knowledge -> single column, no stagger */
+    /* Knowledge -> single column, no stagger; only bottom divider per card */
     .knowledge__grid {
         grid-template-columns: 1fr;
+    }
+
+    .blog-card {
+        border-top: none;
+        padding-top: 0;
+    }
+
+    .knowledge__foot,
+    .knowledge__foot.hide-desktop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .knowledge__head {

@@ -213,7 +213,7 @@
     width: 20px;
     height: 2px;
     margin-inline: auto;
-    background-color: var(--color-ink);
+    background-color: var(--color-red);
     border-radius: 2px;
     transition: transform var(--transition-base), opacity var(--transition-base);
 }
