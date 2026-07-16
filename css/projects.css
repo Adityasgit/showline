@@ -577,16 +577,18 @@
 
 .pr-fan__nav {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 70%;
+    transform: translateY(50%);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    padding: 16px;
+    border-radius: 40px;
     background-color: var(--color-white);
     border: none;
+    outline: none;
     cursor: pointer;
     z-index: 10;
     transition: background-color var(--transition-base);
@@ -595,18 +597,23 @@
 .pr-fan__nav:hover {
     background-color: var(--color-surface);
 }
+.pr-fan__nav:focus-visible,
+.pr-fan__nav:focus {
+    outline: none;
+    border:none
+}
 
 .pr-fan__nav img {
-    width: 20px;
-    height: 20px;
+    width: 100%;
+    height: 100%;
 }
 
 .pr-fan__nav--prev {
-    left: 0;
+    left: 4.5rem;
 }
 
 .pr-fan__nav--next {
-    right: 0;
+    right: 4.5rem;
 }
 
 /* ===================== FEATURED PROJECTS (mobile) ===================== */
@@ -683,14 +690,18 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    padding: 12px;
+    border-radius: 32px;
     background-color: var(--color-white);
-    border: 1.5px solid var(--color-red);
-    color: var(--color-red);
-    font-size: 1rem;
+    border: none;
     cursor: pointer;
+}
+
+.pr-featured-m__btn img {
+    width: 100%;
+    height: 100%;
 }
 
 .pr-featured-m__stage {
@@ -860,10 +871,10 @@
 
     .pr-featured-m__nav {
         position: absolute;
-        left: 0;
-        right: 0;
-        top: 52%;
-        transform: translateY(-50%);
+        left: 1.75rem;
+        right: 1.75rem;
+        top: 100%;
+        transform: translateY(0%);
         display: flex;
         justify-content: space-between;
         gap: 0;
