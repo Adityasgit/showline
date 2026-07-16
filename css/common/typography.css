@@ -5,7 +5,7 @@
    Geist          -> button labels
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Fustat:wght@300;400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Inter:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Geist:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fustat:wght@300;400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Inter:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Geist:wght@400;500;600;700&family=Roboto:wght@400;500;700;900&display=swap');
 
 :root {
     --font-heading: 'Instrument Sans', system-ui, sans-serif;

@@ -966,10 +966,12 @@
 
 .testimonial > span {
     display: block;
-    font-family: var(--font-heading);
-    font-size: 3rem;
-    line-height: 0.6;
-    color: rgba(255, 255, 255, 0.55);
+    font-family: Roboto;
+    font-size: 80px;
+    font-weight: 800;
+    line-height: 10%;
+    margin-top: 1.5rem;
+    color: rgba(255, 255, 255);
 }
 
 .testimonial__quote {
