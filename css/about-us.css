@@ -285,7 +285,7 @@
 .whoweare__title {
     color: var(--color-white);
     font-size: var(--fs-h1);
-    font-weight: 700;
+    font-weight: 500;
     margin-bottom: 1.5rem;
 }
 
@@ -959,7 +959,12 @@
     }
 
     .intro__title {
-        font-size: 2.25rem;   /* match the "About Us" hero title on mobile */
+        font-size: 2.25rem;   /* same as the "About Us" hero title on mobile */
+    }
+
+    /* hide the hard line-break — space in the HTML keeps the two words apart */
+    .intro__title br {
+        display: none;
     }
 
     .intro__text {
