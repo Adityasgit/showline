@@ -632,25 +632,6 @@
     margin-bottom: 1.5rem;
 }
 
-/* Desktop-label / mobile-label swap (formerly .hide-mobile / .hide-desktop
-   on the two <span> children — now targeted via the parent instead) */
-.contact__title span:first-child {
-    display: revert;
-}
-
-.contact__title span:last-child {
-    display: none;
-}
-
-@media (max-width: 768px) {
-    .contact__title span:first-child {
-        display: none !important;
-    }
-
-    .contact__title span:last-child {
-        display: revert;
-    }
-}
 
 .contact__lines,
 .contact__lines p {

@@ -215,27 +215,6 @@
     margin-bottom: 1.75rem;
 }
 
-/* Desktop-label / mobile-label swap for pages that split the title into two
-   <span> children (formerly .hide-mobile / .hide-desktop on each span —
-   now targeted via the parent instead). Titles with a single text node are
-   unaffected since :first-child/:last-child then both resolve to nothing. */
-.contact-form__title span:first-child {
-    display: revert;
-}
-
-.contact-form__title span:last-child {
-    display: none;
-}
-
-@media (max-width: 768px) {
-    .contact-form__title span:first-child {
-        display: none !important;
-    }
-
-    .contact-form__title span:last-child {
-        display: revert;
-    }
-}
 
 .contact-form__row {
     display: grid;
@@ -273,6 +252,13 @@
     width: 1.5rem;
     height: 1.5rem;
     filter: brightness(0) invert(1);
+}
+
+/* Hide arrow icon on mobile — button only */
+@media (max-width: 768px) {
+    .contact-form__actions > span {
+        display: none !important;
+    }
 }
 
 .contact-form__note {
