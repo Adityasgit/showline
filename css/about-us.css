@@ -270,7 +270,8 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(rgba(10, 4, 6, 0.82), rgba(10, 4, 6, 0.82));
+    /* background: linear-gradient(rgba(10, 4, 6, 0.82), rgba(10, 4, 6, 0.82)); */
+    background: linear-gradient(178.29deg, #000000 -25.61%, rgba(0, 0, 0, 0.4) 44.13%, rgba(0, 0, 0, 0.9) 98.59%);
     z-index: 1;
 }
 
