@@ -1205,6 +1205,12 @@
         align-items: stretch;
     }
 
+    /* Keep "Why Choose Us?" on a single line in the stacked/mobile layout —
+       the <br> in the markup is a desktop-only line break */
+    .why__title br {
+        display: none;
+    }
+
     .why__intro {
         max-width: 100%;
     }

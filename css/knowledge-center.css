@@ -125,7 +125,7 @@
 /* ---- Featured Article ---- */
 .kc-featured {
     padding-bottom: var(--section-pad-y);
-    max-width: 1440px;
+    /* max-width: 1440px; */
     margin-inline:auto;
 }
 
@@ -260,8 +260,8 @@
 .kc-articles {
     padding-bottom: var(--section-pad-y);
     background: var(--color-surface-2);
-    max-width: 1400px;
-    margin-inline: auto;
+    /* max-width: 1400px; */
+    /* margin-inline: auto; */
     /* padding-top: var(--section-pad-y); */
 }
 
@@ -269,8 +269,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-32);
-    max-width: 1400px;
-    margin-inline: auto;
+    /* max-width: 1400px;
+    margin-inline: auto; */
 }
 
 .kc-card {
@@ -439,7 +439,7 @@
     }
 }
 
-@media (min-width: 1700px){
+/* @media (min-width: 1700px){
     .kc-featured,.kc-articles,.kc-grid {
         max-width: 1600px;
     }
@@ -449,4 +449,4 @@
     .kc-featured,.kc-articles,.kc-grid {
         max-width: 1800px;
     }
-}
+} */
