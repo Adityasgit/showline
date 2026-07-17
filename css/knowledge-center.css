@@ -256,6 +256,12 @@
     align-items: center;
     gap: var(--space-8);
     flex-shrink: 0;
+    font-family: Manrope;
+    padding: 10px 20px;
+    font-weight: 600;
+    width: 128px;
+    height: 38px;
+    font-size: 13px;
 }
 
 .kc-featured__btn svg {
@@ -445,6 +451,16 @@
         padding: var(--space-24);
     }
 
+    .kc-featured__footer {
+        flex-direction: column;
+        justify-content: start;
+        align-items: flex-start;
+        width: 100%;
+    }
+    .kc-featured__footer > .kc-featured__btn {
+        width: 100%;
+        height:43px ;
+    }
     .kc-card__content {
         padding: var(--space-24);
     }
