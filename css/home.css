@@ -184,7 +184,7 @@
 }
 
 .home-intro__lead {
-    max-width: 1040px;
+    max-width: 1135px;
     margin-inline: auto;
     text-align: center;
     color: var(--color-white);
@@ -212,7 +212,7 @@
 .stat__value {
     color: var(--color-white);
     font-family: var(--font-body);      /* Manrope */
-    font-weight: 600;
+    font-weight: 500;
     font-size: clamp(2.5rem, 4vw, 4rem);
     line-height: 1;
     letter-spacing: -0.02em;

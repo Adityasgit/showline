@@ -255,6 +255,10 @@
     color: var(--color-ink);
 }
 
+.ex-serve-card__list li:first-child {
+    border-top: 1px solid #B4243B;
+}
+
 .ex-serve-card__list li:last-child {
     border-bottom: none;
 }

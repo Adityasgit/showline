@@ -134,7 +134,7 @@
 .ex-hero__text p {
     color: var(--color-white);
     font-family: var(--font-heading);
-    font-size: 17px;
+    font-size: 24px;
     font-weight: 400;
     line-height: 1.5;
     opacity: 0;
@@ -288,6 +288,10 @@
     border-bottom: 1px solid #B4243B;
     font-size: 1rem;
     color: var(--color-ink);
+}
+
+.ex-serve-card__list li:first-child {
+    border-top: 1px solid #B4243B;
 }
 
 .ex-serve-card__list li:last-child {
