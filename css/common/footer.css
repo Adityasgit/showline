@@ -64,8 +64,10 @@
     transition: color var(--transition-fast);
 }
 
-.site-footer__nav a:hover {
-    color: var(--color-white);
+@media (hover: hover) {
+    .site-footer__nav a:hover {
+        color: var(--color-white);
+    }
 }
 
 /* ---- Social ---- */
@@ -81,9 +83,11 @@
     transition: transform var(--transition-base), opacity var(--transition-base);
 }
 
-.site-footer__social a:hover {
-    transform: translateY(-2px);
-    opacity: 0.85;
+@media (hover: hover) {
+    .site-footer__social a:hover {
+        transform: translateY(-2px);
+        opacity: 0.85;
+    }
 }
 
 .site-footer__social img {
@@ -137,8 +141,10 @@
     color: rgba(255, 255, 255, 0.55);
 }
 
-.site-footer__legal a:hover {
-    color: var(--color-white);
+@media (hover: hover) {
+    .site-footer__legal a:hover {
+        color: var(--color-white);
+    }
 }
 
 /* ---- Responsive ---- */

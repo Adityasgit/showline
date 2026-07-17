@@ -34,10 +34,12 @@
     color: var(--color-white);
 }
 
-.btn-primary:hover,
-.projects__cta > span:first-child:hover {
-    background-color: var(--color-red-dark);
-    box-shadow: var(--shadow-btn);
+@media (hover: hover) {
+    .btn-primary:hover,
+    .projects__cta > span:first-child:hover {
+        background-color: var(--color-red-dark);
+        box-shadow: var(--shadow-btn);
+    }
 }
 
 /* White pill (on red backgrounds) */
@@ -46,8 +48,10 @@
     color: var(--color-red);
 }
 
-.btn-light:hover {
-    background-color: var(--color-surface);
+@media (hover: hover) {
+    .btn-light:hover {
+        background-color: var(--color-surface);
+    }
 }
 
 /* Full-width solid red (forms) */
@@ -74,12 +78,14 @@
                 transform var(--transition-base);
 }
 
-.btn-icon:hover,
-.projects__cta > span:last-child:hover,
-.contact-form__actions > span:hover,
-.blog-card__head > span:last-child:hover {
-    background-color: var(--color-red-dark);
-    transform: rotate(45deg);
+@media (hover: hover) {
+    .btn-icon:hover,
+    .projects__cta > span:last-child:hover,
+    .contact-form__actions > span:hover,
+    .blog-card__head > span:last-child:hover {
+        background-color: var(--color-red-dark);
+        transform: rotate(45deg);
+    }
 }
 
 .btn-icon img,

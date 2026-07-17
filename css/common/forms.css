@@ -179,10 +179,16 @@
     transition: background-color var(--transition-fast), color var(--transition-fast);
 }
 
-.select__option.is-active,
-.select__option:hover {
+.select__option.is-active {
     background-color: var(--color-surface);
     color: var(--color-ink);
+}
+
+@media (hover: hover) {
+    .select__option:hover {
+        background-color: var(--color-surface);
+        color: var(--color-ink);
+    }
 }
 
 .select__option[aria-selected="true"] {
@@ -244,9 +250,11 @@
     transition: background-color var(--transition-base), transform var(--transition-base);
 }
 
-.contact-form__actions span:hover {
-    background-color: var(--color-red-dark);
-    transform: rotate(45deg);
+@media (hover: hover) {
+    .contact-form__actions span:hover {
+        background-color: var(--color-red-dark);
+        transform: rotate(45deg);
+    }
 }
 
 .contact-form__actions span img {

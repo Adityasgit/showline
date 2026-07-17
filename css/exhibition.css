@@ -224,8 +224,10 @@
     transition: background-color var(--transition-base);
 }
 
-.ex-carousel-btn:hover {
-    background-color: var(--color-red-dark);
+@media (hover: hover) {
+    .ex-carousel-btn:hover {
+        background-color: var(--color-red-dark);
+    }
 }
 .ex-carousel-btn:focus-visible,.ex-carousel-btn:focus {
     outline:none;
@@ -491,9 +493,11 @@
     filter: none;
 }
 
-.ex-services__nav .ex-carousel-btn:hover {
-    opacity: 0.8;
-    background-color: transparent;
+@media (hover: hover) {
+    .ex-services__nav .ex-carousel-btn:hover {
+        opacity: 0.8;
+        background-color: transparent;
+    }
 }
 
 .ex-services__nav .ex-carousel-btn--primary {
@@ -506,9 +510,11 @@
     filter: brightness(0) invert(1);
 }
 
-.ex-services__nav .ex-carousel-btn--primary:hover {
-    background-color: var(--color-red-dark);
-    opacity: 1;
+@media (hover: hover) {
+    .ex-services__nav .ex-carousel-btn--primary:hover {
+        background-color: var(--color-red-dark);
+        opacity: 1;
+    }
 }
 
 /* ===================== STAND TYPES (mobile carousel) ===================== */

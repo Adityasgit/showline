@@ -144,9 +144,11 @@
         border-color var(--transition-base);
 }
 
-.pr-pill:hover {
-    border-color: var(--color-red);
-    color: var(--color-red);
+@media (hover: hover) {
+    .pr-pill:hover {
+        border-color: var(--color-red);
+        color: var(--color-red);
+    }
 }
 
 .pr-pill.is-active {
@@ -270,10 +272,12 @@
     color: var(--color-white);
 }
 
-.pr-empty__btn:hover {
-    background-color: var(--color-red-dark);
-    border-color: var(--color-red-dark);
-    color: var(--color-white);
+@media (hover: hover) {
+    .pr-empty__btn:hover {
+        background-color: var(--color-red-dark);
+        border-color: var(--color-red-dark);
+        color: var(--color-white);
+    }
 }
 
 /* Formerly .pr-filter__count on the <span> itself — now targeted via its
@@ -594,8 +598,10 @@
     transition: background-color var(--transition-base);
 }
 
-.pr-fan__nav:hover {
-    background-color: var(--color-surface);
+@media (hover: hover) {
+    .pr-fan__nav:hover {
+        background-color: var(--color-surface);
+    }
 }
 .pr-fan__nav:focus-visible,
 .pr-fan__nav:focus {

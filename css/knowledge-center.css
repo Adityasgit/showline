@@ -111,9 +111,14 @@
     white-space: nowrap;
 }
 
-.kc-category:hover,
 .kc-category:focus-visible {
     background: var(--color-surface);
+}
+
+@media (hover: hover) {
+    .kc-category:hover {
+        background: var(--color-surface);
+    }
 }
 
 .kc-category.is-active {
@@ -143,9 +148,11 @@
     transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
-.kc-featured__card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0px 8px 32px 0px #0000001A;
+@media (hover: hover) {
+    .kc-featured__card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0px 8px 32px 0px #0000001A;
+    }
 }
 
 .kc-featured__image-wrap {
@@ -287,9 +294,11 @@
     transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
-.kc-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-card);
+@media (hover: hover) {
+    .kc-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-card);
+    }
 }
 
 .kc-card__image-wrap {
@@ -360,13 +369,6 @@
     transition: var(--transition-base);
 }
 
-.kc-card:hover .kc-card__btn,
-.kc-card__btn:hover {
-    background: var(--color-ink);
-    color: var(--color-white);
-    transform: none; /* Prevent .btn-icon rotation */
-}
-
 .kc-card__btn .kc-card__btn-icon {
     /* 14x14 at 1440px viewport (14/1440 = 0.973vw), half the circle size */
     width: clamp(12px, 0.973vw, 18px);
@@ -375,8 +377,17 @@
     transition: transform 0.3s ease;
 }
 
-.kc-card:hover .kc-card__btn .kc-card__btn-icon {
-    transform: rotate(-45deg);
+@media (hover: hover) {
+    .kc-card:hover .kc-card__btn,
+    .kc-card__btn:hover {
+        background: var(--color-ink);
+        color: var(--color-white);
+        transform: none; /* Prevent .btn-icon rotation */
+    }
+
+    .kc-card:hover .kc-card__btn .kc-card__btn-icon {
+        transform: rotate(-45deg);
+    }
 }
 
 /* ============================================================

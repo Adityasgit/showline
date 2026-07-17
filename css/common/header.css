@@ -45,16 +45,18 @@
     transition: color var(--transition-fast);
 }
 
-.site-nav__list a:hover,
 .site-nav__list a[aria-current="page"] {
     color: var(--color-red);
 }
 
-/* Underline only on hover, so the hover state is distinguishable from the
-   active (current page) link, which stays solid red without underline. */
-.site-nav__list a:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
+/* Hover color + underline on pointer devices only — avoids sticky red/underline
+   after a tap on touch devices. Active page color above stays always-on. */
+@media (hover: hover) {
+    .site-nav__list a:hover {
+        color: var(--color-red);
+        text-decoration: underline;
+        text-underline-offset: 4px;
+    }
 }
 
 /* ---- Services dropdown ---- */
@@ -162,10 +164,16 @@
     transition: background-color var(--transition-fast), color var(--transition-fast);
 }
 
-.nav-dropdown__menu a:hover,
 .nav-dropdown__menu a[aria-current="page"] {
     background-color: var(--color-surface-2);
     color: var(--color-red);
+}
+
+@media (hover: hover) {
+    .nav-dropdown__menu a:hover {
+        background-color: var(--color-surface-2);
+        color: var(--color-red);
+    }
 }
 
 /* ---- Actions ---- */
@@ -326,8 +334,10 @@
         border-radius: var(--radius-md);
     }
 
-    .site-nav__list a:hover {
-        background-color: var(--color-surface-2);
+    @media (hover: hover) {
+        .site-nav__list a:hover {
+            background-color: var(--color-surface-2);
+        }
     }
 
     /* Dropdown behaves as an inline accordion inside the mobile panel */

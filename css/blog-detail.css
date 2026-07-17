@@ -197,8 +197,10 @@
     transition: opacity var(--transition-base);
 }
 
-.blog-author-card__social a:hover {
-    opacity: 1;
+@media (hover: hover) {
+    .blog-author-card__social a:hover {
+        opacity: 1;
+    }
 }
 
 .blog-author-card__social img {
@@ -243,8 +245,10 @@
     transition: opacity var(--transition-base);
 }
 
-.blog-related__view-all:hover {
-    opacity: 0.8;
+@media (hover: hover) {
+    .blog-related__view-all:hover {
+        opacity: 0.8;
+    }
 }
 
 .blog-related__view-all img {

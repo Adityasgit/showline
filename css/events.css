@@ -193,8 +193,10 @@
     transition: background-color var(--transition-base);
 }
 
-.ex-carousel-btn:hover {
-    background-color: var(--color-red-dark);
+@media (hover: hover) {
+    .ex-carousel-btn:hover {
+        background-color: var(--color-red-dark);
+    }
 }
 
 .ex-carousel-btn img {
@@ -1235,9 +1237,11 @@
     filter: none;
 }
 
-.ev-modular__nav .ex-carousel-btn:hover {
-    opacity: 0.85;
-    background-color: transparent;
+@media (hover: hover) {
+    .ev-modular__nav .ex-carousel-btn:hover {
+        opacity: 0.85;
+        background-color: transparent;
+    }
 }
 
 .ev-modular__nav .ex-carousel-btn--primary {
@@ -1250,9 +1254,11 @@
     filter: brightness(0) invert(1);
 }
 
-.ev-modular__nav .ex-carousel-btn--primary:hover {
-    background-color: var(--color-red-dark);
-    opacity: 1;
+@media (hover: hover) {
+    .ev-modular__nav .ex-carousel-btn--primary:hover {
+        background-color: var(--color-red-dark);
+        opacity: 1;
+    }
 }
 
 /* ============================================================
