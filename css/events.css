@@ -1192,10 +1192,28 @@
 }
 
 .ex-service-card.is-active span {
-    right: -20px;
-    bottom: -10px;
+    /* right: 17px; */
+    bottom: -15px;
     width: 313px;
     height: 223px;
+    border-radius: 14px;
+    border: 0;
+}
+
+/* Slot-based image treatment (the track is DOM-reordered on rotate, so the
+   visual 1st card is always :first-child). Per the design: the 1st card's
+   image overflows the dashed frame only at the bottom (x stays inside),
+   like the active card; cards 3+ keep the fully-tucked corner treatment.
+   Mirrors the final version in exhibition.css. */
+.ex-service-card {
+    overflow: visible;
+}
+
+.ex-service-card--corner:first-child > span {
+    /* right: 17px; */
+    bottom: -28px;
+    width: 226px;
+    height: 215px;
     border-radius: 14px;
     border: 0;
 }
@@ -1336,6 +1354,14 @@
     }
 
     .ex-service-card.is-active span {
+        right: -1.5px;
+        bottom: -1.5px;
+        width: 203px;
+        height: 191px;
+        border-radius: 20px 0 0 0;
+    }
+
+    .ex-service-card--corner:first-child > span {
         right: -1.5px;
         bottom: -1.5px;
         width: 203px;

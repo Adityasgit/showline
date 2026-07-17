@@ -584,7 +584,7 @@
 }
 
 .info-card--red::before {
-    background-color: var(--color-red);
+    background-color: #000;
 }
 
 .info-card--red .info-card__title {
