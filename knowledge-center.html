@@ -38,7 +38,8 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about-us.html">About</a></li>
                     <li class="site-nav__item nav-dropdown">
-                        <button type="button" class="site-nav__link nav-dropdown__toggle" aria-haspopup="true" aria-expanded="false">
+                        <button type="button" class="site-nav__link nav-dropdown__toggle" aria-haspopup="true"
+                            aria-expanded="false">
                             Services
                             <span aria-hidden="true"></span>
                         </button>
@@ -86,39 +87,42 @@
         </section>
 
         <!-- ===================== SEARCH & CATEGORIES ===================== -->
-        <section class="kc-filters section">
+        <section class="kc-filters section--tight">
             <div class="container">
-                <div class="kc-search" data-aos="fade-up">
-                    <div class="kc-search__icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
-                                stroke="#666666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M21 21L16.65 16.65" stroke="#666666" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
+                <div class="kc-filters__inner">
+                    <div class="kc-search" data-aos="fade-up">
+                        <div class="kc-search__icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
+                                    stroke="#666666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M21 21L16.65 16.65" stroke="#666666" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <input type="text" class="kc-search__input" placeholder="Search articles...">
                     </div>
-                    <input type="text" class="kc-search__input" placeholder="Search articles...">
-                </div>
 
-                <div class="kc-categories" data-aos="fade-up" data-aos-delay="100">
-                    <ul class="kc-categories__list">
-                        <li><a href="#" class="kc-category is-active">All</a></li>
-                        <li><a href="#" class="kc-category">Exhibitions</a></li>
-                        <li><a href="#" class="kc-category">Events</a></li>
-                        <li><a href="#" class="kc-category">Sustainability</a></li>
-                        <li><a href="#" class="kc-category">Design</a></li>
-                        <li><a href="#" class="kc-category">Retail</a></li>
-                        <li><a href="#" class="kc-category">Interiors</a></li>
-                        <li><a href="#" class="kc-category">Execution</a></li>
-                        <li><a href="#" class="kc-category">Technology</a></li>
-                    </ul>
+                    <div class="kc-categories" data-aos="fade-up" data-aos-delay="100">
+                        <ul class="kc-categories__list">
+                            <li><a href="#" class="kc-category is-active">All</a></li>
+                            <li><a href="#" class="kc-category">Exhibitions</a></li>
+                            <li><a href="#" class="kc-category">Events</a></li>
+                            <li><a href="#" class="kc-category">Sustainability</a></li>
+                            <li><a href="#" class="kc-category">Design</a></li>
+                            <li><a href="#" class="kc-category">Retail</a></li>
+                            <li><a href="#" class="kc-category">Interiors</a></li>
+                            <li><a href="#" class="kc-category">Execution</a></li>
+                            <li><a href="#" class="kc-category">Technology</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- ===================== FEATURED ARTICLE ===================== -->
-        <section class="kc-featured section">
+        <section class="kc-featured ">
             <div class="container">
                 <a href="blog-detail.html" class="kc-featured__card">
                     <div class="kc-featured__image-wrap" data-aos="fade-right">
@@ -131,28 +135,32 @@
                         <p class="kc-featured__excerpt">How SHOWLINE's modular approach to retail allows brands to scale
                             physical presence rapidly and effectively.</p>
 
-                        <div class="kc-author">
-                            <img src="images/knowledge-center/david-park.png" alt="David Park" class="kc-author__img">
-                            <div class="kc-author__meta">
-                                <span>David Park</span>
-                                <span>June 8 &middot; 6 min read</span>
+                        <div class="kc-featured__footer">
+                            <div class="kc-author">
+                                <img src="images/knowledge-center/david-park.png" alt="David Park"
+                                    class="kc-author__img">
+                                <div class="kc-author__meta">
+                                    <span>David Park</span>
+                                    <span>June 8 &middot; 6 min read</span>
+                                </div>
                             </div>
-                        </div>
 
-                        <span class="btn btn-primary kc-featured__btn">
-                            Read More
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M5 12h14m-7-7l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </span>
+                            <span class="btn btn-primary kc-featured__btn">
+                                Read More
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.91602 7H11.0836M6.99982 11.0838L11.0836 7L6.99982 2.9162" stroke="white"
+                                        stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </span>
+                        </div>
                     </div>
                 </a>
             </div>
         </section>
 
         <!-- ===================== ARTICLE GRID ===================== -->
-        <section class="kc-articles section">
+        <section class="kc-articles">
             <div class="container">
                 <div class="kc-grid">
                     <!-- Card 1 -->
@@ -177,8 +185,11 @@
                                     </div>
                                 </div>
                                 <span class="btn-icon btn-icon--sm kc-card__btn" aria-hidden="true">
-                                    <img src="images/icons/icon-arrow-navbar.svg" alt="" width="24" height="24"
-                                        class="kc-card__btn-icon">
+                                    <svg class="kc-card__btn-icon" width="14" height="14" viewBox="0 0 14 14"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <path d="M2.91602 7H11.0836M6.99982 11.0838L11.0836 7L6.99982 2.9162"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                    </svg>
                                 </span>
                             </div>
                         </div>
@@ -206,8 +217,11 @@
                                     </div>
                                 </div>
                                 <span class="btn-icon btn-icon--sm kc-card__btn" aria-hidden="true">
-                                    <img src="images/icons/icon-arrow-navbar.svg" alt="" width="24" height="24"
-                                        class="kc-card__btn-icon">
+                                    <svg class="kc-card__btn-icon" width="14" height="14" viewBox="0 0 14 14"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <path d="M2.91602 7H11.0836M6.99982 11.0838L11.0836 7L6.99982 2.9162"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                    </svg>
                                 </span>
                             </div>
                         </div>
@@ -235,8 +249,11 @@
                                     </div>
                                 </div>
                                 <span class="btn-icon btn-icon--sm kc-card__btn" aria-hidden="true">
-                                    <img src="images/icons/icon-arrow-navbar.svg" alt="" width="24" height="24"
-                                        class="kc-card__btn-icon">
+                                    <svg class="kc-card__btn-icon" width="14" height="14" viewBox="0 0 14 14"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <path d="M2.91602 7H11.0836M6.99982 11.0838L11.0836 7L6.99982 2.9162"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                    </svg>
                                 </span>
                             </div>
                         </div>
@@ -264,8 +281,11 @@
                                     </div>
                                 </div>
                                 <span class="btn-icon btn-icon--sm kc-card__btn" aria-hidden="true">
-                                    <img src="images/icons/icon-arrow-navbar.svg" alt="" width="24" height="24"
-                                        class="kc-card__btn-icon">
+                                    <svg class="kc-card__btn-icon" width="14" height="14" viewBox="0 0 14 14"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <path d="M2.91602 7H11.0836M6.99982 11.0838L11.0836 7L6.99982 2.9162"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                    </svg>
                                 </span>
                             </div>
                         </div>
@@ -293,8 +313,11 @@
                                     </div>
                                 </div>
                                 <span class="btn-icon btn-icon--sm kc-card__btn" aria-hidden="true">
-                                    <img src="images/icons/icon-arrow-navbar.svg" alt="" width="24" height="24"
-                                        class="kc-card__btn-icon">
+                                    <svg class="kc-card__btn-icon" width="14" height="14" viewBox="0 0 14 14"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <path d="M2.91602 7H11.0836M6.99982 11.0838L11.0836 7L6.99982 2.9162"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                    </svg>
                                 </span>
                             </div>
                         </div>
@@ -322,8 +345,11 @@
                                     </div>
                                 </div>
                                 <span class="btn-icon btn-icon--sm kc-card__btn" aria-hidden="true">
-                                    <img src="images/icons/icon-arrow-navbar.svg" alt="" width="24" height="24"
-                                        class="kc-card__btn-icon">
+                                    <svg class="kc-card__btn-icon" width="14" height="14" viewBox="0 0 14 14"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <path d="M2.91602 7H11.0836M6.99982 11.0838L11.0836 7L6.99982 2.9162"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                    </svg>
                                 </span>
                             </div>
                         </div>
