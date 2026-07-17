@@ -258,8 +258,8 @@
 }
 
 .contact-form__actions span img {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 35px;
+    height: 35px;
     filter: brightness(0) invert(1);
 }
 
