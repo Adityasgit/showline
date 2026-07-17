@@ -50,6 +50,13 @@
     color: var(--color-red);
 }
 
+/* Underline only on hover, so the hover state is distinguishable from the
+   active (current page) link, which stays solid red without underline. */
+.site-nav__list a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
 /* ---- Services dropdown ---- */
 .nav-dropdown {
     position: relative;
